@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  GrowthAmp
+
+  Created by Kirollos Risk on 8/3/13.
+  Copyright (c) 2013 GrowthAmp. All rights reserved.
+*/
+
+"invite_friends" = "Invite Friends";
+"tap_next_to_invite_friends" = "Tap next to invite {count} friends";
+"next" = "Next";
+"select_all" = "Select All";
+"unselect_all" = "Unselect All";
+"continue" = "Continue";
