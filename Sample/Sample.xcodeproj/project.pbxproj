@@ -30,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		37974C5E17E0E11100BB4E02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A16CDB5217AC6D5E00FB4F96;
+			remoteInfo = GrowthAmpResources;
+		};
 		A1653502179384A40039EF26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A16534D5179384A40039EF26 /* Project object */;
@@ -228,6 +235,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				37974C5F17E0E11100BB4E02 /* PBXTargetDependency */,
 				A1653524179384E50039EF26 /* PBXTargetDependency */,
 			);
 			name = Sample;
@@ -371,6 +379,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		37974C5F17E0E11100BB4E02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GrowthAmpResources;
+			targetProxy = 37974C5E17E0E11100BB4E02 /* PBXContainerItemProxy */;
+		};
 		A1653503179384A40039EF26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A16534DC179384A40039EF26 /* Sample */;
