@@ -19,6 +19,11 @@
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *headerSubTitle;
 
+@property (nonatomic, strong) NSString *trackingCode;
+@property (nonatomic, strong) NSString *userFirstName;
+@property (nonatomic, strong) NSString *userLastName;
+@property (nonatomic, strong) NSString *userEmail;
+
 @property (nonatomic, strong) NSArray *devices;
 
 @property (nonatomic,retain) NSString *sdkVersion;
@@ -38,5 +43,6 @@
 + (GALoader *)sharedInstance;
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated;
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
-
+- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
+                            trackingCode:(NSString*)trackingCode;
 @end

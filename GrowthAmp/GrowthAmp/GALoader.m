@@ -79,6 +79,13 @@
     
     
 }
+- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
+                            trackingCode:(NSString*)trackingCode {
+    
+    self.trackingCode = trackingCode;
+    [self presentInvitationsFromController:controller animated:animated showSplash:showSplash];
+}
+
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
     if (showSplash) {
