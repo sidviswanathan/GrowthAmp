@@ -1,0 +1,15 @@
+{
+    "SDKVersion" : "1.0",
+    "isAutoLaunchEnabled" : 1,
+    "appLaunchedUntil1stAutoLaunch" : 3,
+    "daysUntil2ndAutoLaunch" : 30,
+    "isContactSelectEnabled" : "http://",
+    "maxNumberOfContacts" : "http://",
+    "apiPostURL" : "http://",
+    "trackingPostURL" : "http://",
+    "userPostURL" : "http://",
+    "sessionPostURL" : "http://",
+    "invitationURL" : "http://"
+    
+}
+

@@ -12,6 +12,7 @@
 #import "GAABImport.h"
 #import "GAAccessViewController.h"
 #import "GAFrameworkUtils.h"
+#import "NSDictionary+JSONCategories.h"
 
 @interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
@@ -31,10 +32,52 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.autoLoad = NO;
-        self.maxNumberOfContacts = 10;
+        
+        [self loadConfig];
     }
     return self;
+}
+
+-(void)loadConfig {
+    
+    // Load GAConfig.json
+    NSDictionary *configDict = [NSDictionary dictionaryWithNameOfJSONFile:@"GAConfig.json"];
+    
+    if (configDict) {
+
+        self.sdkVersion = [configDict objectForKey:@"sdkVersion"];
+        
+        self.isAutoLaunchEnabled = [[configDict valueForKey:@"isAutoLaunchEnabled"] boolValue];
+        self.appLaunchedUntil1stAutoLaunch = [[configDict valueForKey:@"appLaunchedUntil1stAutoLaunch"] integerValue];
+        self.daysUntil2ndAutoLaunch = [[configDict valueForKey:@"daysUntil2ndAutoLaunch"] integerValue];
+        
+        self.isContactSelectEnabled = [[configDict valueForKey:@"isContactSelectEnabled"] integerValue];
+        self.maxNumberOfContacts = [[configDict valueForKey:@"maxNumberOfContacts"] integerValue];
+
+        self.apiPostURL = [configDict objectForKey:@"apiPostURL"];
+        self.trackingPostURL = [configDict objectForKey:@"trackingPostURL"];
+        self.userPostURL = [configDict objectForKey:@"userPostURL"];
+        self.sessionPostURL = [configDict objectForKey:@"sessionPostURL"];
+        self.invitationURL = [configDict objectForKey:@"invitationURL"];
+        
+    
+    } else {
+        
+        NSLog(@"GAConfig.json appears to be missing from the project. Using defaults");
+        
+        // Default configuration values
+        self.sdkVersion = @"1.0";
+        
+        self.isAutoLaunchEnabled = NO;
+        self.appLaunchedUntil1stAutoLaunch = 3;
+        self.daysUntil2ndAutoLaunch = 30;
+        
+        self.isContactSelectEnabled = YES;
+        self.maxNumberOfContacts = 10;
+        
+    }
+    
+    
 }
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
