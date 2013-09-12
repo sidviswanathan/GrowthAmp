@@ -92,30 +92,30 @@
     int currentAppLaunchCount = [[GAUserPreferences getObjectOfTypeKey:@"appLaunchCount"] intValue];
     
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *dateOfFirstAutolaunch = [GAUserPreferences getObjectOfTypeKey:@"firstAutolaunchDate"];
-    int daysSince1stAutolaunch = 0;
-    if (dateOfFirstAutolaunch) {
+    NSDate *dateOfAutolaunch = [GAUserPreferences getObjectOfTypeKey:@"autolaunchDate"];
+    int daysSinceLasttAutolaunch = 0;
+    if (dateOfAutolaunch) {
         
-        daysSince1stAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfFirstAutolaunch toDate:[NSDate date]];
+        daysSinceLasttAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfAutolaunch toDate:[NSDate date]];
     }
     
-    if (!dateOfFirstAutolaunch && (currentAppLaunchCount >= self.appLaunchedUntil1stAutoLaunch)) {
+    if (!dateOfAutolaunch && (currentAppLaunchCount >= self.appLaunchedUntil1stAutoLaunch)) {
         
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
         
-        [GAUserPreferences setObjectOfTypeKey:@"firstAutolaunchDate" object:[NSDate date]];
+        [GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[NSDate date]];
         
         // Spoof date for testing
         //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         //[dateFormat setDateFormat:@"yyMMdd"];
-        //[GAUserPreferences setObjectOfTypeKey:@"firstAutolaunchDate" object:[dateFormat dateFromString:@"130901"]];
+        //[GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[dateFormat dateFromString:@"130801"]];
         
         
-    } else if (![[GAUserPreferences getObjectOfTypeKey:@"secondAutolaunch"] boolValue] && (daysSince1stAutolaunch >= self.daysUntil2ndAutoLaunch)) {
+    } else if (daysSinceLasttAutolaunch >= self.daysUntil2ndAutoLaunch) {
     
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"second_autolaunch"];
         
-        [GAUserPreferences setObjectOfTypeKey:@"secondAutolaunch" object:[NSNumber numberWithBool:YES]];
+        [GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[NSDate date]];
 
     } else {
     
