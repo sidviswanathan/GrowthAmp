@@ -313,6 +313,9 @@
         }
         picker.recipients = numbers;
         [self presentViewController:picker animated:YES completion:nil];
+    } else {
+        
+        NSLog(@"SMS is not supported!");
     }
 }
 
