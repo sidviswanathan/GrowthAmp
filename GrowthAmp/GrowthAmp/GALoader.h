@@ -41,8 +41,13 @@
 @property (nonatomic,retain) NSString *invitationURL;
 
 + (GALoader *)sharedInstance;
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated;
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
+
+- (void) checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
+
+- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated;
+
+- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
+
+- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
                             trackingCode:(NSString*)trackingCode;
 @end

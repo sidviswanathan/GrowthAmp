@@ -25,6 +25,10 @@
 /* Begin PBXBuildFile section */
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; };
 		37974C6817E0EF5700BB4E02 /* NSDictionary+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */; };
+		37974C6F17E223B800BB4E02 /* GAUserPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6D17E223B800BB4E02 /* GAUserPreferences.h */; };
+		37974C7017E223B800BB4E02 /* GAUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6E17E223B800BB4E02 /* GAUserPreferences.m */; };
+		37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */; };
+		37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */; };
 		A106CA7B17AD7702002191EF /* GAHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA7917AD7702002191EF /* GAHeaderCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A106CA7C17AD7702002191EF /* GAHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A106CA7A17AD7702002191EF /* GAHeaderCell.m */; };
 		A106CA8317AD82DB002191EF /* NSString+GAUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA8117AD82DB002191EF /* NSString+GAUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -187,6 +191,10 @@
 /* Begin PBXFileReference section */
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
+		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
+		37974C6E17E223B800BB4E02 /* GAUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUserPreferences.m; sourceTree = "<group>"; };
+		37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+MySpecialCalculation.h"; sourceTree = "<group>"; };
+		37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+MySpecialCalculation.m"; sourceTree = "<group>"; };
 		A106CA7917AD7702002191EF /* GAHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAHeaderCell.h; sourceTree = "<group>"; };
 		A106CA7A17AD7702002191EF /* GAHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAHeaderCell.m; sourceTree = "<group>"; };
 		A106CA8117AD82DB002191EF /* NSString+GAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GAUtils.h"; sourceTree = "<group>"; };
@@ -630,6 +638,8 @@
 				A1DA33491793760E003BBCD1 /* GAConstants.m */,
 				A1377C5C17B7F83B003C81D0 /* GAFrameworkUtils.h */,
 				A1377C5D17B7F83B003C81D0 /* GAFrameworkUtils.m */,
+				37974C6D17E223B800BB4E02 /* GAUserPreferences.h */,
+				37974C6E17E223B800BB4E02 /* GAUserPreferences.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -643,6 +653,8 @@
 				A106CA8217AD82DB002191EF /* NSString+GAUtils.m */,
 				37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */,
 				37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */,
+				37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */,
+				37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -665,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */,
+				37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */,
 				A1DA333B1793753E003BBCD1 /* GAABParser.h in Headers */,
 				37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */,
 				A1DA333717937532003BBCD1 /* GAABImport.h in Headers */,
@@ -688,6 +701,7 @@
 				A1DEE7A217AEEFB6004DA4FC /* GAPhoneFilter.h in Headers */,
 				A1DEE7A617AEF055004DA4FC /* GAFilter.h in Headers */,
 				A1377C5617B7F71C003C81D0 /* GAMainViewController.h in Headers */,
+				37974C6F17E223B800BB4E02 /* GAUserPreferences.h in Headers */,
 				A1377C5E17B7F83B003C81D0 /* GAFrameworkUtils.h in Headers */,
 				A1377C6917B83167003C81D0 /* GAAccessViewController.h in Headers */,
 				A1377C7117B83498003C81D0 /* GAViewController.h in Headers */,
@@ -920,6 +934,7 @@
 				A1DA331817937468003BBCD1 /* GAContact.m in Sources */,
 				A1DA331C1793748E003BBCD1 /* GAAddress.m in Sources */,
 				A1DA332017937497003BBCD1 /* GAPhoneNumber.m in Sources */,
+				37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */,
 				A1DA3324179374A5003BBCD1 /* GASite.m in Sources */,
 				A1DA3328179374B3003BBCD1 /* GASocialProfile.m in Sources */,
 				A1DA333817937532003BBCD1 /* GAABImport.m in Sources */,
@@ -940,6 +955,7 @@
 				A1377C5717B7F71C003C81D0 /* GAMainViewController.m in Sources */,
 				A1377C5F17B7F83B003C81D0 /* GAFrameworkUtils.m in Sources */,
 				A1377C6A17B83167003C81D0 /* GAAccessViewController.m in Sources */,
+				37974C7017E223B800BB4E02 /* GAUserPreferences.m in Sources */,
 				A1377C7217B83498003C81D0 /* GAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

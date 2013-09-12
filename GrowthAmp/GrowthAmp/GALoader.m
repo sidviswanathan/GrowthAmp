@@ -13,6 +13,8 @@
 #import "GAAccessViewController.h"
 #import "GAFrameworkUtils.h"
 #import "NSDictionary+JSONCategories.h"
+#import "GAUserPreferences.h"
+#import "NSCalendar+MySpecialCalculation.h"
 
 @interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
@@ -79,6 +81,51 @@
     
     
 }
+
+-(void)checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
+ 
+    if (!self.isAutoLaunchEnabled) {
+        
+        return;
+    }
+    
+    int currentAppLaunchCount = [[GAUserPreferences getObjectOfTypeKey:@"appLaunchCount"] intValue];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *dateOfFirstAutolaunch = [GAUserPreferences getObjectOfTypeKey:@"firstAutolaunchDate"];
+    int daysSince1stAutolaunch = 0;
+    if (dateOfFirstAutolaunch) {
+        
+        daysSince1stAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfFirstAutolaunch toDate:[NSDate date]];
+    }
+    
+    if (!dateOfFirstAutolaunch && (currentAppLaunchCount >= self.appLaunchedUntil1stAutoLaunch)) {
+        
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
+        
+        [GAUserPreferences setObjectOfTypeKey:@"firstAutolaunchDate" object:[NSDate date]];
+        
+        // Spoof date for testing
+        //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        //[dateFormat setDateFormat:@"yyMMdd"];
+        //[GAUserPreferences setObjectOfTypeKey:@"firstAutolaunchDate" object:[dateFormat dateFromString:@"130901"]];
+        
+        
+    } else if (![[GAUserPreferences getObjectOfTypeKey:@"secondAutolaunch"] boolValue] && (daysSince1stAutolaunch >= self.daysUntil2ndAutoLaunch)) {
+    
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"second_autolaunch"];
+        
+        [GAUserPreferences setObjectOfTypeKey:@"secondAutolaunch" object:[NSNumber numberWithBool:YES]];
+
+    } else {
+    
+        [GAUserPreferences setObjectOfTypeKey:@"appLaunchCount" object:@(currentAppLaunchCount+1)];
+        
+    }
+    
+    
+}
+
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
                             trackingCode:(NSString*)trackingCode {
     
