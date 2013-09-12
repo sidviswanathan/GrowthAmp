@@ -15,6 +15,7 @@
 #import "NSDictionary+JSONCategories.h"
 #import "GAUserPreferences.h"
 #import "NSCalendar+MySpecialCalculation.h"
+#import "GADeviceInfo.h"
 
 @interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
@@ -36,6 +37,8 @@
     if (self) {
         
         [self loadConfig];
+        
+        //[GADeviceInfo test];
     }
     return self;
 }

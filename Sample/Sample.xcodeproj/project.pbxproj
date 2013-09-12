@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37974C6417E0E5E600BB4E02 /* GAConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 37974C6317E0E5E600BB4E02 /* GAConfig.json */; };
+		37974C7C17E271C900BB4E02 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37974C7B17E271C900BB4E02 /* CoreTelephony.framework */; };
 		A12C3B6C179386AD00D3B808 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12C3B681793869C00D3B808 /* AddressBook.framework */; };
 		A12C3B6F1793891000D3B808 /* libGrowthAmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A165351C179384C90039EF26 /* libGrowthAmp.a */; };
 		A1377C5017B6D62F003C81D0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1377C4F17B6D62F003C81D0 /* MessageUI.framework */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		37974C6317E0E5E600BB4E02 /* GAConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GAConfig.json; sourceTree = "<group>"; };
+		37974C7B17E271C900BB4E02 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A12C3B681793869C00D3B808 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A1377C4F17B6D62F003C81D0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A1377C6417B8020B003C81D0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37974C7C17E271C900BB4E02 /* CoreTelephony.framework in Frameworks */,
 				A1377C5017B6D62F003C81D0 /* MessageUI.framework in Frameworks */,
 				A16CDAF417AC64AA00FB4F96 /* CoreImage.framework in Frameworks */,
 				A12C3B6F1793891000D3B808 /* libGrowthAmp.a in Frameworks */,
@@ -156,6 +159,7 @@
 		A16534DF179384A40039EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37974C7B17E271C900BB4E02 /* CoreTelephony.framework */,
 				A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */,
 				A16CDAF317AC64AA00FB4F96 /* CoreImage.framework */,
 				A12C3B681793869C00D3B808 /* AddressBook.framework */,

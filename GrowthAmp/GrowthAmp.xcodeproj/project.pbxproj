@@ -29,6 +29,9 @@
 		37974C7017E223B800BB4E02 /* GAUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6E17E223B800BB4E02 /* GAUserPreferences.m */; };
 		37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */; };
 		37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */; };
+		37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7517E2524600BB4E02 /* GADeviceInfo.h */; };
+		37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7617E2524600BB4E02 /* GADeviceInfo.m */; };
+		37974C7A17E26CDA00BB4E02 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */; };
 		A106CA7B17AD7702002191EF /* GAHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA7917AD7702002191EF /* GAHeaderCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A106CA7C17AD7702002191EF /* GAHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A106CA7A17AD7702002191EF /* GAHeaderCell.m */; };
 		A106CA8317AD82DB002191EF /* NSString+GAUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA8117AD82DB002191EF /* NSString+GAUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -195,6 +198,9 @@
 		37974C6E17E223B800BB4E02 /* GAUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUserPreferences.m; sourceTree = "<group>"; };
 		37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+MySpecialCalculation.h"; sourceTree = "<group>"; };
 		37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+MySpecialCalculation.m"; sourceTree = "<group>"; };
+		37974C7517E2524600BB4E02 /* GADeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADeviceInfo.h; sourceTree = "<group>"; };
+		37974C7617E2524600BB4E02 /* GADeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADeviceInfo.m; sourceTree = "<group>"; };
+		37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A106CA7917AD7702002191EF /* GAHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAHeaderCell.h; sourceTree = "<group>"; };
 		A106CA7A17AD7702002191EF /* GAHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAHeaderCell.m; sourceTree = "<group>"; };
 		A106CA8117AD82DB002191EF /* NSString+GAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GAUtils.h"; sourceTree = "<group>"; };
@@ -336,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37974C7A17E26CDA00BB4E02 /* CoreTelephony.framework in Frameworks */,
 				A1653526179385F10039EF26 /* AddressBook.framework in Frameworks */,
 				A1DA32E2179371BD003BBCD1 /* Foundation.framework in Frameworks */,
 			);
@@ -535,6 +542,7 @@
 		A1DA32E0179371BD003BBCD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */,
 				A1653525179385F10039EF26 /* AddressBook.framework */,
 				A1DA32E1179371BD003BBCD1 /* Foundation.framework */,
 				A1DA32F0179371BD003BBCD1 /* SenTestingKit.framework */,
@@ -598,6 +606,8 @@
 				A1DA3322179374A5003BBCD1 /* GASite.m */,
 				A1DA3325179374B3003BBCD1 /* GASocialProfile.h */,
 				A1DA3326179374B3003BBCD1 /* GASocialProfile.m */,
+				37974C7517E2524600BB4E02 /* GADeviceInfo.h */,
+				37974C7617E2524600BB4E02 /* GADeviceInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -682,6 +692,7 @@
 				37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */,
 				A1DA333717937532003BBCD1 /* GAABImport.h in Headers */,
 				A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */,
+				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
 				A1DA332B179374C6003BBCD1 /* GALoader.h in Headers */,
 				A1DA331717937468003BBCD1 /* GAContact.h in Headers */,
 				A1DA331B1793748E003BBCD1 /* GAAddress.h in Headers */,
@@ -941,6 +952,7 @@
 				A1DA333C1793753E003BBCD1 /* GAABParser.m in Sources */,
 				A1DA334117937563003BBCD1 /* GAInvitationsViewController.m in Sources */,
 				A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */,
+				37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */,
 				A1DA334B1793760E003BBCD1 /* GAConstants.m in Sources */,
 				A12C3B731793894300D3B808 /* GASorter.m in Sources */,
 				A16CDAE817AC599A00FB4F96 /* GAContactCell.m in Sources */,
