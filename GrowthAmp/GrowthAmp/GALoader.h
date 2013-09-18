@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GALoaderDelegate.h"
 #import <UIKit/UIKit.h>
+#import "GAConfig.h"
 
 @interface GALoader : NSObject
 
@@ -26,19 +27,7 @@
 
 @property (nonatomic, strong) NSArray *devices;
 
-@property (nonatomic,retain) NSString *sdkVersion;
-@property (nonatomic,assign) BOOL isAutoLaunchEnabled;
-@property (nonatomic,assign) NSInteger appLaunchedUntil1stAutoLaunch;
-@property (nonatomic,assign) NSInteger daysUntil2ndAutoLaunch;
-
-@property (nonatomic,assign) BOOL isContactSelectEnabled;
-@property (nonatomic,assign) NSInteger maxNumberOfContacts;
-
-@property (nonatomic,retain) NSString *apiPostURL;
-@property (nonatomic,retain) NSString *trackingPostURL;
-@property (nonatomic,retain) NSString *userPostURL;
-@property (nonatomic,retain) NSString *sessionPostURL;
-@property (nonatomic,retain) NSString *invitationURL;
+@property (nonatomic,retain) GAConfig *config;
 
 + (GALoader *)sharedInstance;
 

@@ -25,7 +25,6 @@
 @property (nonatomic, strong) NSMutableArray *searchResults;
 
 @property (nonatomic, strong) NSMutableSet *selectedContacts;
-@property (nonatomic) BOOL allSelected;
 
 @property (nonatomic) BOOL shouldRelaodTableView;
 
@@ -42,7 +41,7 @@
         self.selectedContacts = [[NSMutableSet alloc] init];
         self.navigationItem.title = GALocalizedString(@"invite_friends", nil);
         
-        self.allSelected = YES;
+        self.selectAllEnabled = YES;
     }
     return self;
 }
@@ -77,7 +76,7 @@
                 [self.items addObject:kGAHeader];
                 [self.items addObjectsFromArray:self.contacts];
                 
-                if (self.allSelected) {
+                if (self.selectAllEnabled) {
                     for (GAContact *contact in self.contacts) {
                         [self.selectedContacts addObject:contact];
                     }
@@ -146,7 +145,7 @@
             cell = [[GAHeaderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
         }
         cell.cellPosition = [self positionForCellAtIndexPath:indexPath inArray:arr];
-        ((GAHeaderCell *)cell).status = self.allSelected;
+        ((GAHeaderCell *)cell).status = self.selectAllEnabled;
         ((GAHeaderCell *)cell).delegate = self;
         ((GAHeaderCell *)cell).model = [self headerModel];
     } else {
@@ -191,8 +190,8 @@
 }
 
 - (void)headerCell:(GAHeaderCell *)cell didChangeWithSelectStatus:(GAHeaderCellStatus)status {
-    self.allSelected = status;
-    if (self.allSelected) {
+    self.selectAllEnabled = status;
+    if (self.selectAllEnabled) {
         for (GAContact *contact in self.contacts) {
             [self.selectedContacts addObject:contact];
         }
@@ -231,14 +230,14 @@
     GAContact *contact = (GAContact *)item;
     if ([self.selectedContacts containsObject:contact]) {
         [self.selectedContacts removeObject:contact];
-        self.allSelected = NO;
+        self.selectAllEnabled = NO;
         if (self.selectedContacts.count == 0) {
             reload = YES;
         }
     } else {
         [self.selectedContacts addObject:contact];
         if (self.selectedContacts.count == self.contacts.count) {
-            self.allSelected = YES;
+            self.selectAllEnabled = YES;
             reload = YES;
         }
         

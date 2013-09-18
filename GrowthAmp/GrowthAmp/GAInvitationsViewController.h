@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *headerSubTitle;
 @property (nonatomic) NSInteger maxNumberOfContacts;
+@property (nonatomic) BOOL selectAllEnabled;
 
 - (id)initWithContacts:(NSArray *)contacts;
 

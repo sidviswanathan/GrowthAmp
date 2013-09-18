@@ -45,25 +45,27 @@
 
 -(void)loadConfig {
     
+    self.config = [[GAConfig alloc] init];
+    
     // Load GAConfig.json
     NSDictionary *configDict = [NSDictionary dictionaryWithNameOfJSONFile:@"GAConfig.json"];
     
     if (configDict) {
 
-        self.sdkVersion = [configDict objectForKey:@"sdkVersion"];
+        self.config.sdkVersion = [configDict objectForKey:@"sdkVersion"];
         
-        self.isAutoLaunchEnabled = [[configDict valueForKey:@"isAutoLaunchEnabled"] boolValue];
-        self.appLaunchedUntil1stAutoLaunch = [[configDict valueForKey:@"appLaunchedUntil1stAutoLaunch"] integerValue];
-        self.daysUntil2ndAutoLaunch = [[configDict valueForKey:@"daysUntil2ndAutoLaunch"] integerValue];
+        self.config.isAutoLaunchEnabled = [[configDict valueForKey:@"isAutoLaunchEnabled"] boolValue];
+        self.config.appLaunchedUntil1stAutoLaunch = [[configDict valueForKey:@"appLaunchedUntil1stAutoLaunch"] integerValue];
+        self.config.daysUntil2ndAutoLaunch = [[configDict valueForKey:@"daysUntil2ndAutoLaunch"] integerValue];
         
-        self.isContactSelectEnabled = [[configDict valueForKey:@"isContactSelectEnabled"] integerValue];
-        self.maxNumberOfContacts = [[configDict valueForKey:@"maxNumberOfContacts"] integerValue];
+        self.config.selectAllEnabled = [[configDict valueForKey:@"selectAllEnabled"] integerValue];
+        self.config.maxNumberOfContacts = [[configDict valueForKey:@"maxNumberOfContacts"] integerValue];
 
-        self.apiPostURL = [configDict objectForKey:@"apiPostURL"];
-        self.trackingPostURL = [configDict objectForKey:@"trackingPostURL"];
-        self.userPostURL = [configDict objectForKey:@"userPostURL"];
-        self.sessionPostURL = [configDict objectForKey:@"sessionPostURL"];
-        self.invitationURL = [configDict objectForKey:@"invitationURL"];
+        self.config.apiPostURL = [configDict objectForKey:@"apiPostURL"];
+        self.config.trackingPostURL = [configDict objectForKey:@"trackingPostURL"];
+        self.config.userPostURL = [configDict objectForKey:@"userPostURL"];
+        self.config.sessionPostURL = [configDict objectForKey:@"sessionPostURL"];
+        self.config.invitationURL = [configDict objectForKey:@"invitationURL"];
         
     
     } else {
@@ -71,14 +73,14 @@
         NSLog(@"GAConfig.json appears to be missing from the project. Using defaults");
         
         // Default configuration values
-        self.sdkVersion = @"1.0";
+        self.config.sdkVersion = @"1.0";
         
-        self.isAutoLaunchEnabled = NO;
-        self.appLaunchedUntil1stAutoLaunch = 3;
-        self.daysUntil2ndAutoLaunch = 30;
+        self.config.isAutoLaunchEnabled = NO;
+        self.config.appLaunchedUntil1stAutoLaunch = 3;
+        self.config.daysUntil2ndAutoLaunch = 30;
         
-        self.isContactSelectEnabled = YES;
-        self.maxNumberOfContacts = 10;
+        self.config.selectAllEnabled = YES;
+        self.config.maxNumberOfContacts = 10;
         
     }
     
@@ -87,7 +89,7 @@
 
 -(void)checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
  
-    if (!self.isAutoLaunchEnabled) {
+    if (!self.config.isAutoLaunchEnabled) {
         
         return;
     }
@@ -102,7 +104,7 @@
         daysSinceLasttAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfAutolaunch toDate:[NSDate date]];
     }
     
-    if (!dateOfAutolaunch && (currentAppLaunchCount >= self.appLaunchedUntil1stAutoLaunch)) {
+    if (!dateOfAutolaunch && (currentAppLaunchCount >= self.config.appLaunchedUntil1stAutoLaunch)) {
         
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
         
@@ -114,7 +116,7 @@
         //[GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[dateFormat dateFromString:@"130801"]];
         
         
-    } else if (daysSinceLasttAutolaunch >= self.daysUntil2ndAutoLaunch) {
+    } else if (daysSinceLasttAutolaunch >= self.config.daysUntil2ndAutoLaunch) {
     
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"second_autolaunch"];
         
@@ -161,7 +163,8 @@
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
                 invitationsController.headerTitle = self.headerTitle;
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = self.maxNumberOfContacts;
+                invitationsController.maxNumberOfContacts = self.config.maxNumberOfContacts;
+                invitationsController.selectAllEnabled = self.config.selectAllEnabled;
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
                 [controller presentViewController:navController animated:animated completion:nil];
             }
@@ -181,7 +184,8 @@
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
                 invitationsController.headerTitle = self.headerTitle;
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = self.maxNumberOfContacts;
+                invitationsController.maxNumberOfContacts = self.config.maxNumberOfContacts;
+                invitationsController.selectAllEnabled = self.config.selectAllEnabled;
                 [controller.navigationController pushViewController:invitationsController animated:YES];
             }
         });
@@ -197,7 +201,7 @@
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
                 invitationsController.headerTitle = self.headerTitle;
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = self.maxNumberOfContacts;
+                invitationsController.maxNumberOfContacts = self.config.maxNumberOfContacts;
                 [controller.navigationController pushViewController:invitationsController animated:YES];
             }
         });

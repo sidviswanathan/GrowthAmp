@@ -23,13 +23,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		371288A717E96F9500B8B344 /* GAConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 371288A517E96F9500B8B344 /* GAConfig.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		371288A817E96F9500B8B344 /* GAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 371288A617E96F9500B8B344 /* GAConfig.m */; };
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; };
 		37974C6817E0EF5700BB4E02 /* NSDictionary+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */; };
 		37974C6F17E223B800BB4E02 /* GAUserPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6D17E223B800BB4E02 /* GAUserPreferences.h */; };
 		37974C7017E223B800BB4E02 /* GAUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6E17E223B800BB4E02 /* GAUserPreferences.m */; };
 		37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */; };
 		37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */; };
-		37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7517E2524600BB4E02 /* GADeviceInfo.h */; };
+		37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7517E2524600BB4E02 /* GADeviceInfo.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7617E2524600BB4E02 /* GADeviceInfo.m */; };
 		37974C7A17E26CDA00BB4E02 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */; };
 		A106CA7B17AD7702002191EF /* GAHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA7917AD7702002191EF /* GAHeaderCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -192,6 +194,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		371288A517E96F9500B8B344 /* GAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConfig.h; sourceTree = "<group>"; };
+		371288A617E96F9500B8B344 /* GAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConfig.m; sourceTree = "<group>"; };
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 				A1DA3326179374B3003BBCD1 /* GASocialProfile.m */,
 				37974C7517E2524600BB4E02 /* GADeviceInfo.h */,
 				37974C7617E2524600BB4E02 /* GADeviceInfo.m */,
+				371288A517E96F9500B8B344 /* GAConfig.h */,
+				371288A617E96F9500B8B344 /* GAConfig.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 				A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */,
 				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
 				A1DA332B179374C6003BBCD1 /* GALoader.h in Headers */,
+				371288A717E96F9500B8B344 /* GAConfig.h in Headers */,
 				A1DA331717937468003BBCD1 /* GAContact.h in Headers */,
 				A1DA331B1793748E003BBCD1 /* GAAddress.h in Headers */,
 				A1DA331F17937497003BBCD1 /* GAPhoneNumber.h in Headers */,
@@ -951,6 +958,7 @@
 				A1DA333817937532003BBCD1 /* GAABImport.m in Sources */,
 				A1DA333C1793753E003BBCD1 /* GAABParser.m in Sources */,
 				A1DA334117937563003BBCD1 /* GAInvitationsViewController.m in Sources */,
+				371288A817E96F9500B8B344 /* GAConfig.m in Sources */,
 				A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */,
 				37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */,
 				A1DA334B1793760E003BBCD1 /* GAConstants.m in Sources */,
