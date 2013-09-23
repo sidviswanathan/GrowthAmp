@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SDKVersion</key>
+	<string>0.9</string>
+	<key>isAutoLaunchEnabled</key>
+	<true/>
+	<key>appLaunchedUntil1stAutoLaunch</key>
+	<integer>3</integer>
+	<key>daysUntil2ndAutoLaunch</key>
+	<integer>30</integer>
+	<key>selectAllEnabled</key>
+	<false/>
+	<key>maxNumberOfContacts</key>
+	<integer>50</integer>
+	<key>apiPostURL</key>
+	<string>http://</string>
+	<key>trackingPostURL</key>
+	<string>http://</string>
+	<key>userPostURL</key>
+	<string>http://</string>
+	<key>sessionPostURL</key>
+	<string>http://</string>
+	<key>invitationURL</key>
+	<string>http://bit.ly/sample</string>
+</dict>
+</plist>

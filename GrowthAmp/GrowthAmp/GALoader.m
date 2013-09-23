@@ -53,7 +53,8 @@
     _config = [[GAConfig alloc] init];
     
     // Load GAConfig.json
-    NSDictionary *configDict = [NSDictionary dictionaryWithNameOfJSONFile:@"GAConfig.json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"GAConfig" ofType:@"plist"];
+    NSDictionary *configDict = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
     if (configDict) {
 
