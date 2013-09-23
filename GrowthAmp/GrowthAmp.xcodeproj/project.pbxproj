@@ -23,8 +23,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		371288A717E96F9500B8B344 /* GAConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 371288A517E96F9500B8B344 /* GAConfig.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		371288A817E96F9500B8B344 /* GAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 371288A617E96F9500B8B344 /* GAConfig.m */; };
+		378F505717ED1F6E00DEFB48 /* GAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723B54F17ED0A8E0012DB12 /* GAConfig.m */; };
+		378F505817ED1F7200DEFB48 /* GAConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3723B54E17ED0A8E0012DB12 /* GAConfig.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; };
 		37974C6817E0EF5700BB4E02 /* NSDictionary+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */; };
 		37974C6F17E223B800BB4E02 /* GAUserPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6D17E223B800BB4E02 /* GAUserPreferences.h */; };
@@ -194,8 +194,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		371288A517E96F9500B8B344 /* GAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConfig.h; sourceTree = "<group>"; };
-		371288A617E96F9500B8B344 /* GAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConfig.m; sourceTree = "<group>"; };
+		3723B54E17ED0A8E0012DB12 /* GAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConfig.h; sourceTree = "<group>"; };
+		3723B54F17ED0A8E0012DB12 /* GAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConfig.m; sourceTree = "<group>"; };
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
@@ -612,8 +612,8 @@
 				A1DA3326179374B3003BBCD1 /* GASocialProfile.m */,
 				37974C7517E2524600BB4E02 /* GADeviceInfo.h */,
 				37974C7617E2524600BB4E02 /* GADeviceInfo.m */,
-				371288A517E96F9500B8B344 /* GAConfig.h */,
-				371288A617E96F9500B8B344 /* GAConfig.m */,
+				3723B54E17ED0A8E0012DB12 /* GAConfig.h */,
+				3723B54F17ED0A8E0012DB12 /* GAConfig.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -700,7 +700,7 @@
 				A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */,
 				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
 				A1DA332B179374C6003BBCD1 /* GALoader.h in Headers */,
-				371288A717E96F9500B8B344 /* GAConfig.h in Headers */,
+				378F505817ED1F7200DEFB48 /* GAConfig.h in Headers */,
 				A1DA331717937468003BBCD1 /* GAContact.h in Headers */,
 				A1DA331B1793748E003BBCD1 /* GAAddress.h in Headers */,
 				A1DA331F17937497003BBCD1 /* GAPhoneNumber.h in Headers */,
@@ -791,7 +791,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GA;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = GrowthAmp;
 			};
 			buildConfigurationList = A1DA32D9179371BD003BBCD1 /* Build configuration list for PBXProject "GrowthAmp" */;
@@ -908,7 +908,7 @@
 		};
 		A1DA330B179372C6003BBCD1 /* Prepare Framework */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -958,7 +958,7 @@
 				A1DA333817937532003BBCD1 /* GAABImport.m in Sources */,
 				A1DA333C1793753E003BBCD1 /* GAABParser.m in Sources */,
 				A1DA334117937563003BBCD1 /* GAInvitationsViewController.m in Sources */,
-				371288A817E96F9500B8B344 /* GAConfig.m in Sources */,
+				378F505717ED1F6E00DEFB48 /* GAConfig.m in Sources */,
 				A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */,
 				37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */,
 				A1DA334B1793760E003BBCD1 /* GAConstants.m in Sources */,
@@ -1039,7 +1039,6 @@
 		A16CDB5E17AC6D5E00FB4F96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1059,7 +1058,6 @@
 		A16CDB5F17AC6D5E00FB4F96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1138,6 +1136,7 @@
 		A1DA3304179371BD003BBCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DSTROOT = /tmp/GrowthAmp.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
@@ -1151,6 +1150,7 @@
 		A1DA3305179371BD003BBCD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DSTROOT = /tmp/GrowthAmp.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "GALoaderDelegate.h"
 #import <UIKit/UIKit.h>
-#import "GAConfig.h"
 
 @interface GALoader : NSObject
 
@@ -26,8 +25,6 @@
 @property (nonatomic, strong) NSString *userEmail;
 
 @property (nonatomic, strong) NSArray *devices;
-
-@property (nonatomic,retain) GAConfig *config;
 
 + (GALoader *)sharedInstance;
 

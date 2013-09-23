@@ -310,6 +310,10 @@
             GAPhoneNumber *phoneNumber = (GAPhoneNumber*)contact.phoneNumbers[0];
             [numbers addObject:phoneNumber.number];
         }
+        // limit sms to 50 recipient
+        if ([numbers count] > 50) {
+            numbers = (NSMutableArray*)[numbers subarrayWithRange:NSMakeRange(0, 50)];
+        }
         picker.recipients = numbers;
         [self presentViewController:picker animated:YES completion:nil];
     } else {

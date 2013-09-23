@@ -10,7 +10,7 @@
 
 @interface GAConfig : NSObject
 
-@property (nonatomic,retain) NSString *sdkVersion;
+@property (nonatomic,strong) NSString *sdkVersion;
 @property (nonatomic,assign) BOOL isAutoLaunchEnabled;
 @property (nonatomic,assign) NSInteger appLaunchedUntil1stAutoLaunch;
 @property (nonatomic,assign) NSInteger daysUntil2ndAutoLaunch;
@@ -18,10 +18,10 @@
 @property (nonatomic,assign) BOOL selectAllEnabled;
 @property (nonatomic,assign) NSInteger maxNumberOfContacts;
 
-@property (nonatomic,retain) NSString *apiPostURL;
-@property (nonatomic,retain) NSString *trackingPostURL;
-@property (nonatomic,retain) NSString *userPostURL;
-@property (nonatomic,retain) NSString *sessionPostURL;
-@property (nonatomic,retain) NSString *invitationURL;
+@property (nonatomic,strong) NSString *apiPostURL;
+@property (nonatomic,strong) NSString *trackingPostURL;
+@property (nonatomic,strong) NSString *userPostURL;
+@property (nonatomic,strong) NSString *sessionPostURL;
+@property (nonatomic,strong) NSString *invitationURL;
 
 @end

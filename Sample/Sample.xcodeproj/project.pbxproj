@@ -159,8 +159,8 @@
 		A16534DF179384A40039EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37974C7B17E271C900BB4E02 /* CoreTelephony.framework */,
 				A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */,
+				37974C7B17E271C900BB4E02 /* CoreTelephony.framework */,
 				A16CDAF317AC64AA00FB4F96 /* CoreImage.framework */,
 				A12C3B681793869C00D3B808 /* AddressBook.framework */,
 				A16534E0179384A40039EF26 /* UIKit.framework */,
