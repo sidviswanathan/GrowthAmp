@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface GAConfig : NSObject
+#import <UIKit/UIKit.h>
+@interface GAConfigManager : NSObject
 
 @property (nonatomic,strong) NSString *sdkVersion;
 @property (nonatomic,assign) BOOL isAutoLaunchEnabled;
@@ -23,5 +23,13 @@
 @property (nonatomic,strong) NSString *userPostURL;
 @property (nonatomic,strong) NSString *sessionPostURL;
 @property (nonatomic,strong) NSString *invitationURL;
+
+@property (nonatomic,strong) NSDictionary *configDictionary;
+
+@property (nonatomic,strong) NSString *headerTitle;
+
++ (id)sharedInstance;
+-(void)loadConfig;
+-(UIImage*)imageForConfigKey:(NSString*)key default:(NSString*)defaultStr;
 
 @end

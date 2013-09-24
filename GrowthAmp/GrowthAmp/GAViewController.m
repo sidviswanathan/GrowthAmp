@@ -7,7 +7,7 @@
 //
 
 #import "GAViewController.h"
-
+#import "GAConfigManager.h"
 @interface GAViewController ()
 
 @end
@@ -18,11 +18,11 @@
     [super viewDidLoad];
 
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
-        UIImage *image = GAImage(@"Header");
+        UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"navBarImageName" default:@"Header"];
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
     
-    UIImage *image = GAImage(@"background");
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@"background"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
     [self setupCloseButton];
@@ -34,7 +34,7 @@
 
 -(void)setupCloseButton {
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *image = GAImage(@"x");
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"cancelButtonImageName" default:@"x"];
     self.closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -51,7 +51,7 @@
 
 - (void)setupNextButton {
     self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *enabledBackgroundImage = GAImage(@"next");
+    UIImage *enabledBackgroundImage = [[GAConfigManager sharedInstance] imageForConfigKey:@"nextButtonImageName" default:@"next"];
     
     enabledBackgroundImage = [enabledBackgroundImage stretchableImageWithLeftCapWidth:enabledBackgroundImage.size.width/2 topCapHeight:enabledBackgroundImage.size.height/2];
     

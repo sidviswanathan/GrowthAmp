@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		378F505A17F0F57100DEFB48 /* GAConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378F505917F0F57100DEFB48 /* GAConfig.plist */; };
+		378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F505E17F10AAD00DEFB48 /* Header_test.png */; };
+		378F506217F110EA00DEFB48 /* background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506017F110EA00DEFB48 /* background_test.png */; };
+		378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506117F110EA00DEFB48 /* splash_background_test.png */; };
 		37974C7C17E271C900BB4E02 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37974C7B17E271C900BB4E02 /* CoreTelephony.framework */; };
 		A12C3B6C179386AD00D3B808 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12C3B681793869C00D3B808 /* AddressBook.framework */; };
 		A12C3B6F1793891000D3B808 /* libGrowthAmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A165351C179384C90039EF26 /* libGrowthAmp.a */; };
@@ -78,6 +81,9 @@
 
 /* Begin PBXFileReference section */
 		378F505917F0F57100DEFB48 /* GAConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GAConfig.plist; sourceTree = "<group>"; };
+		378F505E17F10AAD00DEFB48 /* Header_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header_test.png; sourceTree = "<group>"; };
+		378F506017F110EA00DEFB48 /* background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_test.png; sourceTree = "<group>"; };
+		378F506117F110EA00DEFB48 /* splash_background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_background_test.png; sourceTree = "<group>"; };
 		37974C7B17E271C900BB4E02 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A12C3B681793869C00D3B808 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A1377C4F17B6D62F003C81D0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -136,6 +142,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		378F505D17F10AAD00DEFB48 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				378F506017F110EA00DEFB48 /* background_test.png */,
+				378F506117F110EA00DEFB48 /* splash_background_test.png */,
+				378F505E17F10AAD00DEFB48 /* Header_test.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		A16534D4179384A40039EF26 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +196,7 @@
 				A1377C6517B8020B003C81D0 /* TestViewController.m */,
 				A16534E7179384A40039EF26 /* Supporting Files */,
 				378F505917F0F57100DEFB48 /* GAConfig.plist */,
+				378F505D17F10AAD00DEFB48 /* images */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -333,7 +350,10 @@
 				A16534EB179384A40039EF26 /* InfoPlist.strings in Resources */,
 				A16534F3179384A40039EF26 /* Default.png in Resources */,
 				378F505A17F0F57100DEFB48 /* GAConfig.plist in Resources */,
+				378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */,
 				A16534F5179384A40039EF26 /* Default@2x.png in Resources */,
+				378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */,
+				378F506217F110EA00DEFB48 /* background_test.png in Resources */,
 				A16534F7179384A40039EF26 /* Default-568h@2x.png in Resources */,
 				A16CDBBC17AC732000FB4F96 /* GrowthAmpResources.bundle in Resources */,
 			);

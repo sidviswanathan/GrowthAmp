@@ -51,7 +51,6 @@
 
 - (void)buttonOneClicked {
     GALoader *loader = [GALoader sharedInstance];
-    loader.headerTitle = @"Spread the Mosaic Love";
     loader.userFirstName = @"test_user_firstname";
     loader.userLastName = @"test_user_firstname";
     loader.userEmail = @"test_user_firstname";
@@ -60,7 +59,6 @@
 
 - (void)buttonTwoClicked {
     GALoader *loader = [GALoader sharedInstance];
-    loader.headerTitle = @"Spread the Mosaic Love";
     loader.userFirstName = @"test_user_firstname";
     loader.userLastName = @"test_user_firstname";
     loader.userEmail = @"test_user_firstname";

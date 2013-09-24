@@ -26,7 +26,6 @@
     [self.window makeKeyAndVisible];
     
     GALoader *loader = [GALoader sharedInstance];
-    loader.headerTitle = @"Spread the Mosaic Love";
     [loader checkAutoLaunch:mainViewController animated:YES showSplash:YES];
     
     return YES;

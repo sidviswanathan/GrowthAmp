@@ -24,5 +24,23 @@
 	<string>http://</string>
 	<key>invitationURL</key>
 	<string>http://bit.ly/sample</string>
+	<key>headerTitle</key>
+	<string>Spread the Mosaic Love</string>
+	<key>splashImageName</key>
+	<string>splash_background_test.png</string>
+	<key>navBarImageName</key>
+	<string>Header_test.png</string>
+	<key>selectBGImageName</key>
+	<string>background_test.png</string>
+	<key>checkMarkImageName</key>
+	<string></string>
+	<key>continueButtonImageName</key>
+	<string></string>
+	<key>nextButtonImageName</key>
+	<string></string>
+	<key>selectButtonImageName</key>
+	<string></string>
+	<key>cancelButtonImageName</key>
+	<string></string>
 </dict>
 </plist>

@@ -9,6 +9,7 @@
 #import "GAMainViewController.h"
 #import "GAABImport.h"
 #import "GAInvitationsViewController.h"
+#import "GAConfigManager.h"
 
 @interface GAMainViewController ()
 
@@ -39,7 +40,7 @@
 }
 
 - (void)setupBackground {
-    UIImage *image = GAImage(@"splash_background");
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
@@ -48,8 +49,8 @@
     
     self.continueButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    UIImage *image = GAImage(@"Continue");
-        
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"continueButtonImageName" default:@"Continue"];
+    
     NSString *text = GALocalizedString(@"continue", nil);
     
     [self.continueButton setBackgroundImage:image forState:UIControlStateNormal];

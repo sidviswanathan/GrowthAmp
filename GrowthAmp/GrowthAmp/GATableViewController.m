@@ -7,6 +7,7 @@
 //
 
 #import "GATableViewController.h"
+#import "GAConfigManager.h"
 
 @interface GATableViewController ()
 
@@ -97,7 +98,7 @@
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
-    UIImage *image = GAImage(@"background");
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@"background"];
     tableView.backgroundColor = [UIColor colorWithPatternImage:image];
     
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 15)];

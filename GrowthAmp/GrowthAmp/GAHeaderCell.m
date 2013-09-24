@@ -7,6 +7,7 @@
 //
 
 #import "GAHeaderCell.h"
+#import "GAConfigManager.h"
 
 @interface GAHeaderCell()
 
@@ -61,7 +62,7 @@
 - (void)setupSelectButton {
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
-    UIImage *image = GAImage(@"Select");
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectButtonImageName" default:@"Select"];
     
     image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
     

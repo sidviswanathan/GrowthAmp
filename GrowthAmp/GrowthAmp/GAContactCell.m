@@ -10,6 +10,7 @@
 #import "GAContact.h"
 #import "GAPhoneNumber.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GAConfigManager.h"
 
 @interface GAContactCell()
 
@@ -26,7 +27,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        UIImage *image = GAImage(@"Checkmark");
+        UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"checkMarkImageName" default:@"Checkmark"];
         self.checkmarkImageView = [[UIImageView alloc] initWithImage:image];
         
         [self.contentView addSubview:self.textLabel];
@@ -80,7 +81,7 @@
     CGRect checkmarkFrame = CGRectZero;
     CGFloat offset = 0;
     if (self.checked) {
-        UIImage *image = GAImage(@"Checkmark");
+        UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"checkMarkImageName" default:@"Checkmark"];
         CGSize size = image.size;
         checkmarkFrame = CGRectMake(cellWidth - size.width - 5, cellHeight/2 - size.height/2, size.width, size.height);
         offset = checkmarkFrame.size.width;

@@ -16,13 +16,9 @@
 #import "GAUserPreferences.h"
 #import "NSCalendar+MySpecialCalculation.h"
 #import "GADeviceInfo.h"
-#import "GAConfig.h"
+#import "GAConfigManager.h"
 
-@interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate> {
-    
-    GAConfig *_config;
-}
-
+@interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
 @end
 
@@ -41,63 +37,17 @@
     self = [super init];
     if (self) {
         
-        [self loadConfig];
+        [[GAConfigManager sharedInstance] loadConfig];
         
         //[GADeviceInfo test];
     }
     return self;
 }
 
--(void)loadConfig {
-    
-    _config = [[GAConfig alloc] init];
-    
-    // Load GAConfig.json
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"GAConfig" ofType:@"plist"];
-    NSDictionary *configDict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-    
-    if (configDict) {
-
-        _config.sdkVersion = [configDict objectForKey:@"sdkVersion"];
-        
-        _config.isAutoLaunchEnabled = [[configDict valueForKey:@"isAutoLaunchEnabled"] boolValue];
-        _config.appLaunchedUntil1stAutoLaunch = [[configDict valueForKey:@"appLaunchedUntil1stAutoLaunch"] integerValue];
-        _config.daysUntil2ndAutoLaunch = [[configDict valueForKey:@"daysUntil2ndAutoLaunch"] integerValue];
-        
-        _config.selectAllEnabled = [[configDict valueForKey:@"selectAllEnabled"] integerValue];
-        _config.maxNumberOfContacts = [[configDict valueForKey:@"maxNumberOfContacts"] integerValue];
-
-        _config.apiPostURL = [configDict objectForKey:@"apiPostURL"];
-        _config.trackingPostURL = [configDict objectForKey:@"trackingPostURL"];
-        _config.userPostURL = [configDict objectForKey:@"userPostURL"];
-        _config.sessionPostURL = [configDict objectForKey:@"sessionPostURL"];
-        _config.invitationURL = [configDict objectForKey:@"invitationURL"];
- 
-    
-    } else {
-        
-        NSLog(@"GAConfig.json appears to be missing from the project. Using defaults");
-
-        _config.sdkVersion = @"1.0";
-        
-        // Default configuration values
-        _config.isAutoLaunchEnabled = NO;
-        _config.appLaunchedUntil1stAutoLaunch = 3;
-        _config.daysUntil2ndAutoLaunch = 30;
-        
-        _config.selectAllEnabled = YES;
-        _config.maxNumberOfContacts = 10;
-        
-        _config.invitationURL = @"http://bit.ly/sample";
-
-    }
-    
-    
-}
 
 -(void)checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
  
-    if (!_config.isAutoLaunchEnabled) {
+    if (![[GAConfigManager sharedInstance] isAutoLaunchEnabled]) {
         
         return;
     }
@@ -112,7 +62,7 @@
         daysSinceLasttAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfAutolaunch toDate:[NSDate date]];
     }
     
-    if (!dateOfAutolaunch && (currentAppLaunchCount >= _config.appLaunchedUntil1stAutoLaunch)) {
+    if (!dateOfAutolaunch && (currentAppLaunchCount >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
         
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
         
@@ -124,7 +74,7 @@
         //[GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[dateFormat dateFromString:@"130801"]];
         
         
-    } else if (daysSinceLasttAutolaunch >= _config.daysUntil2ndAutoLaunch) {
+    } else if (daysSinceLasttAutolaunch >= [[GAConfigManager sharedInstance] daysUntil2ndAutoLaunch]) {
     
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"second_autolaunch"];
         
@@ -169,10 +119,10 @@
                 [controller presentViewController:navController animated:animated completion:nil];
             } else {
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = self.headerTitle;
+                invitationsController.headerTitle = [[GAConfigManager sharedInstance] headerTitle];
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = _config.maxNumberOfContacts;
-                invitationsController.selectAllEnabled = _config.selectAllEnabled;
+                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
+                invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
                 [controller presentViewController:navController animated:animated completion:nil];
             }
@@ -190,10 +140,10 @@
                 [controller.navigationController pushViewController:accessController animated:YES];
             } else {
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = self.headerTitle;
+                invitationsController.headerTitle = [[GAConfigManager sharedInstance] headerTitle];
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = _config.maxNumberOfContacts;
-                invitationsController.selectAllEnabled = _config.selectAllEnabled;
+                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
+                invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
                 [controller.navigationController pushViewController:invitationsController animated:YES];
             }
         });
@@ -207,9 +157,9 @@
             if (error) {
             } else {
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = self.headerTitle;
+                invitationsController.headerTitle = [[GAConfigManager sharedInstance] headerTitle];
                 invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = _config.maxNumberOfContacts;
+                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
                 [controller.navigationController pushViewController:invitationsController animated:YES];
             }
         });
