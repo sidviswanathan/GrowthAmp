@@ -70,9 +70,34 @@
     [self.view addSubview:self.continueButton];
 }
 
+#define textInsetWidth 0.1
+
 - (void)setupContent {
-    UILabel *headerLabel = [[UILabel alloc] init];
-    headerLabel.text = @"Spread the Love!";
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashTitleText" default:@"Spread the Love!"];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont boldSystemFontOfSize:22];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.frame = CGRectMake(0,screenSize.height*0.5,screenSize.width,36);
+    //titleLabel.backgroundColor = [UIColor blueColor];
+
+    [self.view addSubview:titleLabel];
+    
+    UILabel *bodyLabel = [[UILabel alloc] init];
+    bodyLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashBodyText" default:@"Invite your friends."];
+    bodyLabel.textAlignment = NSTextAlignmentCenter;
+    bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    bodyLabel.numberOfLines = 0;
+    bodyLabel.font = [UIFont systemFontOfSize:16];
+    bodyLabel.textColor = [UIColor whiteColor];
+    bodyLabel.frame = CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.58,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2);
+    //bodyLabel.backgroundColor = [UIColor blueColor];
+    [bodyLabel sizeToFit];
+    
+    [self.view addSubview:bodyLabel];
+    
+    
 }
 
 - (void)didTapOnContinueButton {

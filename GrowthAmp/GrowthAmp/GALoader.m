@@ -119,7 +119,7 @@
                 [controller presentViewController:navController animated:animated completion:nil];
             } else {
                 GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = [[GAConfigManager sharedInstance] headerTitle];
+                invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
                 invitationsController.headerSubTitle = self.headerSubTitle;
                 invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
                 invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];

@@ -24,14 +24,20 @@
 	<string>http://</string>
 	<key>invitationURL</key>
 	<string>http://bit.ly/sample</string>
-	<key>headerTitle</key>
-	<string>Spread the Mosaic Love</string>
 	<key>splashImageName</key>
-	<string>splash_background_test.png</string>
+	<string></string>
+	<key>splashTitleText</key>
+	<string>Spread the Love!!</string>
+	<key>splashBodyText</key>
+	<string>Invite your friends to join Mosaic today.</string>
 	<key>navBarImageName</key>
-	<string>Header_test.png</string>
+	<string></string>
 	<key>selectBGImageName</key>
-	<string>background_test.png</string>
+	<string></string>
+	<key>selectHeaderTitleText</key>
+	<string>Spread the Mosaic Love</string>
+	<key>selectHeaderSubtitleText</key>
+	<string></string>
 	<key>checkMarkImageName</key>
 	<string></string>
 	<key>continueButtonImageName</key>

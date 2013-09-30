@@ -26,10 +26,9 @@
 
 @property (nonatomic,strong) NSDictionary *configDictionary;
 
-@property (nonatomic,strong) NSString *headerTitle;
 
 + (id)sharedInstance;
 -(void)loadConfig;
 -(UIImage*)imageForConfigKey:(NSString*)key default:(NSString*)defaultStr;
-
+-(NSString*)stringForConfigKey:(NSString*)key default:(NSString*)defaultStr;
 @end

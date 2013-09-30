@@ -44,8 +44,6 @@
         self.sessionPostURL = [self.configDictionary objectForKey:@"sessionPostURL"];
         self.invitationURL = [self.configDictionary objectForKey:@"invitationURL"];
         
-        self.headerTitle = [self.configDictionary objectForKey:@"headerTitle"];
-        
         
     } else {
         
@@ -73,15 +71,25 @@
     UIImage *result = [UIImage imageNamed:imageName];
     
     if (!result) {
-
+        
         result = GAImage(defaultStr);
     }
     
     return result;
     
-    
-    
 }
 
+-(NSString*)stringForConfigKey:(NSString*)key default:(NSString*)defaultStr {
+    
+    NSString *result = [self.configDictionary objectForKey:key];
+    
+    if (!result) {
+        
+        result = defaultStr;
+    }
+    
+    return result;
+    
+}
 
 @end
