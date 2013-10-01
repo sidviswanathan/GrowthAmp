@@ -24,6 +24,8 @@
 
 /* Begin PBXBuildFile section */
 		373A585F17FB2BF0008214DF /* Access.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373A585E17FB1A41008214DF /* Access.xib */; };
+		373A586217FB388D008214DF /* UIColor+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 373A586017FB388D008214DF /* UIColor+HexString.h */; };
+		373A586317FB388D008214DF /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 373A586117FB388D008214DF /* UIColor+HexString.m */; };
 		378F505717ED1F6E00DEFB48 /* GAConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */; };
 		378F505817ED1F7200DEFB48 /* GAConfigManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; };
@@ -198,6 +200,8 @@
 		3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConfigManager.h; sourceTree = "<group>"; };
 		3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConfigManager.m; sourceTree = "<group>"; };
 		373A585E17FB1A41008214DF /* Access.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Access.xib; path = ../../GrowthAmp/Access.xib; sourceTree = "<group>"; };
+		373A586017FB388D008214DF /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		373A586117FB388D008214DF /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
@@ -674,6 +678,8 @@
 				37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */,
 				37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */,
 				37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */,
+				373A586017FB388D008214DF /* UIColor+HexString.h */,
+				373A586117FB388D008214DF /* UIColor+HexString.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -708,6 +714,7 @@
 				A1DA331B1793748E003BBCD1 /* GAAddress.h in Headers */,
 				A1DA331F17937497003BBCD1 /* GAPhoneNumber.h in Headers */,
 				A1DA3323179374A5003BBCD1 /* GASite.h in Headers */,
+				373A586217FB388D008214DF /* UIColor+HexString.h in Headers */,
 				A1DA3327179374B3003BBCD1 /* GASocialProfile.h in Headers */,
 				A1DA334017937563003BBCD1 /* GAInvitationsViewController.h in Headers */,
 				A1DA33461793759F003BBCD1 /* UIAlertView+GABlock.h in Headers */,
@@ -952,6 +959,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373A586317FB388D008214DF /* UIColor+HexString.m in Sources */,
 				A15B83041793801A0097287B /* GALoader.m in Sources */,
 				A1DA331817937468003BBCD1 /* GAContact.m in Sources */,
 				A1DA331C1793748E003BBCD1 /* GAAddress.m in Sources */,
