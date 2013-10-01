@@ -23,6 +23,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		373A585F17FB2BF0008214DF /* Access.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373A585E17FB1A41008214DF /* Access.xib */; };
 		378F505717ED1F6E00DEFB48 /* GAConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */; };
 		378F505817ED1F7200DEFB48 /* GAConfigManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; };
@@ -196,6 +197,7 @@
 /* Begin PBXFileReference section */
 		3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConfigManager.h; sourceTree = "<group>"; };
 		3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConfigManager.m; sourceTree = "<group>"; };
+		373A585E17FB1A41008214DF /* Access.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Access.xib; path = ../../GrowthAmp/Access.xib; sourceTree = "<group>"; };
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 		A16CDB6217AC6F1C00FB4F96 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				373A585E17FB1A41008214DF /* Access.xib */,
 				A1377BDF17B6C466003C81D0 /* Backgrounds */,
 				A1377BE217B6C466003C81D0 /* Buttons */,
 				A1377BEB17B6C466003C81D0 /* Cell */,
@@ -858,6 +861,7 @@
 				A1377C3B17B6C466003C81D0 /* container_down_full_blue.png in Resources */,
 				A1377C3C17B6C466003C81D0 /* container_down_full_blue@2x.png in Resources */,
 				A1377C3D17B6C466003C81D0 /* container_down_top.png in Resources */,
+				373A585F17FB2BF0008214DF /* Access.xib in Resources */,
 				A1377C3E17B6C466003C81D0 /* container_down_top@2x.png in Resources */,
 				A1377C3F17B6C466003C81D0 /* container_down_top_blue.png in Resources */,
 				A1377C4017B6C466003C81D0 /* container_down_top_blue@2x.png in Resources */,

@@ -74,24 +74,22 @@
 
 - (void)setupContent {
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    UILabel *titleLabel = [[UILabel alloc] init];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,screenSize.height*0.5,screenSize.width,36)];
     titleLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashTitleText" default:@"Spread the Love!"];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont boldSystemFontOfSize:22];
     titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.frame = CGRectMake(0,screenSize.height*0.5,screenSize.width,36);
     //titleLabel.backgroundColor = [UIColor blueColor];
 
     [self.view addSubview:titleLabel];
     
-    UILabel *bodyLabel = [[UILabel alloc] init];
+    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.58,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2)];
     bodyLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashBodyText" default:@"Invite your friends."];
     bodyLabel.textAlignment = NSTextAlignmentCenter;
     bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     bodyLabel.numberOfLines = 0;
     bodyLabel.font = [UIFont systemFontOfSize:16];
     bodyLabel.textColor = [UIColor whiteColor];
-    bodyLabel.frame = CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.58,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2);
     //bodyLabel.backgroundColor = [UIColor blueColor];
     [bodyLabel sizeToFit];
     
