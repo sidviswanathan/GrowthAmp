@@ -33,7 +33,7 @@
 
 - (void)setupSearchbar {
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-    self.searchBar.placeholder = @"Search";
+    self.searchBar.placeholder = @"Search your contacts";
     self.searchBar.delegate = self;
     
     [self.searchBar sizeToFit];
