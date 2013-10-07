@@ -22,8 +22,23 @@
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
     
-    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@"background"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    NSString *imageName = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectBGImageName" default:@""];
+    NSString *colorName = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectBGColor" default:@"#FFFFFF"];
+    
+    if (imageName.length) {
+    
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@""]];
+    
+    } else if (colorName.length) {
+        
+    
+        self.view.backgroundColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"selectBGColor" default:@"#FFFFFF"];
+    
+    } else {
+        
+        UIImage *image = GAImage(@"background");
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
     
     [self setupCloseButton];
     [self setupNextButton];

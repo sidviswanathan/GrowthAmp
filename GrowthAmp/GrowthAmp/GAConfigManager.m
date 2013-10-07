@@ -8,6 +8,7 @@
 
 #import "GAConfigManager.h"
 #import <UIKit/UIKit.h>
+#import "UIColor+HexString.h"
 
 @implementation GAConfigManager
 
@@ -76,7 +77,6 @@
     }
     
     return result;
-    
 }
 
 -(NSString*)stringForConfigKey:(NSString*)key default:(NSString*)defaultStr {
@@ -89,7 +89,30 @@
     }
     
     return result;
+}
+
+-(UIColor*)colorForConfigKey:(NSString*)key default:(NSString*)defaultStr {
     
+    NSString *colorStr = [self.configDictionary objectForKey:key];
+    
+    if (colorStr && (colorStr.length > 0)) {
+        
+        return [UIColor colorWithHexString:colorStr];
+    }
+    
+    return [UIColor colorWithHexString:defaultStr];
+}
+
+-(float)floatForConfigKey:(NSString*)key default:(NSString*)defaultStr {
+    
+    NSString *floatStr = [self.configDictionary objectForKey:key];
+    
+    if (floatStr && (floatStr.length > 0)) {
+        
+        return [floatStr floatValue];
+    }
+    
+    return [defaultStr floatValue];
 }
 
 @end

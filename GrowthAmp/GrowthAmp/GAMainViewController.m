@@ -10,6 +10,7 @@
 #import "GAABImport.h"
 #import "GAInvitationsViewController.h"
 #import "GAConfigManager.h"
+#import "UIColor+HexString.h"
 
 @interface GAMainViewController ()
 
@@ -49,13 +50,16 @@
     
     self.continueButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"continueButtonImageName" default:@"Continue"];
+    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"splashContinueButtonImageName" default:@"Continue"];
     
     NSString *text = GALocalizedString(@"continue", nil);
     
     [self.continueButton setBackgroundImage:image forState:UIControlStateNormal];
     [self.continueButton setTitle:text forState:UIControlStateNormal];
-    [self.continueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    UIColor *continueTextColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"splashContinueButtonTextColor" default:@"#FFFFFF"];
+    
+    [self.continueButton setTitleColor:continueTextColor forState:UIControlStateNormal];
     
     self.continueButton.frame = CGRectMake(screenSize.width/2 - image.size.width/2, screenSize.height - image.size.height * 3, image.size.width, image.size.height);
     
@@ -77,8 +81,10 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,screenSize.height*0.5,screenSize.width,36)];
     titleLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashTitleText" default:@"Spread the Love!"];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont boldSystemFontOfSize:22];
-    titleLabel.textColor = [UIColor whiteColor];
+    float titleFontSize = [[GAConfigManager sharedInstance] floatForConfigKey:@"splashTitleTextSize" default:@"22"];
+    titleLabel.font = [UIFont boldSystemFontOfSize:titleFontSize];
+    UIColor *textColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"splashTextColor" default:@"#00FFFF"];
+    titleLabel.textColor = textColor;
     //titleLabel.backgroundColor = [UIColor blueColor];
 
     [self.view addSubview:titleLabel];
@@ -86,10 +92,11 @@
     UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.58,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2)];
     bodyLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashBodyText" default:@"Invite your friends."];
     bodyLabel.textAlignment = NSTextAlignmentCenter;
+    float bodyFontSize = [[GAConfigManager sharedInstance] floatForConfigKey:@"splashBodyTextSize" default:@"16"];
+    bodyLabel.font = [UIFont systemFontOfSize:bodyFontSize];
     bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     bodyLabel.numberOfLines = 0;
-    bodyLabel.font = [UIFont systemFontOfSize:16];
-    bodyLabel.textColor = [UIColor whiteColor];
+    bodyLabel.textColor = textColor;
     //bodyLabel.backgroundColor = [UIColor blueColor];
     [bodyLabel sizeToFit];
     

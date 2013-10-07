@@ -28,19 +28,31 @@
 	<string></string>
 	<key>splashTitleText</key>
 	<string>Spread the Love!!</string>
+	<key>splashTitleTextSize</key>
+	<string></string>
 	<key>splashBodyText</key>
 	<string>Invite your friends to join Mosaic today.</string>
+	<key>splashBodyTextSize</key>
+	<string></string>
+	<key>splashTextColor</key>
+	<string>#FFFFFF</string>
+	<key>splashContinueButtonImageName</key>
+	<string></string>
+	<key>splashContinueButtonTextColor</key>
+	<string>#FFFFFF</string>
 	<key>navBarImageName</key>
 	<string></string>
+	<key>navBarTextColor</key>
+	<string></string>
 	<key>selectBGImageName</key>
+	<string></string>
+	<key>selectBGColor</key>
 	<string></string>
 	<key>selectHeaderTitleText</key>
 	<string>Spread the Mosaic Love</string>
 	<key>selectHeaderSubtitleText</key>
 	<string></string>
 	<key>checkMarkImageName</key>
-	<string></string>
-	<key>continueButtonImageName</key>
 	<string></string>
 	<key>nextButtonImageName</key>
 	<string></string>

@@ -8,7 +8,7 @@
 
 #import "GAAccessViewController.h"
 #import "GADeviceInfo.h"
-
+#import "GAConfigManager.h"
 @interface GAAccessViewController ()
 
 @end
@@ -23,7 +23,11 @@
 
 - (void)setupContent {
     
-    self.navigationItem.title = GALocalizedString(@"invite_friends", nil);
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = GALocalizedString(@"invite_friends", nil);
+    titleLabel.textColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"navBarTextColor" default:@"#FFFFFF"];
+    self.navigationItem.titleView = titleLabel;
     
     NSArray *nibViews = [[GAFrameworkUtils frameworkBundle] loadNibNamed:@"Access" owner:self options:nil];
     UIView *contentView = [nibViews objectAtIndex:0];

@@ -15,6 +15,7 @@
 #import "GAFilter.h"
 #import "GASorter.h"
 #import "GAPhoneFilter.h"
+#import "GAConfigManager.h"
 
 #define kGAHeader @"header"
 
@@ -39,7 +40,12 @@
         self.contacts = [contacts mutableCopy];
         self.items = [[NSMutableArray alloc] init];
         self.selectedContacts = [[NSMutableSet alloc] init];
-        self.navigationItem.title = GALocalizedString(@"invite_friends", nil);
+
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.text = GALocalizedString(@"invite_friends", nil);
+        titleLabel.textColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"navBarTextColor" default:@"#FFFFFF"];
+        self.navigationItem.titleView = titleLabel;
         
         self.selectAllEnabled = YES;
     }
