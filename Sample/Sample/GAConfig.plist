@@ -4,6 +4,8 @@
 <dict>
 	<key>SDKVersion</key>
 	<string>0.9</string>
+	<key>useSampleData</key>
+	<true/>
 	<key>isAutoLaunchEnabled</key>
 	<true/>
 	<key>appLaunchedUntil1stAutoLaunch</key>
@@ -60,5 +62,7 @@
 	<string></string>
 	<key>cancelButtonImageName</key>
 	<string></string>
+	<key>invitationText</key>
+	<string>I&apos;m using a new app called Mosaic to create beautiful photo books, you can get the app here </string>
 </dict>
 </plist>

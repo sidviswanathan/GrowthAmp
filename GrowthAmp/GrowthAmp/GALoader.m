@@ -9,7 +9,7 @@
 #import "GALoader.h"
 #import "GAInvitationsViewController.h"
 #import "GAMainViewController.h"
-#import "GAABImport.h"
+#import "GAImport.h"
 #import "GAAccessViewController.h"
 #import "GAFrameworkUtils.h"
 #import "NSDictionary+JSONCategories.h"
@@ -110,7 +110,7 @@
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated {
     // Get the contacts
-    [GAABImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
+    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
@@ -132,7 +132,7 @@
 
 - (void)mainViewController:(GAMainViewController *)controller didTapOnContinueButton:(UIButton *)button {
     // Get the contacts
-    [GAABImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
+    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
@@ -152,7 +152,7 @@
 
 - (void)accessViewController:(GAAccessViewController *)controller didTapOnNextButton:(UIButton *)button {
     // Get the contacts
-    [GAABImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
+    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
             } else {
