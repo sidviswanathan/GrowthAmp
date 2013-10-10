@@ -62,7 +62,7 @@
         daysSinceLasttAutolaunch = [gregorianCalendar daysWithinEraFromDate:dateOfAutolaunch toDate:[NSDate date]];
     }
     
-    if (!dateOfAutolaunch && (currentAppLaunchCount >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
+    if (!dateOfAutolaunch && ((currentAppLaunchCount+1) >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
         
         [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
         

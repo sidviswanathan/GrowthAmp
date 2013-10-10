@@ -321,6 +321,7 @@
             numbers = (NSMutableArray*)[numbers subarrayWithRange:NSMakeRange(0, 50)];
         }
         picker.recipients = numbers;
+        picker.body = [[GAConfigManager sharedInstance] stringForConfigKey:@"invitationText" default:@""];
         [self presentViewController:picker animated:YES completion:nil];
     } else {
         

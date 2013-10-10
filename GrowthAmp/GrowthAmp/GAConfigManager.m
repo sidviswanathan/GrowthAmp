@@ -43,7 +43,6 @@
         self.trackingPostURL = [self.configDictionary objectForKey:@"trackingPostURL"];
         self.userPostURL = [self.configDictionary objectForKey:@"userPostURL"];
         self.sessionPostURL = [self.configDictionary objectForKey:@"sessionPostURL"];
-        self.invitationURL = [self.configDictionary objectForKey:@"invitationURL"];
         
         
     } else {
@@ -59,8 +58,6 @@
         
         self.selectAllEnabled = YES;
         self.maxNumberOfContacts = 10;
-        
-        self.invitationURL = @"http://bit.ly/sample";
         
     }
 }

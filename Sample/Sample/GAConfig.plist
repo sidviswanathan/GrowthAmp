@@ -24,8 +24,6 @@
 	<string>http://</string>
 	<key>sessionPostURL</key>
 	<string>http://</string>
-	<key>invitationURL</key>
-	<string>http://bit.ly/sample</string>
 	<key>splashImageName</key>
 	<string></string>
 	<key>splashTitleText</key>
@@ -63,6 +61,6 @@
 	<key>cancelButtonImageName</key>
 	<string></string>
 	<key>invitationText</key>
-	<string>I&apos;m using a new app called Mosaic to create beautiful photo books, you can get the app here </string>
+	<string>I&apos;m using a new app called Mosaic to create beautiful photo books, you can get the app here: http://bit.ly/sample</string>
 </dict>
 </plist>

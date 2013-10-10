@@ -22,7 +22,6 @@
 @property (nonatomic,strong) NSString *trackingPostURL;
 @property (nonatomic,strong) NSString *userPostURL;
 @property (nonatomic,strong) NSString *sessionPostURL;
-@property (nonatomic,strong) NSString *invitationURL;
 
 @property (nonatomic,strong) NSDictionary *configDictionary;
 
