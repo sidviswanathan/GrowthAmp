@@ -73,7 +73,7 @@
     
     GAContact *newContact = [[GAContact alloc] init];
     
-    newContact.identifier = RND_RANGE(0, ARC4RANDOM_MAX);
+    newContact.identifier = arc4random_uniform(100000000);
     newContact.firstName = firstName;
     newContact.lastName = lastName;
     
