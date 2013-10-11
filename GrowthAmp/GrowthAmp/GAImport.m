@@ -11,6 +11,9 @@
 #import "GAABImport.h"
 #import "GAConfigManager.h"
 
+
+#define kSampleDataThreshold 10
+
 @implementation GAImport
 
 + (void)contactsWithCompletion:(void(^)(NSArray *, NSError*))completion {
@@ -22,8 +25,21 @@
 #endif
     
     if (useSampleData) {
+        
+        [GAABImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
 
-        [GASampleDataImport contactsWithCompletion:completion];
+            if (contacts.count < kSampleDataThreshold) {
+
+                [GASampleDataImport contactsWithCompletion:completion];
+            
+            } else {
+                
+                [GAABImport contactsWithCompletion:completion];
+            }
+            
+        }];
+
+
         
     } else {
         
