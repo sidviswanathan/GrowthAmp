@@ -25,8 +25,7 @@
     
     [self.window makeKeyAndVisible];
     
-    GALoader *loader = [GALoader sharedInstance];
-    [loader checkAutoLaunch:mainViewController animated:YES showSplash:YES];
+    [[GALoader sharedInstance] checkAutoLaunch:mainViewController animated:YES showSplash:YES];
     
     return YES;
 }
@@ -51,6 +50,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    [[GALoader sharedInstance] checkAutoLaunch:self.window.rootViewController animated:YES showSplash:YES];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
