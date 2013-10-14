@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSCalendar (MySpecialCalculation)
+@interface NSCalendar (DaysFromDate)
 
 -(NSInteger)daysWithinEraFromDate:(NSDate *) startDate toDate:(NSDate *) endDate;
 

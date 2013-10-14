@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 GrowthAmp. All rights reserved.
 //
 
-#import "NSCalendar+MySpecialCalculation.h"
+#import "NSCalendar+DaysFromDate.h"
 
-@implementation NSCalendar (MySpecialCalculation)
+@implementation NSCalendar (DaysFromDate)
 
 -(NSInteger)daysWithinEraFromDate:(NSDate *) startDate toDate:(NSDate *) endDate
 {

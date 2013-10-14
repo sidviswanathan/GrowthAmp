@@ -32,8 +32,8 @@
 		37974C6817E0EF5700BB4E02 /* NSDictionary+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */; };
 		37974C6F17E223B800BB4E02 /* GAUserPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6D17E223B800BB4E02 /* GAUserPreferences.h */; };
 		37974C7017E223B800BB4E02 /* GAUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C6E17E223B800BB4E02 /* GAUserPreferences.m */; };
-		37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */; };
-		37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */; };
+		37974C7317E22F8500BB4E02 /* NSCalendar+DaysFromDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7117E22F8500BB4E02 /* NSCalendar+DaysFromDate.h */; };
+		37974C7417E22F8500BB4E02 /* NSCalendar+DaysFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7217E22F8500BB4E02 /* NSCalendar+DaysFromDate.m */; };
 		37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C7517E2524600BB4E02 /* GADeviceInfo.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37974C7617E2524600BB4E02 /* GADeviceInfo.m */; };
 		37974C7A17E26CDA00BB4E02 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */; };
@@ -231,8 +231,8 @@
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
 		37974C6E17E223B800BB4E02 /* GAUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUserPreferences.m; sourceTree = "<group>"; };
-		37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+MySpecialCalculation.h"; sourceTree = "<group>"; };
-		37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+MySpecialCalculation.m"; sourceTree = "<group>"; };
+		37974C7117E22F8500BB4E02 /* NSCalendar+DaysFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DaysFromDate.h"; sourceTree = "<group>"; };
+		37974C7217E22F8500BB4E02 /* NSCalendar+DaysFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+DaysFromDate.m"; sourceTree = "<group>"; };
 		37974C7517E2524600BB4E02 /* GADeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADeviceInfo.h; sourceTree = "<group>"; };
 		37974C7617E2524600BB4E02 /* GADeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADeviceInfo.m; sourceTree = "<group>"; };
 		37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -759,8 +759,8 @@
 				A106CA8217AD82DB002191EF /* NSString+GAUtils.m */,
 				37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */,
 				37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */,
-				37974C7117E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h */,
-				37974C7217E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m */,
+				37974C7117E22F8500BB4E02 /* NSCalendar+DaysFromDate.h */,
+				37974C7217E22F8500BB4E02 /* NSCalendar+DaysFromDate.m */,
 				373A586017FB388D008214DF /* UIColor+HexString.h */,
 				373A586117FB388D008214DF /* UIColor+HexString.m */,
 			);
@@ -785,7 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */,
-				37974C7317E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.h in Headers */,
+				37974C7317E22F8500BB4E02 /* NSCalendar+DaysFromDate.h in Headers */,
 				A1DA333B1793753E003BBCD1 /* GAABParser.h in Headers */,
 				37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */,
 				A1DA333717937532003BBCD1 /* GAABImport.h in Headers */,
@@ -1070,7 +1070,7 @@
 				A1DA331817937468003BBCD1 /* GAContact.m in Sources */,
 				A1DA331C1793748E003BBCD1 /* GAAddress.m in Sources */,
 				A1DA332017937497003BBCD1 /* GAPhoneNumber.m in Sources */,
-				37974C7417E22F8500BB4E02 /* NSCalendar+MySpecialCalculation.m in Sources */,
+				37974C7417E22F8500BB4E02 /* NSCalendar+DaysFromDate.m in Sources */,
 				37BCFBE1180466A3001EB2F5 /* GASampleDataImport.m in Sources */,
 				A1DA3324179374A5003BBCD1 /* GASite.m in Sources */,
 				37BCFBE5180466D9001EB2F5 /* GAImport.m in Sources */,

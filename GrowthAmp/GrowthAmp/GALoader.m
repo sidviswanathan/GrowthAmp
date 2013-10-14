@@ -14,7 +14,7 @@
 #import "GAFrameworkUtils.h"
 #import "NSDictionary+JSONCategories.h"
 #import "GAUserPreferences.h"
-#import "NSCalendar+MySpecialCalculation.h"
+#import "NSCalendar+DaysFromDate.h"
 #import "GADeviceInfo.h"
 #import "GAConfigManager.h"
 
