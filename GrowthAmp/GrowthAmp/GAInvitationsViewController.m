@@ -106,7 +106,7 @@
     GAHeaderModel *model = [[GAHeaderModel alloc] init];
     model.headerTitle = self.headerTitle;
     
-    NSDictionary *data = @{@"count": @(MIN(self.contacts.count, self.maxNumberOfContacts))};
+    NSDictionary *data = @{@"count": @(MIN(self.selectedContacts.count, self.maxNumberOfContacts))};
     model.headerSubTitle = GALocalizedFormattedString(@"tap_next_to_invite_friends", data);
     
     return model;
@@ -264,6 +264,7 @@
     } else {
         [tableView beginUpdates];
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         [tableView endUpdates];
     }
         
