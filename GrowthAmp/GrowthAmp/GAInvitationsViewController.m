@@ -55,6 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.nextButton.enabled = self.selectedContacts.count > 0;
     
     [self parseContacts];
