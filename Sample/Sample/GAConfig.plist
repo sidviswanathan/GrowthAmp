@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>secret</key>
+	<string>529720bd2ea1cd</string>
 	<key>SDKVersion</key>
 	<string>0.9</string>
 	<key>useSampleData</key>

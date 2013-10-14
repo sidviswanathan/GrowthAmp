@@ -264,7 +264,9 @@
     } else {
         [tableView beginUpdates];
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        if (!inSearch) {
+            [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        }
         [tableView endUpdates];
     }
         
@@ -273,6 +275,7 @@
     }
     
     self.nextButton.enabled = self.selectedContacts.count > 0;
+    
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView {
@@ -304,6 +307,7 @@
     [searchResultTableView setContentOffset:CGPointZero animated:YES];
 }
 
+
 #pragma mark -
 #pragma mark Navigation Buttons
 
@@ -319,8 +323,8 @@
             [numbers addObject:phoneNumber.number];
         }
         // limit sms to 50 recipient
-        if ([numbers count] > 50) {
-            numbers = (NSMutableArray*)[numbers subarrayWithRange:NSMakeRange(0, 50)];
+        if ([numbers count] > kMaxRecipients) {
+            numbers = (NSMutableArray*)[numbers subarrayWithRange:NSMakeRange(0, kMaxRecipients)];
         }
         picker.recipients = numbers;
         picker.body = [[GAConfigManager sharedInstance] stringForConfigKey:@"invitationText" default:@""];

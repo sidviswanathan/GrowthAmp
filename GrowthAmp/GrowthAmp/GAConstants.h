@@ -14,6 +14,8 @@ typedef enum {
     GACellPositionBottom = 0x2
 } GACellPosition;
 
+#define kMaxRecipients 50
+
 @interface GAConstants : NSObject
 
 @end
