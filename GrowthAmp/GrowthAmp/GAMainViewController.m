@@ -41,8 +41,8 @@
 }
 
 - (void)setupBackground {
-    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    self.view.layer.contents = (id)[[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"].CGImage;
 }
 
 - (void)setupContinueButton {
