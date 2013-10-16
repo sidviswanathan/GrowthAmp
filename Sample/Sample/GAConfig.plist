@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GENERAL_COMMENTS</key>
+	<string>Here is a place where you can write some genreal comments. Unfortunately I think they will only appear on one line even if they are very long.</string>
 	<key>secret</key>
 	<string>529720bd2ea1cd</string>
 	<key>SDKVersion</key>
@@ -26,6 +28,10 @@
 	<string>http://</string>
 	<key>sessionPostURL</key>
 	<string>http://</string>
+	<key>CUSTOMIZE_COMMENTS</key>
+	<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel eleifend nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque gravida feugiat </string>
+	<key>****SPLASHPAGE_SECTION*****</key>
+	<string>*****************************************************************</string>
 	<key>splashImageName</key>
 	<string></string>
 	<key>splashTitleText</key>
@@ -42,6 +48,8 @@
 	<string></string>
 	<key>splashContinueButtonTextColor</key>
 	<string>#FFFFFF</string>
+	<key>****INVITE_SECTION*****</key>
+	<string>*****************************************************************</string>
 	<key>navBarImageName</key>
 	<string></string>
 	<key>navBarTextColor</key>
