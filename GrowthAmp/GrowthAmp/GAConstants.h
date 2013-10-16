@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSString+GAUtils.h"
+#include "TargetConditionals.h"
 
 typedef enum {
     GACellPositionTop = 0x1,

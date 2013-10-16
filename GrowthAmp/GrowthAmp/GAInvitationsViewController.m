@@ -332,6 +332,19 @@
     } else {
         
         NSLog(@"SMS is not supported!");
+
+#if (TARGET_IPHONE_SIMULATOR)
+
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SMS messaging functionality not supported"
+                                                        message:@"SMS messaging functionality is not supported in the iOS simulator, please rebuild the app to a device to test the SMS messaging component of the SDK. "
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        
+#endif
+        
     }
 }
 
