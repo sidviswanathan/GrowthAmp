@@ -31,7 +31,10 @@
 
 @end
 
-@implementation GAInvitationsViewController
+@implementation GAInvitationsViewController {
+    
+    UIActivityIndicatorView *_spinner;
+}
 
 - (id)initWithContacts:(NSArray *)contacts {
     self = [super init];
@@ -60,6 +63,12 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     self.nextButton.enabled = self.selectedContacts.count > 0;
+    
+    _spinner = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(100,150,120,120)];
+    _spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    _spinner.hidesWhenStopped = YES;
+    [self.view addSubview:_spinner];
+    [_spinner startAnimating];
     
     [self parseContacts];
 }
@@ -100,6 +109,8 @@
             });
         }];
     }];
+    
+    [_spinner stopAnimating];
 }
 
 #pragma mark -
