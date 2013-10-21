@@ -18,6 +18,8 @@
 #define kSessionPostURL  @"http://"
 
 
+#define kSystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+
 typedef enum {
     GACellPositionTop = 0x1,
     GACellPositionBottom = 0x2
