@@ -33,6 +33,11 @@
 {
     [super viewDidLoad];
     
+    if( kSystemVersion >= 7 ) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     self.nextButton.hidden = YES;
     
     [self setupBackground];   
@@ -42,7 +47,12 @@
 
 - (void)setupBackground {
     
-    self.view.layer.contents = (id)[[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"].CGImage;
+    UIImage *BGImage = [[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"];
+    UIImageView *BGImageView = [[UIImageView alloc] initWithImage:BGImage];
+    BGImageView.frame = self.view.frame;
+    [self.view addSubview:BGImageView];
+    
+    //    self.view.layer.contents = (id)[[GAConfigManager sharedInstance] imageForConfigKey:@"splashImageName" default:@"splash_background"].CGImage;
 }
 
 - (void)setupContinueButton {
