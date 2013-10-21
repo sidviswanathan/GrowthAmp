@@ -25,8 +25,6 @@
     
     [self.window makeKeyAndVisible];
     
-    [[GALoader sharedInstance] checkAutoLaunch:mainViewController animated:YES showSplash:YES];
-    
     return YES;
 }
 
