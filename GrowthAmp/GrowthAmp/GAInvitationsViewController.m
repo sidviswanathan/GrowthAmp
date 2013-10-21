@@ -106,8 +106,19 @@
     GAHeaderModel *model = [[GAHeaderModel alloc] init];
     model.headerTitle = self.headerTitle;
     
-    NSDictionary *data = @{@"count": @(MIN(self.selectedContacts.count, self.maxNumberOfContacts))};
-    model.headerSubTitle = GALocalizedFormattedString(@"tap_next_to_invite_friends", data);
+    int count = MIN(self.selectedContacts.count, self.maxNumberOfContacts);
+    
+    NSString *subtitleStr = [NSString stringWithFormat:@"Tap next to invite %d friends",count];
+    
+    NSMutableAttributedString *notifyingStr = [[NSMutableAttributedString alloc] initWithString:subtitleStr];
+    [notifyingStr beginEditing];
+    [notifyingStr addAttribute:NSFontAttributeName
+                         value:[UIFont boldSystemFontOfSize:14.0f]
+                         range:NSMakeRange(18,3) ];
+    [notifyingStr endEditing];
+    
+    
+    model.headerSubTitle = notifyingStr;
     
     return model;
 }

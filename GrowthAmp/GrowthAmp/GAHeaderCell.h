@@ -27,7 +27,7 @@ typedef enum {
 @interface GAHeaderModel : NSObject
 
 @property (nonatomic, strong) NSString *headerTitle;
-@property (nonatomic, strong) NSString *headerSubTitle;
+@property (nonatomic, strong) NSAttributedString *headerSubTitle;
 
 @end
 

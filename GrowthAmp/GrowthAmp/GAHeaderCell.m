@@ -57,6 +57,10 @@
     NSArray *frame = [self contentFrames];
     self.selectButton.frame = [frame[0] CGRectValue];
     self.textLabel.frame = [frame[1] CGRectValue];
+    
+    CGRect detailTitleFrame = self.detailTextLabel.frame;
+    detailTitleFrame.origin.x += -5;
+    self.detailTextLabel.frame = detailTitleFrame;
 }
 
 - (void)setupSelectButton {
@@ -126,7 +130,7 @@
     _model = model;
     
     self.textLabel.text = model.headerTitle;
-    self.detailTextLabel.text = model.headerSubTitle;
+    self.detailTextLabel.attributedText = model.headerSubTitle;
     [self.selectButton setTitle:[self textForButton] forState:UIControlStateNormal];
 }
 
