@@ -4,8 +4,6 @@
 <dict>
 	<key>secret</key>
 	<string>529720bd2ea1cd</string>
-	<key>SDKVersion</key>
-	<string>0.9</string>
 	<key>useSampleData</key>
 	<true/>
 	<key>isAutoLaunchEnabled</key>
@@ -18,14 +16,6 @@
 	<false/>
 	<key>maxNumberOfContacts</key>
 	<integer>50</integer>
-	<key>apiPostURL</key>
-	<string>http://</string>
-	<key>trackingPostURL</key>
-	<string>http://</string>
-	<key>userPostURL</key>
-	<string>http://</string>
-	<key>sessionPostURL</key>
-	<string>http://</string>
 	<key>splashImageName</key>
 	<string></string>
 	<key>splashTitleText</key>

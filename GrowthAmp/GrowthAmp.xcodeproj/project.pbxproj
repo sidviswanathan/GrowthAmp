@@ -175,7 +175,6 @@
 		A1DA33461793759F003BBCD1 /* UIAlertView+GABlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA33441793759F003BBCD1 /* UIAlertView+GABlock.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA33451793759F003BBCD1 /* UIAlertView+GABlock.m */; };
 		A1DA334A1793760E003BBCD1 /* GAConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA33481793760E003BBCD1 /* GAConstants.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A1DA334B1793760E003BBCD1 /* GAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA33491793760E003BBCD1 /* GAConstants.m */; };
 		A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1DEE7A217AEEFB6004DA4FC /* GAPhoneFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DEE7A017AEEFB6004DA4FC /* GAPhoneFilter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1DEE7A317AEEFB6004DA4FC /* GAPhoneFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DEE7A117AEEFB6004DA4FC /* GAPhoneFilter.m */; };
@@ -379,7 +378,6 @@
 		A1DA33441793759F003BBCD1 /* UIAlertView+GABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+GABlock.h"; sourceTree = "<group>"; };
 		A1DA33451793759F003BBCD1 /* UIAlertView+GABlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+GABlock.m"; sourceTree = "<group>"; };
 		A1DA33481793760E003BBCD1 /* GAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConstants.h; sourceTree = "<group>"; };
-		A1DA33491793760E003BBCD1 /* GAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConstants.m; sourceTree = "<group>"; };
 		A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GALoaderDelegate.h; sourceTree = "<group>"; };
 		A1DEE79F17AEEF3A004DA4FC /* GAFilterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAFilterProtocol.h; sourceTree = "<group>"; };
 		A1DEE7A017AEEFB6004DA4FC /* GAPhoneFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPhoneFilter.h; sourceTree = "<group>"; };
@@ -741,7 +739,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DA33481793760E003BBCD1 /* GAConstants.h */,
-				A1DA33491793760E003BBCD1 /* GAConstants.m */,
 				A1377C5C17B7F83B003C81D0 /* GAFrameworkUtils.h */,
 				A1377C5D17B7F83B003C81D0 /* GAFrameworkUtils.m */,
 				37974C6D17E223B800BB4E02 /* GAUserPreferences.h */,
@@ -1081,7 +1078,6 @@
 				378F505717ED1F6E00DEFB48 /* GAConfigManager.m in Sources */,
 				A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */,
 				37974C7817E2524600BB4E02 /* GADeviceInfo.m in Sources */,
-				A1DA334B1793760E003BBCD1 /* GAConstants.m in Sources */,
 				A12C3B731793894300D3B808 /* GASorter.m in Sources */,
 				A16CDAE817AC599A00FB4F96 /* GAContactCell.m in Sources */,
 				A16CDAF217AC629200FB4F96 /* GARoundedCorners.m in Sources */,

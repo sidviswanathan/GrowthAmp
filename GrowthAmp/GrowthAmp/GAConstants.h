@@ -10,6 +10,14 @@
 #import "NSString+GAUtils.h"
 #include "TargetConditionals.h"
 
+#define kSDKVersion 0.9
+
+#define kAPIPostURL      @"http://"
+#define kTrackingPostURL @"http://"
+#define kUserPostURL     @"http://"
+#define kSessionPostURL  @"http://"
+
+
 typedef enum {
     GACellPositionTop = 0x1,
     GACellPositionBottom = 0x2
@@ -17,6 +25,3 @@ typedef enum {
 
 #define kMaxRecipients 50
 
-@interface GAConstants : NSObject
-
-@end
