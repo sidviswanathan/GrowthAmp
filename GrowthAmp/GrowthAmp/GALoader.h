@@ -29,6 +29,7 @@
 + (GALoader *)sharedInstance;
 
 - (void) checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
+-(void)fetchSettings;
 
 - (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated;
 

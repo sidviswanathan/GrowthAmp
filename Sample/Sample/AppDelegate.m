@@ -25,6 +25,7 @@
     
     [self.window makeKeyAndVisible];
     
+    [[GALoader sharedInstance] fetchSettings];
     return YES;
 }
 

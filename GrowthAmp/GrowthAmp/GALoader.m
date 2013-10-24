@@ -52,10 +52,10 @@
         return;
     }
     
-    int currentAppLaunchCount = [[GAUserPreferences getObjectOfTypeKey:@"appLaunchCount"] intValue];
+    int currentAppLaunchCount = [[GAUserPreferences getObjectOfTypeKey:kAppLaunchCountKey] intValue];
     
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *dateOfAutolaunch = [GAUserPreferences getObjectOfTypeKey:@"autolaunchDate"];
+    NSDate *dateOfAutolaunch = [GAUserPreferences getObjectOfTypeKey:kAutoLaunchDateKey];
     int daysSinceLasttAutolaunch = 0;
     if (dateOfAutolaunch) {
         
@@ -64,9 +64,9 @@
     
     if (!dateOfAutolaunch && (currentAppLaunchCount >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
         
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"first_autolaunch"];
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:kFirstLaunchKey];
         
-        [GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[NSDate date]];
+        [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
         
         // Spoof date for testing
         //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -76,17 +76,22 @@
         
     } else if (daysSinceLasttAutolaunch >= [[GAConfigManager sharedInstance] daysUntil2ndAutoLaunch]) {
     
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:@"second_autolaunch"];
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:kSecondLaunchKey];
         
-        [GAUserPreferences setObjectOfTypeKey:@"autolaunchDate" object:[NSDate date]];
+        [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
 
     } else {
     
-        [GAUserPreferences setObjectOfTypeKey:@"appLaunchCount" object:@(currentAppLaunchCount+1)];
+        [GAUserPreferences setObjectOfTypeKey:kAppLaunchCountKey object:@(currentAppLaunchCount+1)];
         
     }
     
     
+}
+
+-(void)fetchSettings {
+    
+    [[GAConfigManager sharedInstance] fetchSettings];
 }
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash

@@ -9,6 +9,8 @@
 #import "GAConfigManager.h"
 #import <UIKit/UIKit.h>
 #import "UIColor+HexString.h"
+#import "GAAPIClient.h"
+#import "GAUserPreferences.h"
 
 @implementation GAConfigManager
 
@@ -51,6 +53,7 @@
         
     }
 }
+#pragma mark - Accessor methods
 
 -(UIImage*)imageForConfigKey:(NSString*)key default:(NSString*)defaultStr {
     
@@ -101,5 +104,39 @@
     
     return [defaultStr floatValue];
 }
+
+#pragma mark - Server
+-(void)fetchSettings {
+    
+    // GET /settings example
+    //     www.growthamp.com/settings/1?secret=529720bd2ea1cd
+    //     http://www.growthamp.com/settings/?secret=529720bd2ea1cd
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
+                                   @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""]
+                                     }];
+
+    [[GAAPIClient sharedClient] POST:kSettingsEndPoint parameters:params
+       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           NSLog(@"JSON: %@", responseObject);
+           
+           [GAUserPreferences setObjectOfTypeKey:kCustomerIDKey object:responseObject[@"details"][@"customer_id"]];
+           [self updateSettingsFromServer:responseObject];
+           
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           NSLog(@"Error: %@", error);
+           
+       }];
+}
+
+-(void)updateSettingsFromServer:(NSDictionary*)settingsDict {
+    
+    for (NSString *key in settingsDict) {
+        
+        // update settings
+    }
+    
+}
+
 
 @end

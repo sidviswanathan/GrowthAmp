@@ -12,13 +12,20 @@
 
 #define kSDKVersion 0.9
 
-#define kAPIPostURL      @"http://"
-#define kTrackingPostURL @"http://"
-#define kUserPostURL     @"http://"
-#define kSessionPostURL  @"http://"
+#define kAPIBaseURL      @"http://www.growthamp.com"
+#define kSettingsEndPoint @"settings/"
+#define kUserEndPoint     @"user"
+#define kSessionEndPoint  @"session"
 
 
 #define kSystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define kCustomerIDKey @"customerID"
+#define kAppLaunchCountKey @"appLaunchCount"
+#define kAutoLaunchDateKey @"autolaunchDate"
+#define kFirstLaunchKey @"first_autolaunch"
+#define kSecondLaunchKey @"second_autolaunch"
+
 
 typedef enum {
     GACellPositionTop = 0x1,
