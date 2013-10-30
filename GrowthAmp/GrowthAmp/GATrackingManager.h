@@ -41,13 +41,17 @@
 #define kTrackingKeyActionContactsSelectAll @"contacts-list-select-all"           // User taps ‘Select All’ in contacts list
 #define kTrackingKeyActionContactsSelect @"contacts-list-select"                  // User selects a contact by tapping on unselected contact
 #define kTrackingKeyActionContactsUnselect @"contacts-list-unselect"              // User unselects a contact by tapping on selected contact
+#define kTrackingKeyActionContactsSearchSelect @"contacts-list-search-select"      // User taps on a contacts to select it from search
+#define kTrackingKeyActionContactsSearchUnselect @"contacts-list-search-unselect" // User taps on a contact to unselect it from search
 #define kTrackingKeyActionContactsScroll @"contacts-list-scroll"                  // User scrolls on the contacts list view
+
 #define kTrackingKeyActionContactsSearch @"contacts-list-search "                 // User taps into search field at the top of contacts list
 #define kTrackingKeyActionContactsSearchCancel @"contacts-list-search-cancel"     // User taps ‘Cancel’ to exit out of search
+
 #define kTrackingKeyActionContactsSearchX @"contacts-list-search-x"               // User taps ‘x’ button in search field to clear out search
-#define kTrackingKeyActionContactsSeachSelect @"contacts-list-search-select"      // User taps on a contacts to select it from search
-#define kTrackingKeyActionContactsSearchUnselect @"contacts-list-search-unselect" // User taps on a contact to unselect it from search
 #define kTrackingKeyActionContactsSearchDone @"contacts-list-search-done"         // User taps on ‘Done’ button after selecting contact
+
 #define kTrackingKeyActionSMSSend @"sms-send"                                     // User taps ‘Send’ button from SMS compose screen
 #define kTrackingKeyActionSMSCancel @"sms-cancel"                                 // User taps ‘Cancel’ from SMS compose screen’
+#define kTrackingKeyActionSMSFailed @"sms-failed"                                 // User taps ‘Cancel’ from SMS compose screen’
 

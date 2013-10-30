@@ -119,8 +119,21 @@
     
     
 }
-
+#pragma mark - Navigation buttons
+- (void)didTapOnCloseButton {
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionSplashX
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+    
+    [super didTapOnCloseButton];
+}
 - (void)didTapOnContinueButton {
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionSplashContinue
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+    
     [self.delegate mainViewController:self didTapOnContinueButton:self.continueButton];
 }
 

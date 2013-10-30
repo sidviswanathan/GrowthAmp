@@ -205,6 +205,13 @@
     return cell;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsScroll
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+}
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 
@@ -254,6 +261,8 @@
     NSArray *items;
     
     BOOL inSearch = tableView == self.searchDisplayController.searchResultsTableView;
+    BOOL didSelect = NO;
+    BOOL didUnselect = NO;
     
     items = inSearch ? self.searchResults : self.items;
 
@@ -266,12 +275,14 @@
     GAContact *contact = (GAContact *)item;
     if ([self.selectedContacts containsObject:contact]) {
         [self.selectedContacts removeObject:contact];
+        didUnselect = YES;
         self.selectAllEnabled = NO;
         if (self.selectedContacts.count == 0) {
             reload = YES;
         }
     } else {
         [self.selectedContacts addObject:contact];
+        didSelect = YES;
         if (self.selectedContacts.count == self.contacts.count) {
             self.selectAllEnabled = YES;
             reload = YES;
@@ -305,6 +316,25 @@
     
     self.nextButton.enabled = self.selectedContacts.count > 0;
     
+    // Track action
+    NSString *trackingKey;
+    
+    if (didUnselect) {
+        
+         trackingKey = inSearch ? kTrackingKeyActionContactsSearchUnselect : kTrackingKeyActionContactsUnselect;
+    }
+    
+    if (didSelect) {
+        
+        trackingKey = inSearch ? kTrackingKeyActionContactsSearchSelect : kTrackingKeyActionContactsSelect;
+    }
+    
+    if (trackingKey) {
+
+        [[GATrackingManager sharedManager] reportUserActionWithName:trackingKey
+                                                               type:kTrackingKeyTypeAction
+                                                               info:nil];
+    }
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView {
@@ -336,11 +366,40 @@
     [searchResultTableView setContentOffset:CGPointZero animated:YES];
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    
+        [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsSearch
+                                                         type:kTrackingKeyTypeAction
+                                                         info:nil];
+    
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+   
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsSearchCancel
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+}
 
 #pragma mark -
 #pragma mark Navigation Buttons
 
+- (void)didTapOnCloseButton {
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsX
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+    
+    [super didTapOnCloseButton];
+}
+
+
 - (void)didTapOnNextButton {
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsNext
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+
     [super didTapOnNextButton];
     
     if ([MFMessageComposeViewController canSendText]) {
@@ -386,6 +445,25 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSString *trackingKey;
+    switch (result) {
+        case MessageComposeResultCancelled:
+            trackingKey = kTrackingKeyActionSMSCancel;
+            break;
+        case MessageComposeResultSent:
+            trackingKey = kTrackingKeyActionSMSSend;
+            break;
+        case MessageComposeResultFailed:
+            trackingKey = kTrackingKeyActionSMSFailed;
+            break;
+            
+    }
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:trackingKey
+                                                           type:kTrackingKeyTypeAction
+                                                           info:nil];
+    
 }
 
 @end

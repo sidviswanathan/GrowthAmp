@@ -41,6 +41,8 @@
     newAction.trackingInfo = info;
     
     [_userActionStore addObject:newAction];
+    
+    NSLog(@"User action: %@",name);
 }
 
 

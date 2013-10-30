@@ -141,6 +141,20 @@
 }
 
 - (void)didTapOnSelectButton {
+    
+    if (!self.status) {
+
+        [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsSelectAll
+                                                               type:kTrackingKeyTypeAction
+                                                               info:nil];
+    } else {
+        
+        [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyActionContactsUnselectAll
+                                                               type:kTrackingKeyTypeAction
+                                                               info:nil];
+    }
+    
+    
     self.status = !self.status;
     [self.delegate headerCell:self didChangeWithSelectStatus:self.status];
 }
