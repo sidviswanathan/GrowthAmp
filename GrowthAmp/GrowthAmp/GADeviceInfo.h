@@ -10,9 +10,9 @@
 
 @interface GADeviceInfo : NSObject
 
-+(NSString*)appId;
++(NSString*)appID;
 +(NSString*)appName;
-+(NSString*)deviceId;
++(NSString*)deviceID;
 +(NSString*)deviceType;
 +(NSString*)deviceOS;
 +(NSString*)deviceCarrier;

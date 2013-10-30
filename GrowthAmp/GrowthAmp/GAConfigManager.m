@@ -11,6 +11,7 @@
 #import "UIColor+HexString.h"
 #import "GAAPIClient.h"
 #import "GAUserPreferences.h"
+#import "GADeviceInfo.h"
 
 @implementation GAConfigManager
 
@@ -113,7 +114,9 @@
     //     http://www.growthamp.com/settings/?secret=529720bd2ea1cd
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
-                                   @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""]
+                                   @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+                                     @"app_id" : [GADeviceInfo appID],
+                                     @"app_name" : [GADeviceInfo appName],
                                      }];
 
     [[GAAPIClient sharedClient] POST:kSettingsEndPoint parameters:params

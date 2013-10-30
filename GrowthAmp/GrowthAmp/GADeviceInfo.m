@@ -18,7 +18,7 @@
 @implementation GADeviceInfo
 
 
-+(NSString*)appId {
++(NSString*)appID {
     
     return NSBundle.mainBundle.infoDictionary[@"CFBundleIdentifier"];
 }
@@ -28,7 +28,7 @@
     return NSBundle.mainBundle.infoDictionary[@"CFBundleDisplayName"];
 }
 
-+(NSString*)deviceId {
++(NSString*)deviceID {
     
     return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
 }
@@ -86,9 +86,9 @@
 
 +(void)test {
     
-    NSLog(@"appId: %@",[GADeviceInfo appId]);
+    NSLog(@"appId: %@",[GADeviceInfo appID]);
     NSLog(@"appName: %@",[GADeviceInfo appName]);
-    NSLog(@"deviceId: %@",[GADeviceInfo deviceId]);
+    NSLog(@"deviceId: %@",[GADeviceInfo deviceID]);
     NSLog(@"deviceType: %@",[GADeviceInfo deviceType]);
     NSLog(@"deviceOS: %@",[GADeviceInfo deviceOS]);
     NSLog(@"deviceCarrier: %@",[GADeviceInfo deviceCarrier]);
