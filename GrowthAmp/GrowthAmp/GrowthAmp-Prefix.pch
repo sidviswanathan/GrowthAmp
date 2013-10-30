@@ -7,4 +7,5 @@
 
     #import "GAConstants.h"
     #import "GAFrameworkUtils.h"
+    #import "GATrackingManager.h"
 #endif

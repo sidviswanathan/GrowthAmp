@@ -43,6 +43,11 @@
     [self setupBackground];   
     [self setupContinueButton];
     [self setupContent];
+    
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageSplash
+                                                           type:kTrackingKeyTypeFull
+                                                           info:nil];
 }
 
 - (void)setupBackground {

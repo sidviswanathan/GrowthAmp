@@ -46,6 +46,10 @@
 		37A11B161818751D00A79F7C /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A8888C181871A200709D78 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37A11B321818899B00A79F7C /* GAAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A11B301818899B00A79F7C /* GAAPIClient.h */; };
 		37A11B331818899B00A79F7C /* GAAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B311818899B00A79F7C /* GAAPIClient.m */; };
+		37A11B3618199BC500A79F7C /* GATrackingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A11B3418199BC500A79F7C /* GATrackingManager.h */; };
+		37A11B3718199BC500A79F7C /* GATrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3518199BC500A79F7C /* GATrackingManager.m */; };
+		37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A11B3A18199C8100A79F7C /* GAUserAction.h */; };
+		37A11B3D18199C8100A79F7C /* GAUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3B18199C8100A79F7C /* GAUserAction.m */; };
 		37A8888E181871A200709D78 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A8886E181871A200709D78 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37A8888F181871A200709D78 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A8886F181871A200709D78 /* AFHTTPRequestOperation.m */; };
 		37A88890181871A200709D78 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A8886F181871A200709D78 /* AFHTTPRequestOperation.m */; };
@@ -284,6 +288,10 @@
 		37974C7917E26CDA00BB4E02 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		37A11B301818899B00A79F7C /* GAAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAAPIClient.h; sourceTree = "<group>"; };
 		37A11B311818899B00A79F7C /* GAAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAAPIClient.m; sourceTree = "<group>"; };
+		37A11B3418199BC500A79F7C /* GATrackingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATrackingManager.h; sourceTree = "<group>"; };
+		37A11B3518199BC500A79F7C /* GATrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GATrackingManager.m; sourceTree = "<group>"; };
+		37A11B3A18199C8100A79F7C /* GAUserAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserAction.h; sourceTree = "<group>"; };
+		37A11B3B18199C8100A79F7C /* GAUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUserAction.m; sourceTree = "<group>"; };
 		37A8886E181871A200709D78 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		37A8886F181871A200709D78 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		37A88870181871A200709D78 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -835,8 +843,8 @@
 				A1DA3326179374B3003BBCD1 /* GASocialProfile.m */,
 				37974C7517E2524600BB4E02 /* GADeviceInfo.h */,
 				37974C7617E2524600BB4E02 /* GADeviceInfo.m */,
-				3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */,
-				3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */,
+				37A11B3A18199C8100A79F7C /* GAUserAction.h */,
+				37A11B3B18199C8100A79F7C /* GAUserAction.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -884,6 +892,10 @@
 				37974C6E17E223B800BB4E02 /* GAUserPreferences.m */,
 				37A11B301818899B00A79F7C /* GAAPIClient.h */,
 				37A11B311818899B00A79F7C /* GAAPIClient.m */,
+				3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */,
+				3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */,
+				37A11B3418199BC500A79F7C /* GATrackingManager.h */,
+				37A11B3518199BC500A79F7C /* GATrackingManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -923,6 +935,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */,
+				37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */,
 				A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */,
 				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
 				37A11B11181874F800A79F7C /* UIAlertView+AFNetworking.h in Headers */,
@@ -969,6 +982,7 @@
 				A11E855F17AEE7560098E506 /* GATableViewController.h in Headers */,
 				A1DEE7A217AEEFB6004DA4FC /* GAPhoneFilter.h in Headers */,
 				A1DEE7A617AEF055004DA4FC /* GAFilter.h in Headers */,
+				37A11B3618199BC500A79F7C /* GATrackingManager.h in Headers */,
 				A1377C5617B7F71C003C81D0 /* GAMainViewController.h in Headers */,
 				A1377C5E17B7F83B003C81D0 /* GAFrameworkUtils.h in Headers */,
 				A1377C6917B83167003C81D0 /* GAAccessViewController.h in Headers */,
@@ -1237,6 +1251,7 @@
 				37974C7417E22F8500BB4E02 /* NSCalendar+DaysFromDate.m in Sources */,
 				37BCFBE1180466A3001EB2F5 /* GASampleDataImport.m in Sources */,
 				A1DA3324179374A5003BBCD1 /* GASite.m in Sources */,
+				37A11B3D18199C8100A79F7C /* GAUserAction.m in Sources */,
 				37BCFBE5180466D9001EB2F5 /* GAImport.m in Sources */,
 				37A888A3181871A200709D78 /* AFURLRequestSerialization.m in Sources */,
 				A1DA3328179374B3003BBCD1 /* GASocialProfile.m in Sources */,
@@ -1256,6 +1271,7 @@
 				37A8888F181871A200709D78 /* AFHTTPRequestOperation.m in Sources */,
 				A106CA7C17AD7702002191EF /* GAHeaderCell.m in Sources */,
 				37974C6817E0EF5700BB4E02 /* NSDictionary+JSONCategories.m in Sources */,
+				37A11B3718199BC500A79F7C /* GATrackingManager.m in Sources */,
 				A106CA8417AD82DB002191EF /* NSString+GAUtils.m in Sources */,
 				37A888A7181871A200709D78 /* AFURLResponseSerialization.m in Sources */,
 				A11E856017AEE7560098E506 /* GATableViewController.m in Sources */,

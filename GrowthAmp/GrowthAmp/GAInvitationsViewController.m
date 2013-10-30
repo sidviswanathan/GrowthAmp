@@ -71,6 +71,10 @@
     [_spinner startAnimating];
     
     [self parseContacts];
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageContacts
+                                                           type:kTrackingKeyTypeFull
+                                                           info:nil];
 }
 
 - (void)parseContacts {
@@ -354,6 +358,10 @@
         picker.recipients = numbers;
         picker.body = [[GAConfigManager sharedInstance] stringForConfigKey:@"invitationText" default:@""];
         [self presentViewController:picker animated:YES completion:nil];
+        
+        [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageSMS
+                                                               type:kTrackingKeyTypeFull
+                                                               info:nil];
     } else {
         
         NSLog(@"SMS is not supported!");

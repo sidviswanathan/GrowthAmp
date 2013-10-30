@@ -19,6 +19,10 @@
 {
     [super viewDidLoad];
     [self setupContent];
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageEnable
+                                                           type:kTrackingKeyTypeFull
+                                                           info:nil];
 }
 
 - (void)setupContent {

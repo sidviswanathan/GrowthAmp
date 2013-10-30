@@ -14,6 +14,7 @@
 
 #define kAPIBaseURL      @"http://www.growthamp.com"
 #define kSettingsEndPoint @"settings/"
+#define kTrackingEndPoint @"tracking/"
 #define kUserEndPoint     @"user"
 #define kSessionEndPoint  @"session"
 

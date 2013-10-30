@@ -93,6 +93,8 @@
 
 - (void)didTapOnCloseButton {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+    [[GATrackingManager sharedManager] sendTrackingDataToServer];
 }
 
 - (void)didTapOnNextButton {
