@@ -15,13 +15,14 @@
 #define kAPIBaseURL      @"http://www.growthamp.com"
 #define kSettingsEndPoint @"settings/"
 #define kTrackingEndPoint @"tracking/"
-#define kUserEndPoint     @"user"
+#define kUserEndPoint     @"user/"
 #define kSessionEndPoint  @"session"
 
 
 #define kSystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
 
 #define kCustomerIDKey @"customerID"
+#define kUserIDKey @"userID"
 #define kAppLaunchCountKey @"appLaunchCount"
 #define kAutoLaunchDateKey @"autolaunchDate"
 #define kFirstLaunchKey @"first_autolaunch"

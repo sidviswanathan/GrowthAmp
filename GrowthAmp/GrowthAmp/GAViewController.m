@@ -8,6 +8,8 @@
 
 #import "GAViewController.h"
 #import "GAConfigManager.h"
+#import "GASessionManager.h"
+
 @interface GAViewController ()
 
 @end
@@ -94,6 +96,7 @@
 - (void)didTapOnCloseButton {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
+    [[GASessionManager sharedManager] endSession];
     [[GATrackingManager sharedManager] sendTrackingDataToServer];
 }
 

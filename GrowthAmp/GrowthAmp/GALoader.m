@@ -17,6 +17,7 @@
 #import "NSCalendar+DaysFromDate.h"
 #import "GADeviceInfo.h"
 #import "GAConfigManager.h"
+#import "GASessionManager.h"
 
 @interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
@@ -97,12 +98,16 @@
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
                             trackingCode:(NSString*)trackingCode {
     
+    [[GASessionManager sharedManager] startSession];
+    
+    
     self.trackingCode = trackingCode;
     [self presentInvitationsFromController:controller animated:animated showSplash:showSplash];
 }
 
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
+    [[GASessionManager sharedManager] startSession];
     if (showSplash) {
         GAMainViewController *mainViewController = [[GAMainViewController alloc] init];
         mainViewController.delegate = self;
@@ -114,6 +119,7 @@
 }
 
 - (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated {
+    [[GASessionManager sharedManager] startSession];
     // Get the contacts
     [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{

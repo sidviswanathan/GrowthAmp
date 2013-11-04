@@ -26,6 +26,8 @@
 		373A585F17FB2BF0008214DF /* Access.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373A585E17FB1A41008214DF /* Access.xib */; };
 		373A586217FB388D008214DF /* UIColor+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 373A586017FB388D008214DF /* UIColor+HexString.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		373A586317FB388D008214DF /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 373A586117FB388D008214DF /* UIColor+HexString.m */; };
+		37627492182823BB001F5B67 /* GASessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 37627490182823BB001F5B67 /* GASessionManager.h */; };
+		37627493182823BB001F5B67 /* GASessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37627491182823BB001F5B67 /* GASessionManager.m */; };
 		378F505717ED1F6E00DEFB48 /* GAConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */; };
 		378F505817ED1F7200DEFB48 /* GAConfigManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -277,6 +279,8 @@
 		373A585E17FB1A41008214DF /* Access.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Access.xib; path = ../../GrowthAmp/Access.xib; sourceTree = "<group>"; };
 		373A586017FB388D008214DF /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		373A586117FB388D008214DF /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		37627490182823BB001F5B67 /* GASessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GASessionManager.h; sourceTree = "<group>"; };
+		37627491182823BB001F5B67 /* GASessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GASessionManager.m; sourceTree = "<group>"; };
 		37974C6517E0EF5700BB4E02 /* NSDictionary+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONCategories.h"; sourceTree = "<group>"; };
 		37974C6617E0EF5700BB4E02 /* NSDictionary+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONCategories.m"; sourceTree = "<group>"; };
 		37974C6D17E223B800BB4E02 /* GAUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserPreferences.h; sourceTree = "<group>"; };
@@ -896,6 +900,8 @@
 				3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */,
 				37A11B3418199BC500A79F7C /* GATrackingManager.h */,
 				37A11B3518199BC500A79F7C /* GATrackingManager.m */,
+				37627490182823BB001F5B67 /* GASessionManager.h */,
+				37627491182823BB001F5B67 /* GASessionManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -942,6 +948,7 @@
 				37A8889E181871A200709D78 /* AFURLConnectionOperation.h in Headers */,
 				37A88892181871A200709D78 /* AFHTTPRequestOperationManager.h in Headers */,
 				37A11B161818751D00A79F7C /* UIWebView+AFNetworking.h in Headers */,
+				37627492182823BB001F5B67 /* GASessionManager.h in Headers */,
 				37A11B151818751700A79F7C /* UIProgressView+AFNetworking.h in Headers */,
 				A1DA333B1793753E003BBCD1 /* GAABParser.h in Headers */,
 				A1DA333717937532003BBCD1 /* GAABImport.h in Headers */,
@@ -1255,6 +1262,7 @@
 				37BCFBE5180466D9001EB2F5 /* GAImport.m in Sources */,
 				37A888A3181871A200709D78 /* AFURLRequestSerialization.m in Sources */,
 				A1DA3328179374B3003BBCD1 /* GASocialProfile.m in Sources */,
+				37627493182823BB001F5B67 /* GASessionManager.m in Sources */,
 				A1DA333817937532003BBCD1 /* GAABImport.m in Sources */,
 				A1DA333C1793753E003BBCD1 /* GAABParser.m in Sources */,
 				A1DA334117937563003BBCD1 /* GAInvitationsViewController.m in Sources */,

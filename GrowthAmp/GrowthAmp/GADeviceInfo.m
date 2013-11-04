@@ -48,7 +48,14 @@
     CTTelephonyNetworkInfo *phoneInfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *phoneCarrier = [phoneInfo subscriberCellularProvider];
     
-    return [phoneCarrier carrierName];
+    if ([phoneCarrier carrierName]) {
+        
+        return [phoneCarrier carrierName];
+    
+    } else {
+        
+        return @"<Carrier Not Availble>";
+    }
 }
 
 +(NSString*)deviceLocale {

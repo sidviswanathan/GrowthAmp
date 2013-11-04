@@ -13,4 +13,7 @@
 
 + (id)sharedClient;
 
++ (void)sendUserInfo;
++ (void)sendSessionInfo:(NSDictionary*)params;
+
 @end
