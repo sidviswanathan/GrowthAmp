@@ -12,6 +12,8 @@
 
 #define kSDKVersion 0.9
 
+#define kMaxAPIRetries 3
+
 #define kAPIBaseURL      @"http://www.growthamp.com"
 #define kSettingsEndPoint @"settings/"
 #define kTrackingEndPoint @"tracking/"

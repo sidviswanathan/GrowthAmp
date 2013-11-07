@@ -14,6 +14,12 @@
 + (id)sharedClient;
 
 + (void)sendUserInfo;
++(void)sendUserInfoRetryingNumberOfTimes:(NSUInteger)nTimes
+                              parameters:(NSDictionary*)params
+                                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 + (void)sendSessionInfo:(NSDictionary*)params;
+
 
 @end

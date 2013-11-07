@@ -25,58 +25,88 @@
 
 + (void)sendUserInfo {
     
-    // retry example https://github.com/AFNetworking/AFNetworking/issues/393
+    NSDictionary *params = @{@"secret"          : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+                             @"customer_id"     : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
+                             @"device_id"       : [GADeviceInfo deviceID],
+                             @"device_type"     : [GADeviceInfo deviceType],
+                             @"device_os"       : [GADeviceInfo deviceOS],
+                             @"device_carrier"  : [GADeviceInfo deviceCarrier],
+                             @"sdk_version"     : @(kSDKVersion),
+                             @"device_locale"   : [GADeviceInfo deviceLocale],
+                             @"ip_address"      : [GADeviceInfo ipAddress],
+                            };
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
-                                   @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
-                                     @"customer_id" : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
-                                     @"device_id" : [GADeviceInfo deviceID],
-                                     @"device_type" : [GADeviceInfo deviceType],
-                                     @"device_os" : [GADeviceInfo deviceOS],
-                                     @"device_carrier" : [GADeviceInfo deviceCarrier],
-                                     @"sdk_version" : @(kSDKVersion),
-                                     @"device_locale" : [GADeviceInfo deviceLocale],
-                                     @"ip_address" : [GADeviceInfo ipAddress],
-                                     }];
-    
-    id user_id = [GAUserPreferences getObjectOfTypeKey:kUserIDKey];
-    
-    if (user_id) {
-        
-        NSString *endPointPath = [NSString stringWithFormat:@"%@\%@",kUserEndPoint,[user_id stringValue]];
-        [[GAAPIClient sharedClient] PUT:endPointPath parameters:params
-                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                     NSLog(@"JSON: %@", responseObject);
-                                     
-                                     [GAUserPreferences setObjectOfTypeKey:kUserIDKey object:responseObject[@"details"][@"user_id"]];
-                                     
-                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                     NSLog(@"Error: %@", error);
-                                     
-                                     // If failure, sechedule again for later
-                                     
-                                 }];
+    [GAAPIClient sendUserInfoRetryingNumberOfTimes:kMaxAPIRetries
+                                        parameters:params
+                                           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                               NSLog(@"JSON: %@", responseObject);
+                                               
+                                               [GAUserPreferences setObjectOfTypeKey:kUserIDKey object:responseObject[@"details"][@"user_id"]];
+                                                   
+                                            }
+                                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                NSLog(@"Error: %@", error);
+                                                   
+                                                // If failure, sechedule again for later
+                                                   
+                                            }];
+}
 
++(void)sendUserInfoRetryingNumberOfTimes:(NSUInteger)nTimes
+                              parameters:(NSDictionary*)params
+                                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
     
+    if (nTimes <= 0) {
+        if (failure) {
+            NSError *error = [NSError errorWithDomain: @"sendUserInfo: Max number of retries reached."
+                                                 code:1 userInfo:nil];
+            failure(nil,error);
+        }
     } else {
         
-        [[GAAPIClient sharedClient] POST:kUserEndPoint parameters:params
-                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                     NSLog(@"JSON: %@", responseObject);
-                                     
-                                      [GAUserPreferences setObjectOfTypeKey:kUserIDKey object:responseObject[@"details"][@"user_id"]];
-                                     
-                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                     NSLog(@"Error: %@", error);
-                                     
-                                     // If failure, sechedule again for later
-                                     
-                                 }];
+        NSLog(@"SendUserInfo Attempt: %d",(kMaxAPIRetries - nTimes)+1);
+        
+        id user_id = [GAUserPreferences getObjectOfTypeKey:kUserIDKey];
+        
+        if (user_id) {
+            
+            NSString *endPointPath = [NSString stringWithFormat:@"%@\%@",kUserEndPoint,[user_id stringValue]];
+
+            [[GAAPIClient sharedClient] PUT:endPointPath parameters:params
+                                     success:success
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         
+                                         [GAAPIClient sendUserInfoRetryingNumberOfTimes:nTimes - 1
+                                                                                 parameters:params
+                                                                                    success:success
+                                                                                    failure:failure];
+                                     }];
+
+            
+        } else {
+            
+            [[GAAPIClient sharedClient] POST:kUserEndPoint parameters:params
+                                     success:success
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         
+                                         [GAAPIClient sendUserInfoRetryingNumberOfTimes:nTimes - 1
+                                                                                 parameters:params
+                                                                                    success:success
+                                                                                    failure:failure];
+                                     }];
+        }
+
+        
+        
+       
     }
 }
 
 + (void)sendSessionInfo:(NSDictionary*)params {
 
 }
+
 
 @end
