@@ -444,7 +444,8 @@
 #pragma mark MFMessageComposeViewControllerDelegate
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:^{ [super didTapOnCloseButton]; }];
     
     NSString *trackingKey;
     switch (result) {
@@ -463,6 +464,7 @@
     [[GATrackingManager sharedManager] reportUserActionWithName:trackingKey
                                                            type:kTrackingKeyTypeAction
                                                            info:nil];
+    
     
 }
 

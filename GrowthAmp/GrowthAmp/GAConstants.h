@@ -18,7 +18,7 @@
 #define kSettingsEndPoint @"settings/"
 #define kTrackingEndPoint @"tracking/"
 #define kUserEndPoint     @"user/"
-#define kSessionEndPoint  @"session"
+#define kSessionEndPoint  @"session/"
 
 
 #define kSystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
