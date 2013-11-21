@@ -50,19 +50,31 @@
 }
 
 - (void)buttonOneClicked {
-    GALoader *loader = [GALoader sharedInstance];
-    loader.userFirstName = @"test_user_firstname";
-    loader.userLastName = @"test_user_firstname";
-    loader.userEmail = @"test_user_firstname";
-    [loader presentInvitationsFromController:self animated:YES showSplash:YES trackingCode:@"test_button_1"];
+
+    // Optionally set user contact information before presenting invitation view controller
+    [GALoader sharedInstance].userContact = @{@"firstName" : @"",
+                                              @"lastName"  : @"",
+                                              @"email"     : @""};
+                           
+    // Invoke the Growth Amp invitation view controller
+	[[GALoader sharedInstance] presentInvitationsFromController:self
+                                                       animated:YES
+                                                     showSplash:YES
+                                                    sessionType:@"test_button_1"];
 }
 
 - (void)buttonTwoClicked {
-    GALoader *loader = [GALoader sharedInstance];
-    loader.userFirstName = @"test_user_firstname";
-    loader.userLastName = @"test_user_firstname";
-    loader.userEmail = @"test_user_firstname";
-    [loader presentInvitationsFromController:self animated:YES showSplash:NO trackingCode:@"test_button_2"];
+
+    // Optionally set user contact information before presenting invitation view controller
+    [GALoader sharedInstance].userContact = @{@"firstName" : @"",
+                                              @"lastName"  : @"",
+                                              @"email"     : @""};
+
+    // Invoke the Growth Amp invitation view controller
+    [[GALoader sharedInstance] presentInvitationsFromController:self
+                                                       animated:YES
+                                                     showSplash:NO
+                                                    sessionType:@"test_button_2"];
 }
 
 @end

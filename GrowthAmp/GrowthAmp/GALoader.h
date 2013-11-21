@@ -19,10 +19,7 @@
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *headerSubTitle;
 
-@property (nonatomic, strong) NSString *trackingCode;
-@property (nonatomic, strong) NSString *userFirstName;
-@property (nonatomic, strong) NSString *userLastName;
-@property (nonatomic, strong) NSString *userEmail;
+@property (nonatomic, strong) NSDictionary *userContact;
 
 @property (nonatomic, strong) NSArray *devices;
 
@@ -36,6 +33,8 @@
 
 - (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
 
-- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
-                            trackingCode:(NSString*)trackingCode;
+- (void) presentInvitationsFromController:(UIViewController *)controller
+                                 animated:(BOOL)animated
+                               showSplash:(BOOL)showSplash
+                              sessionType:(NSString*)sessionType;
 @end

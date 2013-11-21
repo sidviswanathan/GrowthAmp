@@ -11,6 +11,9 @@
 
 @interface GASessionManager : NSObject
 
+@property (nonatomic, strong) NSString *sessionType;
+@property (nonatomic, strong) NSDictionary *userContact;
+
 + (id)sharedManager;
 
 -(void)startSession;

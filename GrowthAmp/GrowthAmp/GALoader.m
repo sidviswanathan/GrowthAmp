@@ -65,7 +65,7 @@
     
     if (!dateOfAutolaunch && (currentAppLaunchCount >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
         
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:kFirstLaunchKey];
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash sessionType:kFirstLaunchKey];
         
         [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
         
@@ -77,7 +77,7 @@
         
     } else if (daysSinceLasttAutolaunch >= [[GAConfigManager sharedInstance] daysUntil2ndAutoLaunch]) {
     
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash trackingCode:kSecondLaunchKey];
+        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash sessionType:kSecondLaunchKey];
         
         [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
 
@@ -95,13 +95,19 @@
     [[GAConfigManager sharedInstance] fetchSettings];
 }
 
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
-                            trackingCode:(NSString*)trackingCode {
+- (void) setUserContact:(NSDictionary*)userContact {
     
+    [[GASessionManager sharedManager] setUserContact:userContact];
+}
+
+
+- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
+                            sessionType:(NSString*)sessionType {
+    
+    [[GASessionManager sharedManager] setSessionType:sessionType];
     [[GASessionManager sharedManager] startSession];
     
     
-    self.trackingCode = trackingCode;
     [self presentInvitationsFromController:controller animated:animated showSplash:showSplash];
 }
 
