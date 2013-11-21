@@ -58,9 +58,13 @@
       
         [[GAAPIClient sharedClient] POST:kTrackingEndPoint parameters:params
                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                     NSLog(@"JSON: %@", responseObject);
-                                     
-                                     
+       
+            if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
+       
+                NSLog(@"JSON: %@", responseObject);
+            }
+       
+       
                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                      NSLog(@"Error: %@", error);
                                     

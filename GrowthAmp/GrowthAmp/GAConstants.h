@@ -29,7 +29,7 @@
 #define kAutoLaunchDateKey @"autolaunchDate"
 #define kFirstLaunchKey @"first_autolaunch"
 #define kSecondLaunchKey @"second_autolaunch"
-
+#define kDefaultSecretKey @"YOUR_SECRET_KEY_HERE"
 
 typedef enum {
     GACellPositionTop = 0x1,

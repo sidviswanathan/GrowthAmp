@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "AFURLRequestSerialization.h"
+#import "GAConfigManager.h"
 
 extern NSString * const AFNetworkingErrorDomain;
 
@@ -259,7 +260,14 @@ NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value) {
 {
     NSParameterAssert(method);
     NSParameterAssert(URLString);
-    NSLog(@"API REQUEST: %@ %@ %@",method,URLString,parameters);
+    
+    
+    if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
+        
+        NSLog(@"API REQUEST: %@ %@ %@",method,URLString,parameters);
+    }
+    
+    
     NSURL *url = [NSURL URLWithString:URLString];
 
     NSParameterAssert(url);

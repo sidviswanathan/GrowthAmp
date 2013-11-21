@@ -26,4 +26,6 @@
 -(NSString*)stringForConfigKey:(NSString*)key default:(NSString*)defaultStr;
 -(UIColor*)colorForConfigKey:(NSString*)key default:(NSString*)defaultStr;
 -(float)floatForConfigKey:(NSString*)key default:(NSString*)defaultStr;
+-(BOOL)boolForConfigKey:(NSString*)key default:(NSString*)defaultStr;
+
 @end

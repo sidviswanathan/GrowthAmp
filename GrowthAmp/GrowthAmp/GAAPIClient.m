@@ -39,7 +39,11 @@
     [GAAPIClient sendUserInfoRetryingNumberOfTimes:kMaxAPIRetries
                                         parameters:params
                                            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                               NSLog(@"JSON: %@", responseObject);
+                                               
+                                               if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
+                                                   
+                                                   NSLog(@"JSON: %@", responseObject);
+                                               }
                                                
                                                [GAUserPreferences setObjectOfTypeKey:kUserIDKey object:responseObject[@"details"][@"user_id"]];
                                                    

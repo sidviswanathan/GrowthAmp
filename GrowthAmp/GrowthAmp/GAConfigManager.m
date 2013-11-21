@@ -106,22 +106,43 @@
     return [defaultStr floatValue];
 }
 
+-(BOOL)boolForConfigKey:(NSString*)key default:(NSString*)defaultStr {
+    
+    id str = [self.configDictionary objectForKey:key];
+    
+    if (str) {
+        
+        return [str boolValue];
+    }
+    
+    return [defaultStr boolValue];
+}
 #pragma mark - Server
 -(void)fetchSettings {
     
+    // Make sure we have a secret key
+    NSString *secretKey = [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:kDefaultSecretKey];
+    
+    NSAssert((![secretKey isEqualToString:kDefaultSecretKey] && ![secretKey isEqualToString:@""]),
+             @"Your Growth Amp secret key is missing from the GAConfig.plist file.");
+    
+    
     // GET /settings example
-    //     www.growthamp.com/settings/1?secret=529720bd2ea1cd
-    //     http://www.growthamp.com/settings/?secret=529720bd2ea1cd
+    //     www.growthamp.com/settings/1?secret=YOUR_SECRET_KEY_HERE
+    //     http://www.growthamp.com/settings/?secret=YOUR_SECRET_KEY_HERE
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
-                                   @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+                                   @{@"secret" : secretKey,
                                      @"app_id" : [GADeviceInfo appID],
                                      @"app_name" : [GADeviceInfo appName],
                                      }];
 
     [[GAAPIClient sharedClient] POST:kSettingsEndPoint parameters:params
        success:^(AFHTTPRequestOperation *operation, id responseObject) {
-           NSLog(@"JSON: %@", responseObject);
+           if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
+               
+               NSLog(@"JSON: %@", responseObject);
+           }
            
            [GAUserPreferences setObjectOfTypeKey:kCustomerIDKey object:responseObject[@"details"][@"customer_id"]];
            [self updateSettingsFromServer:responseObject];

@@ -6,6 +6,8 @@
 	<string>529720bd2ea1cd</string>
 	<key>useSampleData</key>
 	<true/>
+	<key>enableJSONOutput</key>
+	<true/>
 	<key>isAutoLaunchEnabled</key>
 	<true/>
 	<key>appLaunchedUntil1stAutoLaunch</key>
