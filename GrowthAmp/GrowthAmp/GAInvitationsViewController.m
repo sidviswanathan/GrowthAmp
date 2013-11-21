@@ -445,7 +445,8 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     
-    [self dismissViewControllerAnimated:YES completion:^{ [super didTapOnCloseButton]; }];
+    
+    BOOL isComplete = NO;
     
     NSString *trackingKey;
     switch (result) {
@@ -454,6 +455,7 @@
             break;
         case MessageComposeResultSent:
             trackingKey = kTrackingKeyActionSMSSend;
+            isComplete = YES;
             break;
         case MessageComposeResultFailed:
             trackingKey = kTrackingKeyActionSMSFailed;
@@ -461,6 +463,15 @@
             
     }
     
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        if (isComplete) {
+
+            [super didTapOnCloseButton];
+        }
+    
+    }];
+
     [[GATrackingManager sharedManager] reportUserActionWithName:trackingKey
                                                            type:kTrackingKeyTypeAction
                                                            info:nil];
