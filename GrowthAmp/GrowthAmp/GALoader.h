@@ -23,17 +23,22 @@
 
 @property (nonatomic, strong) NSArray *devices;
 
-+ (GALoader *)sharedInstance;
++ (GALoader*) sharedInstance;
 
-- (void) checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
+- (void) checkAutoLaunch:(UIViewController *)controller
+                animated:(BOOL)animated
+              showSplash:(BOOL)showSplash;
 
-- (void)fetchSettings;
+- (void) fetchSettings;
 
-- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated;
+- (void) presentInvitationsFromController:(UIViewController*)controller
+                                 animated:(BOOL)animated;
 
-- (void) presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash;
+- (void) presentInvitationsFromController:(UIViewController*)controller
+                                 animated:(BOOL)animated
+                               showSplash:(BOOL)showSplash;
 
-- (void) presentInvitationsFromController:(UIViewController *)controller
+- (void) presentInvitationsFromController:(UIViewController*)controller
                                  animated:(BOOL)animated
                                showSplash:(BOOL)showSplash
                               sessionType:(NSString*)sessionType;
