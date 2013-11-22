@@ -11,6 +11,7 @@
 #import "UIAlertView+GABlock.h"
 #import <UIKit/UIKit.h>
 #import "GAABParser.h"
+#import "GAContactsCache.h"
 
 @implementation GAABImport
 
@@ -61,6 +62,7 @@
                         NSError *error;
                         NSArray *contacts = [parser parseContactsFromAddressBookRef:addressBookRef error:&error];
                         completion(contacts, error);
+                        [[GAContactsCache sharedCache] setContacts:contacts];
                     } else {
                         completion(nil, [NSError errorWithDomain:@"" code:1 userInfo:nil]);
                     }
@@ -74,6 +76,7 @@
                 
                 NSError *error;
                 NSArray *contacts = [parser parseContactsFromAddressBookRef:addressBookRef error:&error];
+                [[GAContactsCache sharedCache] setContacts:contacts];
                 completion(contacts, error);
             });
         }

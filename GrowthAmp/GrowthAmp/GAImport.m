@@ -10,7 +10,7 @@
 #import "GASampleDataImport.h"
 #import "GAABImport.h"
 #import "GAConfigManager.h"
-
+#import "GAContactsCache.h"
 
 #define kSampleDataThreshold 10
 
@@ -18,9 +18,17 @@
 
 + (void)contactsWithCompletion:(void(^)(NSArray *, NSError*))completion {
     
+    // If cache exists, use it
+    if ([[GAContactsCache sharedCache] contacts]) {
+        
+        [[GAContactsCache sharedCache] contactsWithCompletion:completion];
+        return;
+    }
+    
     BOOL useSampleData = [[[GAConfigManager sharedInstance] stringForConfigKey:@"useSampleData" default:@"YES"] boolValue];
     
 #ifdef CONFIGURATION_Release
+    // If this is a realease build, override configuration and don't show sample data
     useSampleData = NO;
 #endif
     

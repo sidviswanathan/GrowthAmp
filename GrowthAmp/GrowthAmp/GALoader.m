@@ -18,6 +18,7 @@
 #import "GADeviceInfo.h"
 #import "GAConfigManager.h"
 #import "GASessionManager.h"
+#import "GAContactsCache.h"
 
 @interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
 
@@ -48,6 +49,9 @@
 
 -(void)checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
  
+    
+    [[GAContactsCache sharedCache] invalidate];
+    
     if (![[GAConfigManager sharedInstance] isAutoLaunchEnabled]) {
         
         return;

@@ -117,6 +117,8 @@
 		37BCFC0D180479B4001EB2F5 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 37BCFBF9180479B4001EB2F5 /* 9.png */; };
 		37BCFC0E180479B4001EB2F5 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 37BCFBFA180479B4001EB2F5 /* 20.png */; };
 		37BCFC1118048432001EB2F5 /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37BCFC0F18047C13001EB2F5 /* names.txt */; };
+		37F04C0E183ED652002528B4 /* GAContactsCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F04C0C183ED652002528B4 /* GAContactsCache.h */; };
+		37F04C0F183ED652002528B4 /* GAContactsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F04C0D183ED652002528B4 /* GAContactsCache.m */; };
 		A106CA7B17AD7702002191EF /* GAHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA7917AD7702002191EF /* GAHeaderCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A106CA7C17AD7702002191EF /* GAHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A106CA7A17AD7702002191EF /* GAHeaderCell.m */; };
 		A106CA8317AD82DB002191EF /* NSString+GAUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A106CA8117AD82DB002191EF /* NSString+GAUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -352,6 +354,8 @@
 		37BCFBF9180479B4001EB2F5 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		37BCFBFA180479B4001EB2F5 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
 		37BCFC0F18047C13001EB2F5 /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = names.txt; path = GrowthAmpResources/names.txt; sourceTree = SOURCE_ROOT; };
+		37F04C0C183ED652002528B4 /* GAContactsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAContactsCache.h; sourceTree = "<group>"; };
+		37F04C0D183ED652002528B4 /* GAContactsCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAContactsCache.m; sourceTree = "<group>"; };
 		A106CA7917AD7702002191EF /* GAHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAHeaderCell.h; sourceTree = "<group>"; };
 		A106CA7A17AD7702002191EF /* GAHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAHeaderCell.m; sourceTree = "<group>"; };
 		A106CA8117AD82DB002191EF /* NSString+GAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GAUtils.h"; sourceTree = "<group>"; };
@@ -598,6 +602,23 @@
 			path = Headshots;
 			sourceTree = "<group>";
 		};
+		37F04C0B183ED54F002528B4 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				37A11B301818899B00A79F7C /* GAAPIClient.h */,
+				37A11B311818899B00A79F7C /* GAAPIClient.m */,
+				3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */,
+				3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */,
+				37A11B3418199BC500A79F7C /* GATrackingManager.h */,
+				37A11B3518199BC500A79F7C /* GATrackingManager.m */,
+				37627490182823BB001F5B67 /* GASessionManager.h */,
+				37627491182823BB001F5B67 /* GASessionManager.m */,
+				37F04C0C183ED652002528B4 /* GAContactsCache.h */,
+				37F04C0D183ED652002528B4 /* GAContactsCache.m */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
 		A1377BDF17B6C466003C81D0 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +818,7 @@
 				A1DA32E6179371BD003BBCD1 /* GrowthAmp.h */,
 				A1DA334317937573003BBCD1 /* Categories */,
 				A1DA33421793756E003BBCD1 /* Utils */,
+				37F04C0B183ED54F002528B4 /* Singletons */,
 				A1DA331317937448003BBCD1 /* Models */,
 				A1DA331417937453003BBCD1 /* Logic */,
 				A1DA333D17937547003BBCD1 /* UI */,
@@ -894,14 +916,6 @@
 				A1377C5D17B7F83B003C81D0 /* GAFrameworkUtils.m */,
 				37974C6D17E223B800BB4E02 /* GAUserPreferences.h */,
 				37974C6E17E223B800BB4E02 /* GAUserPreferences.m */,
-				37A11B301818899B00A79F7C /* GAAPIClient.h */,
-				37A11B311818899B00A79F7C /* GAAPIClient.m */,
-				3723B54E17ED0A8E0012DB12 /* GAConfigManager.h */,
-				3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */,
-				37A11B3418199BC500A79F7C /* GATrackingManager.h */,
-				37A11B3518199BC500A79F7C /* GATrackingManager.m */,
-				37627490182823BB001F5B67 /* GASessionManager.h */,
-				37627491182823BB001F5B67 /* GASessionManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -980,6 +994,7 @@
 				37974C7317E22F8500BB4E02 /* NSCalendar+DaysFromDate.h in Headers */,
 				37974C6717E0EF5700BB4E02 /* NSDictionary+JSONCategories.h in Headers */,
 				A12C3B721793894300D3B808 /* GASorter.h in Headers */,
+				37F04C0E183ED652002528B4 /* GAContactsCache.h in Headers */,
 				37BCFBE4180466D9001EB2F5 /* GAImport.h in Headers */,
 				A16CDAE717AC599A00FB4F96 /* GAContactCell.h in Headers */,
 				A16CDAF117AC629200FB4F96 /* GARoundedCorners.h in Headers */,
@@ -1283,6 +1298,7 @@
 				A106CA8417AD82DB002191EF /* NSString+GAUtils.m in Sources */,
 				37A888A7181871A200709D78 /* AFURLResponseSerialization.m in Sources */,
 				A11E856017AEE7560098E506 /* GATableViewController.m in Sources */,
+				37F04C0F183ED652002528B4 /* GAContactsCache.m in Sources */,
 				A1DEE7A317AEEFB6004DA4FC /* GAPhoneFilter.m in Sources */,
 				A1DEE7A717AEF055004DA4FC /* GAFilter.m in Sources */,
 				37A88897181871A200709D78 /* AFNetworkReachabilityManager.m in Sources */,
