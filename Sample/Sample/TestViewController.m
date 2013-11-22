@@ -58,7 +58,6 @@
                            
     // Invoke the Growth Amp invitation view controller
 	[[GALoader sharedInstance] presentInvitationsFromController:self
-                                                       animated:YES
                                                      showSplash:YES
                                                     sessionType:@"test_button_1"];
 }
@@ -72,7 +71,6 @@
 
     // Invoke the Growth Amp invitation view controller
     [[GALoader sharedInstance] presentInvitationsFromController:self
-                                                       animated:YES
                                                      showSplash:NO
                                                     sessionType:@"test_button_2"];
 }

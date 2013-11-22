@@ -47,7 +47,7 @@
 }
 
 
--(void)checkAutoLaunch:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
+-(void)checkAutoLaunch:(UIViewController *)controller showSplash:(BOOL)showSplash {
  
     
     [[GAContactsCache sharedCache] invalidate];
@@ -69,7 +69,7 @@
     
     if (!dateOfAutolaunch && (currentAppLaunchCount >= [[GAConfigManager sharedInstance] appLaunchedUntil1stAutoLaunch])) {
         
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash sessionType:kFirstLaunchKey];
+        [self presentInvitationsFromController:controller showSplash:showSplash sessionType:kFirstLaunchKey];
         
         [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
         
@@ -81,7 +81,7 @@
         
     } else if (daysSinceLasttAutolaunch >= [[GAConfigManager sharedInstance] daysUntil2ndAutoLaunch]) {
     
-        [self presentInvitationsFromController:controller animated:animated showSplash:showSplash sessionType:kSecondLaunchKey];
+        [self presentInvitationsFromController:controller showSplash:showSplash sessionType:kSecondLaunchKey];
         
         [GAUserPreferences setObjectOfTypeKey:kAutoLaunchDateKey object:[NSDate date]];
 
@@ -104,51 +104,39 @@
     [[GASessionManager sharedManager] setUserContact:userContact];
 }
 
+- (void)presentInvitationsFromController:(UIViewController *)controller
+                              showSplash:(BOOL)showSplash
+                             sessionType:(NSString*)sessionType {
 
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash
-                            sessionType:(NSString*)sessionType {
-    
     [[GASessionManager sharedManager] setSessionType:sessionType];
     [[GASessionManager sharedManager] startSession];
     
-    
-    [self presentInvitationsFromController:controller animated:animated showSplash:showSplash];
-}
-
-
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated showSplash:(BOOL)showSplash {
-    [[GASessionManager sharedManager] startSession];
     if (showSplash) {
         GAMainViewController *mainViewController = [[GAMainViewController alloc] init];
         mainViewController.delegate = self;
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-        [controller presentViewController:navController animated:animated completion:nil];
+        [controller presentViewController:navController animated:YES completion:nil];
     } else {
-        [self presentInvitationsFromController:controller animated:animated];
+        // Get the contacts
+        [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error) {
+                    GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
+                    accessController.delegate = self;
+                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accessController];
+                    [controller presentViewController:navController animated:YES completion:nil];
+                } else {
+                    GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
+                    invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
+                    invitationsController.headerSubTitle = self.headerSubTitle;
+                    invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
+                    invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
+                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
+                    [controller presentViewController:navController animated:YES completion:nil];
+                }
+            });
+        }];
     }
-}
-
-- (void)presentInvitationsFromController:(UIViewController *)controller animated:(BOOL)animated {
-    [[GASessionManager sharedManager] startSession];
-    // Get the contacts
-    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
-                accessController.delegate = self;
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accessController];
-                [controller presentViewController:navController animated:animated completion:nil];
-            } else {
-                GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
-                invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
-                invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
-                [controller presentViewController:navController animated:animated completion:nil];
-            }
-        });
-    }];
 }
 
 - (void)mainViewController:(GAMainViewController *)controller didTapOnContinueButton:(UIButton *)button {
