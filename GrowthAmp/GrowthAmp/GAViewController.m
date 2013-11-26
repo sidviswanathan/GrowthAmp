@@ -94,7 +94,9 @@
 }
 
 - (void)didTapOnCloseButton {
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
     
     [[GASessionManager sharedManager] endSession];
     [[GATrackingManager sharedManager] sendTrackingDataToServer];

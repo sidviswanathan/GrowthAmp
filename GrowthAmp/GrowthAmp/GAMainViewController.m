@@ -11,6 +11,7 @@
 #import "GAInvitationsViewController.h"
 #import "GAConfigManager.h"
 #import "UIColor+HexString.h"
+#import "GALoader.h"
 
 @interface GAMainViewController ()
 
@@ -134,7 +135,8 @@
                                                            type:kTrackingKeyTypeAction
                                                            info:nil];
     
-    [self.delegate mainViewController:self didTapOnContinueButton:self.continueButton];
+    [[GALoader sharedInstance] presentInvitationsFromController:self.navigationController];
+
 }
 
 @end

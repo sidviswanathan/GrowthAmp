@@ -9,8 +9,8 @@
 #import "GALoader.h"
 #import "GAInvitationsViewController.h"
 #import "GAMainViewController.h"
-#import "GAImport.h"
-#import "GAAccessViewController.h"
+
+
 #import "GAFrameworkUtils.h"
 #import "NSDictionary+JSONCategories.h"
 #import "GAUserPreferences.h"
@@ -19,10 +19,6 @@
 #import "GAConfigManager.h"
 #import "GASessionManager.h"
 #import "GAContactsCache.h"
-
-@interface GALoader () <GAMainViewControllerDelegate, GGAAccessViewControllerDelegate>
-
-@end
 
 @implementation GALoader
 
@@ -108,71 +104,47 @@
                               showSplash:(BOOL)showSplash
                              sessionType:(NSString*)sessionType {
 
-    [[GASessionManager sharedManager] setSessionType:sessionType];
+    if (sessionType) {
+        
+        [[GASessionManager sharedManager] setSessionType:sessionType];
+    }
+    
     [[GASessionManager sharedManager] startSession];
     
     if (showSplash) {
         GAMainViewController *mainViewController = [[GAMainViewController alloc] init];
-        mainViewController.delegate = self;
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
         [controller presentViewController:navController animated:YES completion:nil];
     } else {
-        // Get the contacts
-        [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (error) {
-                    GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
-                    accessController.delegate = self;
-                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accessController];
-                    [controller presentViewController:navController animated:YES completion:nil];
-                } else {
-                    GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                    invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
-                    invitationsController.headerSubTitle = self.headerSubTitle;
-                    invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
-                    invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
-                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
-                    [controller presentViewController:navController animated:YES completion:nil];
-                }
-            });
-        }];
+        
+        [self presentInvitationsFromController:controller];
+    
     }
 }
 
-- (void)mainViewController:(GAMainViewController *)controller didTapOnContinueButton:(UIButton *)button {
-    // Get the contacts
-    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
-                accessController.delegate = self;
-                [controller.navigationController pushViewController:accessController animated:YES];
-            } else {
-                GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
-                invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
-                invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
-                [controller.navigationController pushViewController:invitationsController animated:YES];
-            }
-        });
-    }];
-}
 
-- (void)accessViewController:(GAAccessViewController *)controller didTapOnNextButton:(UIButton *)button {
-    // Get the contacts
-    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-            } else {
-                GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] initWithContacts:contacts];
-                invitationsController.headerTitle = [[GAConfigManager sharedInstance] headerTitle];
-                invitationsController.headerSubTitle = self.headerSubTitle;
-                invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
-                [controller.navigationController pushViewController:invitationsController animated:YES];
-            }
-        });
-    }];
+- (void)presentInvitationsFromController:(UIViewController *)controller {
+    
+    
+    GAInvitationsViewController *invitationsController = [[GAInvitationsViewController alloc] init];
+    invitationsController.headerTitle = [[GAConfigManager sharedInstance] stringForConfigKey:@"selectHeaderTitleText" default:@"Spread the Love"];
+    invitationsController.headerSubTitle = self.headerSubTitle;
+    invitationsController.maxNumberOfContacts = [[GAConfigManager sharedInstance] maxNumberOfContacts];
+    invitationsController.selectAllEnabled = [[GAConfigManager sharedInstance] selectAllEnabled];
+    
+    
+    if ([controller isKindOfClass:[UINavigationController class]]) {
+
+        UINavigationController *navCon = (UINavigationController*)controller;
+        [navCon pushViewController:invitationsController animated:YES];
+
+    } else {
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
+        [controller presentViewController:navController animated:YES completion:nil];
+    }
+
+    
 }
 
 @end

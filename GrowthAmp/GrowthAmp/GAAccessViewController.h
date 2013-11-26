@@ -13,13 +13,5 @@
 
 @interface GAAccessViewController : GAViewController
 
-@property (nonatomic, retain) IBOutlet UIView *view;
-@property (nonatomic, weak) id<GGAAccessViewControllerDelegate> delegate;
-
 @end
 
-@protocol GGAAccessViewControllerDelegate <NSObject>
-
-- (void)accessViewController:(GAAccessViewController *)controller didTapOnNextButton:(UIButton *)button;
-
-@end

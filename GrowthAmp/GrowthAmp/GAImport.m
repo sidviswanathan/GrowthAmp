@@ -38,11 +38,13 @@
 
             if (contacts.count < kSampleDataThreshold) {
 
+                [[GAContactsCache sharedCache] invalidate];
                 [GASampleDataImport contactsWithCompletion:completion];
             
             } else {
                 
-                [GAABImport contactsWithCompletion:completion];
+                // Already fetched, use cache
+                 [[GAContactsCache sharedCache] contactsWithCompletion:completion];
             }
             
         }];

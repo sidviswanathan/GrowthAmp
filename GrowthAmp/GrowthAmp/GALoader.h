@@ -33,4 +33,6 @@
 - (void) presentInvitationsFromController:(UIViewController*)controller
                                showSplash:(BOOL)showSplash
                               sessionType:(NSString*)sessionType;
+
+- (void)presentInvitationsFromController:(UIViewController *)controller;
 @end

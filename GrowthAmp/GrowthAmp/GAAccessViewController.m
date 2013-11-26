@@ -9,6 +9,8 @@
 #import "GAAccessViewController.h"
 #import "GADeviceInfo.h"
 #import "GAConfigManager.h"
+#import "GALoader.h"
+
 @interface GAAccessViewController ()
 
 @end
@@ -49,7 +51,9 @@
 }
 
 - (void)didTapOnNextButton {
-    [self.delegate accessViewController:self didTapOnNextButton:self.nextButton];
+    
+    [[GALoader sharedInstance] presentInvitationsFromController:self.navigationController];
+
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GAInvitationsViewController.h"
+#import "GAAccessViewController.h"
 #import "GAContact.h"
 #import "GAPhoneNumber.h"
 #import "GAContactCell.h"
@@ -16,6 +17,7 @@
 #import "GASorter.h"
 #import "GAPhoneFilter.h"
 #import "GAConfigManager.h"
+#import "GAImport.h"
 
 #define kGAHeader @"header"
 
@@ -36,11 +38,10 @@
     UIActivityIndicatorView *_spinner;
 }
 
-- (id)initWithContacts:(NSArray *)contacts {
+- (id)init {
     self = [super init];
     if (self) {
         // Custom initialization
-        self.contacts = [contacts mutableCopy];
         self.items = [[NSMutableArray alloc] init];
         self.selectedContacts = [[NSMutableSet alloc] init];
 
@@ -64,17 +65,42 @@
     }
     self.nextButton.enabled = self.selectedContacts.count > 0;
     
+    [self createSpinnner];
+    
+    [self getContacts];
+    
+    
+    
+    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageContacts
+                                                           type:kTrackingKeyTypeFull
+                                                           info:nil];
+}
+
+-(void)getContacts {
+    
+    // Get the contacts
+    [GAImport contactsWithCompletion:^(NSArray *contacts, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                GAAccessViewController *accessController = [[GAAccessViewController alloc] init];
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accessController];
+                [self presentViewController:navController animated:YES completion:nil];
+            } else {
+                self.contacts = [contacts copy];
+                [self parseContacts];
+            }
+        });
+    }];
+}
+
+-(void)createSpinnner {
+    
     _spinner = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(100,150,120,120)];
     _spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     _spinner.hidesWhenStopped = YES;
     [self.view addSubview:_spinner];
     [_spinner startAnimating];
     
-    [self parseContacts];
-    
-    [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageContacts
-                                                           type:kTrackingKeyTypeFull
-                                                           info:nil];
 }
 
 - (void)parseContacts {

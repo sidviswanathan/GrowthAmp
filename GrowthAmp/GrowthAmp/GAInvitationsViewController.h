@@ -18,7 +18,6 @@
 @property (nonatomic) NSInteger maxNumberOfContacts;
 @property (nonatomic) BOOL selectAllEnabled;
 
-- (id)initWithContacts:(NSArray *)contacts;
 
 @end
 

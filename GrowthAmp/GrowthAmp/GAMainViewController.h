@@ -13,12 +13,5 @@
 
 @interface GAMainViewController : GAViewController
 
-@property (nonatomic, weak) id<GAMainViewControllerDelegate> delegate;
-
-@end
-
-@protocol GAMainViewControllerDelegate <NSObject>
-
-- (void)mainViewController:(GAMainViewController *)controller didTapOnContinueButton:(UIButton *)button;
 
 @end
