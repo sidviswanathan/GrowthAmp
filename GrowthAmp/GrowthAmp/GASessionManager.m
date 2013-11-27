@@ -26,23 +26,17 @@
 
 -(void)startSessionOfType:(NSString*)sessionType {
         
-    if (!_sessionStart) {
 
-        NSLog(@"Start GA Session");
-        _userContact = nil;
-        _numContacts = 0;
-        _sessionID = nil;
-        
-        _sessionType = sessionType;
-        _sessionStart = [NSDate date];
+    NSLog(@"Start GA Session");
+    _userContact = nil;
+    _numContacts = 0;
+    _sessionID = nil;
     
-        [GAAPIClient sendUserInfo];
-    
-    } else {
-        
-        NSLog(@"GA session already started");
+    _sessionType = sessionType;
+    _sessionStart = [NSDate date];
 
-    }
+    [GAAPIClient sendUserInfo];
+
     
     
 }
