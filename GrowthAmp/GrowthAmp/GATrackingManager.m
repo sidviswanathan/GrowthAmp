@@ -11,6 +11,7 @@
 #import "GAConfigManager.h"
 #import "GAAPIClient.h"
 #import "GAUserPreferences.h"
+#import "GASessionManager.h"
 
 @implementation GATrackingManager {
     
@@ -50,28 +51,48 @@
     
     if ([_userActionStore count] > 0) {
 
-      /* Send to server
        
         NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
-                                       @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""]
+                                       @{@"secret" : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+                                         @"user_id"         : [GAUserPreferences getObjectOfTypeKey:kUserIDKey],
+                                         @"customer_id"     : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
+                                         @"session_id"      : [[GASessionManager sharedManager] sessionID],
                                          }];
       
+
+        NSMutableArray *actionArr = [NSMutableArray array];
+        for (GAUserAction *obj in _userActionStore) {
+            
+            NSMutableDictionary *actionDict = [NSMutableDictionary dictionaryWithDictionary:
+                                                @{@"name": obj.name,
+                                                 @"type": obj.actionType,
+                                                 @"timestamp": obj.timestamp,
+                                                  }];
+            
+            [actionDict addEntriesFromDictionary:obj.trackingInfo];
+            
+            [actionArr addObject:actionDict];
+        }
+        
+        [params setObject:actionArr forKey:@"page_keys"];
+        
         [[GAAPIClient sharedClient] POST:kTrackingEndPoint parameters:params
                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
        
+                                     
             if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
        
-                NSLog(@"JSON: %@", responseObject);
+                NSLog(@"JSON Response: %@", responseObject);
             }
-       
+
        
                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                      NSLog(@"Error: %@", error);
                                     
-       // If failure, sechedule again for later
+       
        
                                  }];
-        */
+        
     }
 }
 

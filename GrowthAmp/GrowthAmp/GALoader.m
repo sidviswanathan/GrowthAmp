@@ -104,12 +104,8 @@
                               showSplash:(BOOL)showSplash
                              sessionType:(NSString*)sessionType {
 
-    if (sessionType) {
-        
-        [[GASessionManager sharedManager] setSessionType:sessionType];
-    }
     
-    [[GASessionManager sharedManager] startSession];
+    [[GASessionManager sharedManager] startSessionOfType:sessionType];
     
     if (showSplash) {
         GAMainViewController *mainViewController = [[GAMainViewController alloc] init];

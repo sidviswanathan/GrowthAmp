@@ -99,7 +99,6 @@
     
     
     [[GASessionManager sharedManager] endSession];
-    [[GATrackingManager sharedManager] sendTrackingDataToServer];
 }
 
 - (void)didTapOnNextButton {

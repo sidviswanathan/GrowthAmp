@@ -141,7 +141,7 @@
        success:^(AFHTTPRequestOperation *operation, id responseObject) {
            if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
                
-               NSLog(@"JSON: %@", responseObject);
+               NSLog(@"JSON Response: %@", responseObject);
            }
            
            [GAUserPreferences setObjectOfTypeKey:kCustomerIDKey object:responseObject[@"details"][@"customer_id"]];

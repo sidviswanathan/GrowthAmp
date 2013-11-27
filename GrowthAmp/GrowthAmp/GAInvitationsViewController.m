@@ -18,6 +18,7 @@
 #import "GAPhoneFilter.h"
 #import "GAConfigManager.h"
 #import "GAImport.h"
+#import "GASessionManager.h"
 
 #define kGAHeader @"header"
 
@@ -447,6 +448,9 @@
         [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageSMS
                                                                type:kTrackingKeyTypeFull
                                                                info:nil];
+        
+        [[GASessionManager sharedManager] setNumContacts:[numbers count]];
+        
     } else {
         
         NSLog(@"SMS is not supported!");

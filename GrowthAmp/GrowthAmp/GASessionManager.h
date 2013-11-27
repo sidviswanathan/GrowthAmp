@@ -13,10 +13,12 @@
 
 @property (nonatomic, strong) NSString *sessionType;
 @property (nonatomic, strong) NSDictionary *userContact;
+@property (nonatomic,assign) int numContacts;
+@property (nonatomic,retain) NSString *sessionID;
 
 + (id)sharedManager;
 
--(void)startSession;
+-(void)startSessionOfType:(NSString*)sessionType;
 -(void)endSession;
 
 @end

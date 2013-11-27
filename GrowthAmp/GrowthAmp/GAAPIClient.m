@@ -10,6 +10,8 @@
 #import "GAUserPreferences.h"
 #import "GADeviceInfo.h"
 #import "GAConfigManager.h"
+#import "GASessionManager.h"
+#import "GATrackingManager.h"
 
 @implementation GAAPIClient
 
@@ -22,6 +24,8 @@
     });
     return _sharedObject;
 }
+
+#pragma mark - User/ API
 
 + (void)sendUserInfo {
     
@@ -42,7 +46,7 @@
                                                
                                                if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
                                                    
-                                                   NSLog(@"JSON: %@", responseObject);
+                                                   NSLog(@"JSON Response: %@", responseObject);
                                                }
                                                
                                                [GAUserPreferences setObjectOfTypeKey:kUserIDKey object:responseObject[@"details"][@"user_id"]];
@@ -108,9 +112,69 @@
     }
 }
 
-+ (void)sendSessionInfo:(NSDictionary*)params {
++ (void)sendSessionInfo:(NSDictionary*)aParams {
 
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"secret"          : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+                                                                                  @"user_id"         : [GAUserPreferences getObjectOfTypeKey:kUserIDKey],
+                                                                                  @"customer_id"     : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
+                                                                                  }];
+    
+    [params addEntriesFromDictionary:aParams];
+
+    [GAAPIClient sendSessionInfoRetryingNumberOfTimes:kMaxAPIRetries
+                                        parameters:params
+                                           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                   
+                                                if ([[GAConfigManager sharedInstance] boolForConfigKey:@"enableJSONOutput" default:@"NO"]) {
+                                                    
+                                                    NSLog(@"JSON Response: %@", responseObject);
+                                                }
+                                               
+                                               [[GASessionManager sharedManager] setSessionID:responseObject[@"details"][@"session_id"]];
+                                               [[GATrackingManager sharedManager] sendTrackingDataToServer];
+                                                   
+                                        }
+                                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                NSLog(@"Error: %@", error);
+                                                   
+                                                // If failure, sechedule again for later
+                                                   
+                                            }];
+    
 }
+    
++(void)sendSessionInfoRetryingNumberOfTimes:(NSUInteger)nTimes
+                                 parameters:(NSDictionary*)params
+                                    success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+    {
+        
+        if (nTimes <= 0) {
+            if (failure) {
+                NSError *error = [NSError errorWithDomain: @"sendSessionInfo: Max number of retries reached."
+                                                     code:1 userInfo:nil];
+                failure(nil,error);
+            }
+        } else {
+            
+            NSLog(@"SendSessionInfo Attempt: %d",(kMaxAPIRetries - nTimes)+1);
+            
+
+                
+                [[GAAPIClient sharedClient] POST:kSessionEndPoint parameters:params
+                                         success:success
+                                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                             
+                                             [GAAPIClient sendSessionInfoRetryingNumberOfTimes:nTimes - 1
+                                                                                    parameters:params
+                                                                                       success:success
+                                                                                       failure:failure];
+                                         }];
+            }
+            
+        
+    }
 
 
 @end

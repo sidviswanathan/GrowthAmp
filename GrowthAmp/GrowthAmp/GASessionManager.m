@@ -11,7 +11,7 @@
 
 @implementation GASessionManager {
     
-    NSDate *sessionStart;
+    NSDate *_sessionStart;
 }
 
 + (id)sharedManager
@@ -24,12 +24,17 @@
     return _sharedObject;
 }
 
--(void)startSession {
+-(void)startSessionOfType:(NSString*)sessionType {
         
-    if (!sessionStart) {
+    if (!_sessionStart) {
 
         NSLog(@"Start GA Session");
-        sessionStart = [NSDate date];
+        _userContact = nil;
+        _numContacts = 0;
+        _sessionID = nil;
+        
+        _sessionType = sessionType;
+        _sessionStart = [NSDate date];
     
         [GAAPIClient sendUserInfo];
     
@@ -44,14 +49,16 @@
 
 -(void)endSession {
     
-    NSTimeInterval sessionLength = [[NSDate date] timeIntervalSinceDate:sessionStart];
+    NSTimeInterval sessionLength = [[NSDate date] timeIntervalSinceDate:_sessionStart];
     NSLog(@"sessionLen: %f",sessionLength);
     
+    [GAAPIClient sendSessionInfo:@{@"session_length" : @(sessionLength),
+                                   @"num_invited_contacts" : @(self.numContacts),
+                                   @"session_type" : self.sessionType
+                                   }];
     
-    [GAAPIClient sendSessionInfo:@{@"session_length" : @(sessionLength)}];
     
-    
-    sessionStart = nil;
+    _sessionStart = nil;
 }
 
 
