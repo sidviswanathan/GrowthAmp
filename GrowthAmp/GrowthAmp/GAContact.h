@@ -27,4 +27,6 @@
 @property (nonatomic, strong) NSArray *socialProfiles;
 @property (nonatomic, strong) NSData *imageData;
 
+- (NSDictionary*)dictionary;
+
 @end

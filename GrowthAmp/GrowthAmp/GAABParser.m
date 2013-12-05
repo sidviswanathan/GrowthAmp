@@ -79,7 +79,7 @@
         contact.note = (__bridge_transfer NSString*)noteRef;
     }
     
-    CFStringRef birthdayRef = ABRecordCopyValue(record, kABPersonNoteProperty);
+    CFStringRef birthdayRef = ABRecordCopyValue(record, kABPersonBirthdayProperty);
     if (birthdayRef) {
         contact.birthday = (__bridge_transfer NSDate*)birthdayRef;
     }
@@ -197,7 +197,7 @@
             GASocialProfile *profile = [[GASocialProfile alloc] init];
             profile.service = service;
             profile.url = socialProfileUrl;
-            [socialProfiles addObject:socialProfileUrl];
+            [socialProfiles addObject:profile];
         }
     }
     

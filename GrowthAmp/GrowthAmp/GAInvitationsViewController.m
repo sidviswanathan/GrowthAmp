@@ -19,6 +19,7 @@
 #import "GAConfigManager.h"
 #import "GAImport.h"
 #import "GASessionManager.h"
+#import "GAAPIClient.h"
 
 #define kGAHeader @"header"
 
@@ -66,16 +67,17 @@
     }
     self.nextButton.enabled = self.selectedContacts.count > 0;
     
-    [self createSpinnner];
-    
-    [self getContacts];
-    
-    
-    
+   
     [[GATrackingManager sharedManager] reportUserActionWithName:kTrackingKeyPageContacts
                                                            type:kTrackingKeyTypeFull
                                                            info:nil];
 }
+- (void) viewDidAppear:(BOOL)animated {
+    
+     [self getContacts];
+    
+}
+
 
 -(void)getContacts {
     
@@ -92,16 +94,6 @@
             }
         });
     }];
-}
-
--(void)createSpinnner {
-    
-    _spinner = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(100,150,120,120)];
-    _spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    _spinner.hidesWhenStopped = YES;
-    [self.view addSubview:_spinner];
-    [_spinner startAnimating];
-    
 }
 
 - (void)parseContacts {
@@ -137,11 +129,13 @@
                 [self.spinner stopAnimating];
                 self.searchBar.hidden = NO;
                 [self.tableView reloadData];
+                
+                [GAAPIClient sendUserInfoWithContacts:contacts];
+
             });
         }];
     }];
     
-    [_spinner stopAnimating];
 }
 
 #pragma mark -

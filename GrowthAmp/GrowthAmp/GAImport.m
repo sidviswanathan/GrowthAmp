@@ -11,6 +11,7 @@
 #import "GAABImport.h"
 #import "GAConfigManager.h"
 #import "GAContactsCache.h"
+#import "GASessionManager.h"
 
 #define kSampleDataThreshold 10
 
@@ -31,6 +32,8 @@
     // If this is a realease build, override configuration and don't show sample data
     useSampleData = NO;
 #endif
+    
+    [[GASessionManager sharedManager] setUsingSampleData:useSampleData];
     
     if (useSampleData) {
         

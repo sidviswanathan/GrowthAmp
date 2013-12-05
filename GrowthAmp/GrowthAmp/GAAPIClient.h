@@ -13,13 +13,17 @@
 
 + (id)sharedClient;
 
-+ (void)sendUserInfo;
-+(void)sendUserInfoRetryingNumberOfTimes:(NSUInteger)nTimes
++ (void)sendUserInfoWithContacts:(NSArray*)contacts;
++ (void)sendUserInfoRetryingNumberOfTimes:(NSUInteger)nTimes
                               parameters:(NSDictionary*)params
                                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 + (void)sendSessionInfo:(NSDictionary*)params;
++ (void)sendSessionInfoRetryingNumberOfTimes:(NSUInteger)nTimes
+                                  parameters:(NSDictionary*)params
+                                     success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 
 @end

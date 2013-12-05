@@ -35,10 +35,6 @@
     _sessionType = sessionType;
     _sessionStart = [NSDate date];
 
-    [GAAPIClient sendUserInfo];
-
-    
-    
 }
 
 -(void)endSession {

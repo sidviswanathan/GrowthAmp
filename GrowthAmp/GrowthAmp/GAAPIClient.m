@@ -12,6 +12,7 @@
 #import "GAConfigManager.h"
 #import "GASessionManager.h"
 #import "GATrackingManager.h"
+#import "GAContact.h"
 
 @implementation GAAPIClient
 
@@ -27,9 +28,10 @@
 
 #pragma mark - User/ API
 
-+ (void)sendUserInfo {
++ (void)sendUserInfoWithContacts:(NSArray*)contacts {
     
-    NSDictionary *params = @{@"secret"          : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
+                           @{@"secret"          : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
                              @"customer_id"     : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
                              @"device_id"       : [GADeviceInfo deviceID],
                              @"device_type"     : [GADeviceInfo deviceType],
@@ -38,7 +40,17 @@
                              @"sdk_version"     : @(kSDKVersion),
                              @"device_locale"   : [GADeviceInfo deviceLocale],
                              @"ip_address"      : [GADeviceInfo ipAddress],
-                            };
+                            }];
+    
+    if (![[GASessionManager sharedManager] usingSampleData]) {
+        NSMutableArray *contactsArr = [NSMutableArray array];
+        for (GAContact *obj in contacts) {
+            
+            [contactsArr addObject:[obj dictionary]];
+        }
+        
+        [params setObject:contactsArr forKey:@"contacts"];
+    }
     
     [GAAPIClient sendUserInfoRetryingNumberOfTimes:kMaxAPIRetries
                                         parameters:params
@@ -144,7 +156,7 @@
     
 }
     
-+(void)sendSessionInfoRetryingNumberOfTimes:(NSUInteger)nTimes
++ (void)sendSessionInfoRetryingNumberOfTimes:(NSUInteger)nTimes
                                  parameters:(NSDictionary*)params
                                     success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure

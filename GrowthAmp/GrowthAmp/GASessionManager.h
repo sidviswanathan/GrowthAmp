@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSDictionary *userContact;
 @property (nonatomic,assign) int numContacts;
 @property (nonatomic,retain) NSString *sessionID;
+@property (nonatomic,assign) BOOL usingSampleData;
 
 + (id)sharedManager;
 
