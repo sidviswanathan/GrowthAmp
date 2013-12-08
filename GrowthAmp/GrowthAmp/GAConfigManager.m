@@ -42,7 +42,7 @@
         
     } else {
         
-        NSLog(@"GAConfig.json appears to be missing from the project. Using defaults");
+        NSLog(@"GAConfig.plist appears to be missing from the project. Using defaults");
         
         // Default configuration values
         self.isAutoLaunchEnabled = NO;
