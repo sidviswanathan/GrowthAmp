@@ -60,7 +60,11 @@
     
     NSString *imageName = [self.configDictionary objectForKey:key];
     
-    UIImage *result = [UIImage imageNamed:imageName];
+    UIImage *result = nil;
+    if (![imageName isEqualToString:@""]) {
+        
+        result = [UIImage imageNamed:imageName];
+    }
     
     if (!result) {
         

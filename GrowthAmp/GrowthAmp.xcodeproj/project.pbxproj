@@ -26,6 +26,7 @@
 		373A585F17FB2BF0008214DF /* Access.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373A585E17FB1A41008214DF /* Access.xib */; };
 		373A586217FB388D008214DF /* UIColor+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 373A586017FB388D008214DF /* UIColor+HexString.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		373A586317FB388D008214DF /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 373A586117FB388D008214DF /* UIColor+HexString.m */; };
+		3755EB32185BBC6B008FF92D /* GAConfig.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37B19626185B91FD00BBBCAF /* GAConfig.plist */; };
 		37627492182823BB001F5B67 /* GASessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 37627490182823BB001F5B67 /* GASessionManager.h */; };
 		37627493182823BB001F5B67 /* GASessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37627491182823BB001F5B67 /* GASessionManager.m */; };
 		378F505717ED1F6E00DEFB48 /* GAConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723B54F17ED0A8E0012DB12 /* GAConfigManager.m */; };
@@ -232,6 +233,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3755EB31185BBC59008FF92D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3755EB32185BBC6B008FF92D /* GAConfig.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1DA32DC179371BD003BBCD1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -971,6 +982,7 @@
 				A1DA32DA179371BD003BBCD1 /* Sources */,
 				A1DA32DB179371BD003BBCD1 /* Frameworks */,
 				A1DA32DC179371BD003BBCD1 /* CopyFiles */,
+				3755EB31185BBC59008FF92D /* CopyFiles */,
 				A1DA33091793720F003BBCD1 /* Headers */,
 				A1DA330B179372C6003BBCD1 /* Prepare Framework */,
 			);
