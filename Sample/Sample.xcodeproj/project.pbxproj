@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		378F505A17F0F57100DEFB48 /* GAConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378F505917F0F57100DEFB48 /* GAConfig.plist */; };
 		378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F505E17F10AAD00DEFB48 /* Header_test.png */; };
 		378F506217F110EA00DEFB48 /* background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506017F110EA00DEFB48 /* background_test.png */; };
 		378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506117F110EA00DEFB48 /* splash_background_test.png */; };
@@ -83,7 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		378F505917F0F57100DEFB48 /* GAConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GAConfig.plist; sourceTree = "<group>"; };
 		378F505E17F10AAD00DEFB48 /* Header_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header_test.png; sourceTree = "<group>"; };
 		378F506017F110EA00DEFB48 /* background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_test.png; sourceTree = "<group>"; };
 		378F506117F110EA00DEFB48 /* splash_background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_background_test.png; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				A1377C6417B8020B003C81D0 /* TestViewController.h */,
 				A1377C6517B8020B003C81D0 /* TestViewController.m */,
 				A16534E7179384A40039EF26 /* Supporting Files */,
-				378F505917F0F57100DEFB48 /* GAConfig.plist */,
 				378F505D17F10AAD00DEFB48 /* images */,
 			);
 			path = Sample;
@@ -361,7 +358,6 @@
 			files = (
 				A16534EB179384A40039EF26 /* InfoPlist.strings in Resources */,
 				A16534F3179384A40039EF26 /* Default.png in Resources */,
-				378F505A17F0F57100DEFB48 /* GAConfig.plist in Resources */,
 				378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */,
 				A16534F5179384A40039EF26 /* Default@2x.png in Resources */,
 				378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */,

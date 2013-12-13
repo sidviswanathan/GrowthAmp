@@ -45,6 +45,7 @@
 		37A11B3718199BC500A79F7C /* GATrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3518199BC500A79F7C /* GATrackingManager.m */; };
 		37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A11B3A18199C8100A79F7C /* GAUserAction.h */; };
 		37A11B3D18199C8100A79F7C /* GAUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3B18199C8100A79F7C /* GAUserAction.m */; };
+		37B19639185BADE200BBBCAF /* GALoaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37BCFBE0180466A3001EB2F5 /* GASampleDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 37BCFBDE180466A3001EB2F5 /* GASampleDataImport.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37BCFBE1180466A3001EB2F5 /* GASampleDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BCFBDF180466A3001EB2F5 /* GASampleDataImport.m */; };
 		37BCFBE4180466D9001EB2F5 /* GAImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 37BCFBE2180466D8001EB2F5 /* GAImport.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -212,7 +213,6 @@
 		A1DA33461793759F003BBCD1 /* UIAlertView+GABlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA33441793759F003BBCD1 /* UIAlertView+GABlock.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1DA33471793759F003BBCD1 /* UIAlertView+GABlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA33451793759F003BBCD1 /* UIAlertView+GABlock.m */; };
 		A1DA334A1793760E003BBCD1 /* GAConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA33481793760E003BBCD1 /* GAConstants.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1DEE7A217AEEFB6004DA4FC /* GAPhoneFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DEE7A017AEEFB6004DA4FC /* GAPhoneFilter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1DEE7A317AEEFB6004DA4FC /* GAPhoneFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DEE7A117AEEFB6004DA4FC /* GAPhoneFilter.m */; };
 		A1DEE7A617AEF055004DA4FC /* GAFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DEE7A417AEF055004DA4FC /* GAFilter.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -280,6 +280,7 @@
 		37A11B3518199BC500A79F7C /* GATrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GATrackingManager.m; sourceTree = "<group>"; };
 		37A11B3A18199C8100A79F7C /* GAUserAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAUserAction.h; sourceTree = "<group>"; };
 		37A11B3B18199C8100A79F7C /* GAUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAUserAction.m; sourceTree = "<group>"; };
+		37B19626185B91FD00BBBCAF /* GAConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GAConfig.plist; sourceTree = "<group>"; };
 		37BCFBDE180466A3001EB2F5 /* GASampleDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GASampleDataImport.h; sourceTree = "<group>"; };
 		37BCFBDF180466A3001EB2F5 /* GASampleDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GASampleDataImport.m; sourceTree = "<group>"; };
 		37BCFBE2180466D8001EB2F5 /* GAImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAImport.h; sourceTree = "<group>"; };
@@ -764,6 +765,7 @@
 		A1DA32D5179371BD003BBCD1 = {
 			isa = PBXGroup;
 			children = (
+				37B19626185B91FD00BBBCAF /* GAConfig.plist */,
 				A1DA32E3179371BD003BBCD1 /* GrowthAmp */,
 				A1DA32F8179371BD003BBCD1 /* GrowthAmpTests */,
 				A16CDB5617AC6D5E00FB4F96 /* GrowthAmpResources */,
@@ -938,8 +940,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */,
+				37B19639185BADE200BBBCAF /* GALoaderDelegate.h in Headers */,
 				37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */,
-				A1DA334D17937697003BBCD1 /* GALoaderDelegate.h in Headers */,
 				37C98A5B1855047600581860 /* UIProgressView+AFNetworking.h in Headers */,
 				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
 				37627492182823BB001F5B67 /* GASessionManager.h in Headers */,
@@ -1208,7 +1210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n";
 		};
 		A1DA33121793737E003BBCD1 /* Build Framework */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1452,6 +1454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
+				MACH_O_TYPE = mh_object;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)/Headers";
@@ -1467,6 +1470,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
+				MACH_O_TYPE = mh_object;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)/Headers";
