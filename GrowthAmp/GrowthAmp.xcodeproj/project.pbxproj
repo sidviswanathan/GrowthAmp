@@ -187,11 +187,6 @@
 		A16CDBC117ACDBD000FB4F96 /* GACell.m in Sources */ = {isa = PBXBuildFile; fileRef = A16CDBBF17ACDBD000FB4F96 /* GACell.m */; };
 		A1DA32E2179371BD003BBCD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DA32E1179371BD003BBCD1 /* Foundation.framework */; };
 		A1DA32E7179371BD003BBCD1 /* GrowthAmp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1DA32E6179371BD003BBCD1 /* GrowthAmp.h */; };
-		A1DA32F1179371BD003BBCD1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DA32F0179371BD003BBCD1 /* SenTestingKit.framework */; };
-		A1DA32F4179371BD003BBCD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DA32E1179371BD003BBCD1 /* Foundation.framework */; };
-		A1DA32F7179371BD003BBCD1 /* libGrowthAmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DA32DE179371BD003BBCD1 /* libGrowthAmp.a */; };
-		A1DA32FD179371BD003BBCD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1DA32FB179371BD003BBCD1 /* InfoPlist.strings */; };
-		A1DA3300179371BD003BBCD1 /* GrowthAmpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA32FF179371BD003BBCD1 /* GrowthAmpTests.m */; };
 		A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA32E6179371BD003BBCD1 /* GrowthAmp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1DA331717937468003BBCD1 /* GAContact.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA331517937468003BBCD1 /* GAContact.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1DA331817937468003BBCD1 /* GAContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DA331617937468003BBCD1 /* GAContact.m */; };
@@ -234,13 +229,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = A16CDB5217AC6D5E00FB4F96;
 			remoteInfo = GrowthAmpResources;
-		};
-		A1DA32F5179371BD003BBCD1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1DA32D6179371BD003BBCD1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A1DA32DD179371BD003BBCD1;
-			remoteInfo = GrowthAmp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -429,12 +417,7 @@
 		A1DA32E1179371BD003BBCD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1DA32E5179371BD003BBCD1 /* GrowthAmp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrowthAmp-Prefix.pch"; sourceTree = "<group>"; };
 		A1DA32E6179371BD003BBCD1 /* GrowthAmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrowthAmp.h; sourceTree = "<group>"; };
-		A1DA32EF179371BD003BBCD1 /* GrowthAmpTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowthAmpTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DA32F0179371BD003BBCD1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		A1DA32FA179371BD003BBCD1 /* GrowthAmpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrowthAmpTests-Info.plist"; sourceTree = "<group>"; };
-		A1DA32FC179371BD003BBCD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A1DA32FE179371BD003BBCD1 /* GrowthAmpTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrowthAmpTests.h; sourceTree = "<group>"; };
-		A1DA32FF179371BD003BBCD1 /* GrowthAmpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowthAmpTests.m; sourceTree = "<group>"; };
 		A1DA331517937468003BBCD1 /* GAContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAContact.h; sourceTree = "<group>"; };
 		A1DA331617937468003BBCD1 /* GAContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAContact.m; sourceTree = "<group>"; };
 		A1DA33191793748E003BBCD1 /* GAAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAAddress.h; sourceTree = "<group>"; };
@@ -480,16 +463,6 @@
 				37974C7A17E26CDA00BB4E02 /* CoreTelephony.framework in Frameworks */,
 				A1653526179385F10039EF26 /* AddressBook.framework in Frameworks */,
 				A1DA32E2179371BD003BBCD1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1DA32EB179371BD003BBCD1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1DA32F1179371BD003BBCD1 /* SenTestingKit.framework in Frameworks */,
-				A1DA32F4179371BD003BBCD1 /* Foundation.framework in Frameworks */,
-				A1DA32F7179371BD003BBCD1 /* libGrowthAmp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,7 +740,6 @@
 			children = (
 				37B19626185B91FD00BBBCAF /* GAConfig.plist */,
 				A1DA32E3179371BD003BBCD1 /* GrowthAmp */,
-				A1DA32F8179371BD003BBCD1 /* GrowthAmpTests */,
 				A16CDB5617AC6D5E00FB4F96 /* GrowthAmpResources */,
 				37A8886B1818717C00709D78 /* Vendors */,
 				A1DA32E0179371BD003BBCD1 /* Frameworks */,
@@ -779,7 +751,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DA32DE179371BD003BBCD1 /* libGrowthAmp.a */,
-				A1DA32EF179371BD003BBCD1 /* GrowthAmpTests.octest */,
 				A16CDB5317AC6D5E00FB4F96 /* GrowthAmpResources.bundle */,
 			);
 			name = Products;
@@ -816,25 +787,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DA32E5179371BD003BBCD1 /* GrowthAmp-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A1DA32F8179371BD003BBCD1 /* GrowthAmpTests */ = {
-			isa = PBXGroup;
-			children = (
-				A1DA32FE179371BD003BBCD1 /* GrowthAmpTests.h */,
-				A1DA32FF179371BD003BBCD1 /* GrowthAmpTests.m */,
-				A1DA32F9179371BD003BBCD1 /* Supporting Files */,
-			);
-			path = GrowthAmpTests;
-			sourceTree = "<group>";
-		};
-		A1DA32F9179371BD003BBCD1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A1DA32FA179371BD003BBCD1 /* GrowthAmpTests-Info.plist */,
-				A1DA32FB179371BD003BBCD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1035,25 +987,6 @@
 			productReference = A1DA32DE179371BD003BBCD1 /* libGrowthAmp.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A1DA32EE179371BD003BBCD1 /* GrowthAmpTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A1DA3306179371BD003BBCD1 /* Build configuration list for PBXNativeTarget "GrowthAmpTests" */;
-			buildPhases = (
-				A1DA32EA179371BD003BBCD1 /* Sources */,
-				A1DA32EB179371BD003BBCD1 /* Frameworks */,
-				A1DA32EC179371BD003BBCD1 /* Resources */,
-				A1DA32ED179371BD003BBCD1 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A1DA32F6179371BD003BBCD1 /* PBXTargetDependency */,
-			);
-			name = GrowthAmpTests;
-			productName = GrowthAmpTests;
-			productReference = A1DA32EF179371BD003BBCD1 /* GrowthAmpTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1077,7 +1010,6 @@
 			projectRoot = "";
 			targets = (
 				A1DA32DD179371BD003BBCD1 /* GrowthAmp */,
-				A1DA32EE179371BD003BBCD1 /* GrowthAmpTests */,
 				A1DA330C17937337003BBCD1 /* Framework */,
 				A16CDB5217AC6D5E00FB4F96 /* GrowthAmpResources */,
 			);
@@ -1174,30 +1106,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1DA32EC179371BD003BBCD1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1DA32FD179371BD003BBCD1 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A1DA32ED179371BD003BBCD1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		A1DA330B179372C6003BBCD1 /* Prepare Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -1293,14 +1204,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1DA32EA179371BD003BBCD1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1DA3300179371BD003BBCD1 /* GrowthAmpTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1314,11 +1217,6 @@
 			target = A16CDB5217AC6D5E00FB4F96 /* GrowthAmpResources */;
 			targetProxy = A16CDB6017AC6E9800FB4F96 /* PBXContainerItemProxy */;
 		};
-		A1DA32F6179371BD003BBCD1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1DA32DD179371BD003BBCD1 /* GrowthAmp */;
-			targetProxy = A1DA32F5179371BD003BBCD1 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1326,14 +1224,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A16CDB5A17AC6D5E00FB4F96 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A1DA32FB179371BD003BBCD1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1DA32FC179371BD003BBCD1 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1478,36 +1368,6 @@
 			};
 			name = Release;
 		};
-		A1DA3307179371BD003BBCD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
-				INFOPLIST_FILE = "GrowthAmpTests/GrowthAmpTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		A1DA3308179371BD003BBCD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
-				INFOPLIST_FILE = "GrowthAmpTests/GrowthAmpTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		A1DA330E17937337003BBCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1550,15 +1410,6 @@
 			buildConfigurations = (
 				A1DA3304179371BD003BBCD1 /* Debug */,
 				A1DA3305179371BD003BBCD1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A1DA3306179371BD003BBCD1 /* Build configuration list for PBXNativeTarget "GrowthAmpTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1DA3307179371BD003BBCD1 /* Debug */,
-				A1DA3308179371BD003BBCD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
