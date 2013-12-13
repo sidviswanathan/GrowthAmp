@@ -20,6 +20,24 @@
 #import "GASessionManager.h"
 #import "GAContactsCache.h"
 
+@protocol GALoaderDelegate <NSObject>
+
+@end
+
+@interface GALoader ()
+
+@property (nonatomic, weak) id<GALoaderDelegate> delegate;
+@property (nonatomic, weak) UIViewController *mainViewController;
+
+@property (nonatomic, strong) NSString *navigationTitle;
+@property (nonatomic, strong) NSString *headerTitle;
+@property (nonatomic, strong) NSString *headerSubTitle;
+
+
+@property (nonatomic, strong) NSArray *devices;
+
+@end
+
 @implementation GALoader
 
 + (GALoader *)sharedInstance {

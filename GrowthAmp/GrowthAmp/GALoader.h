@@ -7,21 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GALoaderDelegate.h"
 #import <UIKit/UIKit.h>
 
 @interface GALoader : NSObject
 
-@property (nonatomic, weak) id<GALoaderDelegate> delegate;
-@property (nonatomic, weak) UIViewController *mainViewController;
-
-@property (nonatomic, strong) NSString *navigationTitle;
-@property (nonatomic, strong) NSString *headerTitle;
-@property (nonatomic, strong) NSString *headerSubTitle;
-
 @property (nonatomic, strong) NSDictionary *userContact;
-
-@property (nonatomic, strong) NSArray *devices;
 
 + (GALoader*) sharedInstance;
 
@@ -35,4 +25,5 @@
                               sessionType:(NSString*)sessionType;
 
 - (void)presentInvitationsFromController:(UIViewController *)controller;
+
 @end

@@ -45,7 +45,6 @@
 		37A11B3718199BC500A79F7C /* GATrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3518199BC500A79F7C /* GATrackingManager.m */; };
 		37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A11B3A18199C8100A79F7C /* GAUserAction.h */; };
 		37A11B3D18199C8100A79F7C /* GAUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A11B3B18199C8100A79F7C /* GAUserAction.m */; };
-		37B19639185BADE200BBBCAF /* GALoaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37BCFBE0180466A3001EB2F5 /* GASampleDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 37BCFBDE180466A3001EB2F5 /* GASampleDataImport.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		37BCFBE1180466A3001EB2F5 /* GASampleDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BCFBDF180466A3001EB2F5 /* GASampleDataImport.m */; };
 		37BCFBE4180466D9001EB2F5 /* GAImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 37BCFBE2180466D8001EB2F5 /* GAImport.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -439,7 +438,6 @@
 		A1DA33441793759F003BBCD1 /* UIAlertView+GABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+GABlock.h"; sourceTree = "<group>"; };
 		A1DA33451793759F003BBCD1 /* UIAlertView+GABlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+GABlock.m"; sourceTree = "<group>"; };
 		A1DA33481793760E003BBCD1 /* GAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConstants.h; sourceTree = "<group>"; };
-		A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GALoaderDelegate.h; sourceTree = "<group>"; };
 		A1DEE79F17AEEF3A004DA4FC /* GAFilterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAFilterProtocol.h; sourceTree = "<group>"; };
 		A1DEE7A017AEEFB6004DA4FC /* GAPhoneFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPhoneFilter.h; sourceTree = "<group>"; };
 		A1DEE7A117AEEFB6004DA4FC /* GAPhoneFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPhoneFilter.m; sourceTree = "<group>"; };
@@ -816,7 +814,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DEE79E17AEEF2C004DA4FC /* Filters */,
-				A1DA334C17937626003BBCD1 /* GALoaderDelegate.h */,
 				A1DA3329179374C6003BBCD1 /* GALoader.h */,
 				A1DA332A179374C6003BBCD1 /* GALoader.m */,
 				37BCFBE2180466D8001EB2F5 /* GAImport.h */,
@@ -892,7 +889,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DA330A17937214003BBCD1 /* GrowthAmp.h in Headers */,
-				37B19639185BADE200BBBCAF /* GALoaderDelegate.h in Headers */,
 				37A11B3C18199C8100A79F7C /* GAUserAction.h in Headers */,
 				37C98A5B1855047600581860 /* UIProgressView+AFNetworking.h in Headers */,
 				37974C7717E2524600BB4E02 /* GADeviceInfo.h in Headers */,
@@ -1344,6 +1340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1360,6 +1357,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthAmp/GrowthAmp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
