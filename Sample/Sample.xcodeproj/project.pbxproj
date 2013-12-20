@@ -58,13 +58,6 @@
 			remoteGlobalIDString = A1DA32DE179371BD003BBCD1;
 			remoteInfo = GrowthAmp;
 		};
-		A165351D179384C90039EF26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A1DA32EF179371BD003BBCD1;
-			remoteInfo = GrowthAmpTests;
-		};
 		A1653523179384E50039EF26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
@@ -248,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				A165351C179384C90039EF26 /* libGrowthAmp.a */,
-				A165351E179384C90039EF26 /* GrowthAmpTests.octest */,
 				A16CDBBA17AC718300FB4F96 /* GrowthAmpResources.bundle */,
 			);
 			name = Products;
@@ -333,13 +325,6 @@
 			fileType = archive.ar;
 			path = libGrowthAmp.a;
 			remoteRef = A165351B179384C90039EF26 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A165351E179384C90039EF26 /* GrowthAmpTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GrowthAmpTests.octest;
-			remoteRef = A165351D179384C90039EF26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A16CDBBA17AC718300FB4F96 /* GrowthAmpResources.bundle */ = {
@@ -521,6 +506,7 @@
 		A1653510179384A40039EF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
@@ -535,6 +521,7 @@
 		A1653511179384A40039EF26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
