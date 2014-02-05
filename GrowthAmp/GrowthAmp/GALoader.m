@@ -19,6 +19,7 @@
 #import "GAConfigManager.h"
 #import "GASessionManager.h"
 #import "GAContactsCache.h"
+#import "GAConstants.h"
 
 @protocol GALoaderDelegate <NSObject>
 

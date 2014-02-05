@@ -13,6 +13,7 @@
 #import "GASessionManager.h"
 #import "GATrackingManager.h"
 #import "GAContact.h"
+#import "GAConstants.h"
 
 @implementation GAAPIClient
 

@@ -36,5 +36,5 @@ typedef enum {
     GACellPositionBottom = 0x2
 } GACellPosition;
 
-#define kMaxRecipients 50
+#define kMaxRecipients 10
 

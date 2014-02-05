@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>secret</key>
+	<string>YOUR_SECRET_KEY_HERE</string>
+	<key>useSampleData</key>
+	<true/>
+	<key>enableJSONOutput</key>
+	<true/>
+	<key>isAutoLaunchEnabled</key>
+	<true/>
+	<key>appLaunchedUntil1stAutoLaunch</key>
+	<integer>3</integer>
+	<key>daysUntil2ndAutoLaunch</key>
+	<integer>30</integer>
+	<key>selectAllEnabled</key>
+	<false/>
+	<key>maxNumberOfContacts</key>
+	<integer>50</integer>
+	<key>splashImageName</key>
+	<string></string>
+	<key>splashTitleText</key>
+	<string>Spread the Love!!</string>
+	<key>splashTitleTextSize</key>
+	<string></string>
+	<key>splashBodyText</key>
+	<string>Invite your friends to join Mosaic today.</string>
+	<key>splashBodyTextSize</key>
+	<string></string>
+	<key>splashTextColor</key>
+	<string>#FFFFFF</string>
+	<key>splashContinueButtonImageName</key>
+	<string></string>
+	<key>splashContinueButtonTextColor</key>
+	<string>#FFFFFF</string>
+	<key>navBarImageName</key>
+	<string></string>
+	<key>navBarTextColor</key>
+	<string></string>
+	<key>selectBGImageName</key>
+	<string></string>
+	<key>selectBGColor</key>
+	<string></string>
+	<key>selectHeaderTitleText</key>
+	<string>Spread the Mosaic Love</string>
+	<key>selectHeaderSubtitleText</key>
+	<string></string>
+	<key>checkMarkImageName</key>
+	<string></string>
+	<key>nextButtonImageName</key>
+	<string></string>
+	<key>selectButtonImageName</key>
+	<string></string>
+	<key>cancelButtonImageName</key>
+	<string></string>
+	<key>invitationText</key>
+	<string>I&apos;m using a new app called Mosaic to create beautiful photo books, you can get the app here: http://bit.ly/sample</string>
+</dict>
+</plist>

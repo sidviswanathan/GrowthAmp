@@ -16,7 +16,6 @@
 		37A11B2918187D5700A79F7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A11B2818187D5700A79F7C /* SystemConfiguration.framework */; };
 		37A11B2B18187D9C00A79F7C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A11B2A18187D9C00A79F7C /* MessageUI.framework */; };
 		A12C3B6C179386AD00D3B808 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12C3B681793869C00D3B808 /* AddressBook.framework */; };
-		A12C3B6F1793891000D3B808 /* libGrowthAmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A165351C179384C90039EF26 /* libGrowthAmp.a */; };
 		A1377C6617B8020B003C81D0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1377C6517B8020B003C81D0 /* TestViewController.m */; };
 		A16534E1179384A40039EF26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16534E0179384A40039EF26 /* UIKit.framework */; };
 		A16534E3179384A40039EF26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16534E2179384A40039EF26 /* Foundation.framework */; };
@@ -33,44 +32,15 @@
 		A1653509179384A40039EF26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1653507179384A40039EF26 /* InfoPlist.strings */; };
 		A165350C179384A40039EF26 /* SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A165350B179384A40039EF26 /* SampleTests.m */; };
 		A16CDAF417AC64AA00FB4F96 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CDAF317AC64AA00FB4F96 /* CoreImage.framework */; };
-		A16CDBBC17AC732000FB4F96 /* GrowthAmpResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A16CDBBA17AC718300FB4F96 /* GrowthAmpResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		37974C5E17E0E11100BB4E02 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A16CDB5217AC6D5E00FB4F96;
-			remoteInfo = GrowthAmpResources;
-		};
 		A1653502179384A40039EF26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A16534D5179384A40039EF26 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A16534DC179384A40039EF26;
 			remoteInfo = Sample;
-		};
-		A165351B179384C90039EF26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A1DA32DE179371BD003BBCD1;
-			remoteInfo = GrowthAmp;
-		};
-		A1653523179384E50039EF26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A1DA32DD179371BD003BBCD1;
-			remoteInfo = GrowthAmp;
-		};
-		A16CDBB917AC718300FB4F96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A16CDB5317AC6D5E00FB4F96;
-			remoteInfo = GrowthAmpResources;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -105,7 +75,6 @@
 		A1653508179384A40039EF26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A165350A179384A40039EF26 /* SampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleTests.h; sourceTree = "<group>"; };
 		A165350B179384A40039EF26 /* SampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleTests.m; sourceTree = "<group>"; };
-		A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GrowthAmp.xcodeproj; path = ../GrowthAmp/GrowthAmp.xcodeproj; sourceTree = "<group>"; };
 		A16CDAF317AC64AA00FB4F96 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A1F91B5617AD8EB200556892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +90,6 @@
 				37A11B2518187D4600A79F7C /* CFNetwork.framework in Frameworks */,
 				37974C7C17E271C900BB4E02 /* CoreTelephony.framework in Frameworks */,
 				A16CDAF417AC64AA00FB4F96 /* CoreImage.framework in Frameworks */,
-				A12C3B6F1793891000D3B808 /* libGrowthAmp.a in Frameworks */,
 				A12C3B6C179386AD00D3B808 /* AddressBook.framework in Frameworks */,
 				A16534E1179384A40039EF26 /* UIKit.framework in Frameworks */,
 				A16534E3179384A40039EF26 /* Foundation.framework in Frameworks */,
@@ -174,7 +142,6 @@
 		A16534DF179384A40039EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */,
 				37A11B2A18187D9C00A79F7C /* MessageUI.framework */,
 				37A11B2818187D5700A79F7C /* SystemConfiguration.framework */,
 				37A11B2618187D4E00A79F7C /* Security.framework */,
@@ -237,15 +204,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A1653516179384C90039EF26 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A165351C179384C90039EF26 /* libGrowthAmp.a */,
-				A16CDBBA17AC718300FB4F96 /* GrowthAmpResources.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,8 +218,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				37974C5F17E0E11100BB4E02 /* PBXTargetDependency */,
-				A1653524179384E50039EF26 /* PBXTargetDependency */,
 			);
 			name = Sample;
 			productName = Sample;
@@ -305,12 +261,6 @@
 			mainGroup = A16534D4179384A40039EF26;
 			productRefGroup = A16534DE179384A40039EF26 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A1653516179384C90039EF26 /* Products */;
-					ProjectRef = A1653515179384C90039EF26 /* GrowthAmp.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A16534DC179384A40039EF26 /* Sample */,
@@ -318,23 +268,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A165351C179384C90039EF26 /* libGrowthAmp.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGrowthAmp.a;
-			remoteRef = A165351B179384C90039EF26 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A16CDBBA17AC718300FB4F96 /* GrowthAmpResources.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GrowthAmpResources.bundle;
-			remoteRef = A16CDBB917AC718300FB4F96 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A16534DB179384A40039EF26 /* Resources */ = {
@@ -348,7 +281,6 @@
 				378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */,
 				378F506217F110EA00DEFB48 /* background_test.png in Resources */,
 				A16534F7179384A40039EF26 /* Default-568h@2x.png in Resources */,
-				A16CDBBC17AC732000FB4F96 /* GrowthAmpResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,20 +332,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		37974C5F17E0E11100BB4E02 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GrowthAmpResources;
-			targetProxy = 37974C5E17E0E11100BB4E02 /* PBXContainerItemProxy */;
-		};
 		A1653503179384A40039EF26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A16534DC179384A40039EF26 /* Sample */;
 			targetProxy = A1653502179384A40039EF26 /* PBXContainerItemProxy */;
-		};
-		A1653524179384E50039EF26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GrowthAmp;
-			targetProxy = A1653523179384E50039EF26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

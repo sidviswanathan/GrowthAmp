@@ -12,6 +12,7 @@
 #import "GAAPIClient.h"
 #import "GAUserPreferences.h"
 #import "GASessionManager.h"
+#import "GAConstants.h"
 
 @implementation GATrackingManager {
     
