@@ -12,7 +12,6 @@
 #import "GAAPIClient.h"
 #import "GAUserPreferences.h"
 #import "GADeviceInfo.h"
-#import "GAConstants.h"
 
 @implementation GAConfigManager
 

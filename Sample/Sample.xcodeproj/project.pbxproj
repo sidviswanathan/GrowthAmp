@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370CCDBE18A1D24A000BF8C2 /* GAConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370CCDBD18A1D24A000BF8C2 /* GAConfig.plist */; };
+		376DDB7B18A33DA7004F238E /* GrowthAmpResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 376DDB7918A33DA7004F238E /* GrowthAmpResources.bundle */; };
+		376DDB7D18A33F30004F238E /* libGrowthAmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DDB7C18A33F30004F238E /* libGrowthAmp.a */; };
 		378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F505E17F10AAD00DEFB48 /* Header_test.png */; };
 		378F506217F110EA00DEFB48 /* background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506017F110EA00DEFB48 /* background_test.png */; };
 		378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 378F506117F110EA00DEFB48 /* splash_background_test.png */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370CCDBD18A1D24A000BF8C2 /* GAConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GAConfig.plist; sourceTree = "<group>"; };
+		376DDB7918A33DA7004F238E /* GrowthAmpResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GrowthAmpResources.bundle; path = ../GrowthAmpSDK/GrowthAmpResources.bundle; sourceTree = "<group>"; };
+		376DDB7C18A33F30004F238E /* libGrowthAmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGrowthAmp.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/GrowthAmp-eyhqtwanpbtixvgzzczopjwdhngy/Build/Products/Debug-iphoneos/libGrowthAmp.a"; sourceTree = "<group>"; };
 		378F505E17F10AAD00DEFB48 /* Header_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Header_test.png; sourceTree = "<group>"; };
 		378F506017F110EA00DEFB48 /* background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_test.png; sourceTree = "<group>"; };
 		378F506117F110EA00DEFB48 /* splash_background_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_background_test.png; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 				A16CDAF417AC64AA00FB4F96 /* CoreImage.framework in Frameworks */,
 				A12C3B6C179386AD00D3B808 /* AddressBook.framework in Frameworks */,
 				A16534E1179384A40039EF26 /* UIKit.framework in Frameworks */,
+				376DDB7D18A33F30004F238E /* libGrowthAmp.a in Frameworks */,
 				A16534E3179384A40039EF26 /* Foundation.framework in Frameworks */,
 				A16534E5179384A40039EF26 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -142,6 +149,8 @@
 		A16534DF179384A40039EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				376DDB7C18A33F30004F238E /* libGrowthAmp.a */,
+				376DDB7918A33DA7004F238E /* GrowthAmpResources.bundle */,
 				37A11B2A18187D9C00A79F7C /* MessageUI.framework */,
 				37A11B2818187D5700A79F7C /* SystemConfiguration.framework */,
 				37A11B2618187D4E00A79F7C /* Security.framework */,
@@ -160,6 +169,7 @@
 		A16534E6179384A40039EF26 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				370CCDBD18A1D24A000BF8C2 /* GAConfig.plist */,
 				A16534EF179384A40039EF26 /* AppDelegate.h */,
 				A16534F0179384A40039EF26 /* AppDelegate.m */,
 				A1377C6417B8020B003C81D0 /* TestViewController.h */,
@@ -274,11 +284,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376DDB7B18A33DA7004F238E /* GrowthAmpResources.bundle in Resources */,
 				A16534EB179384A40039EF26 /* InfoPlist.strings in Resources */,
 				A16534F3179384A40039EF26 /* Default.png in Resources */,
 				378F506317F110EA00DEFB48 /* splash_background_test.png in Resources */,
 				A16534F5179384A40039EF26 /* Default@2x.png in Resources */,
 				378F505F17F10AAD00DEFB48 /* Header_test.png in Resources */,
+				370CCDBE18A1D24A000BF8C2 /* GAConfig.plist in Resources */,
 				378F506217F110EA00DEFB48 /* background_test.png in Resources */,
 				A16534F7179384A40039EF26 /* Default-568h@2x.png in Resources */,
 			);
@@ -429,9 +441,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sirnod/Documents/workspace/OPP/GrowthAmp/GrowthAmp1/GrowthAmpSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GrowthAmp-eyhqtwanpbtixvgzzczopjwdhngy/Build/Products/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
@@ -444,9 +464,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sirnod/Documents/workspace/OPP/GrowthAmp/GrowthAmp1/GrowthAmpSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GrowthAmp-eyhqtwanpbtixvgzzczopjwdhngy/Build/Products/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";

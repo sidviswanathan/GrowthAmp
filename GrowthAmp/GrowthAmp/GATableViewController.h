@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GAViewController.h"
-#import "GAConstants.h"
 
 @interface GATableViewController : GAViewController <UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate>
 

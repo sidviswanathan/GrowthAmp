@@ -13,7 +13,6 @@
 #import "GASessionManager.h"
 #import "GATrackingManager.h"
 #import "GAContact.h"
-#import "GAConstants.h"
 
 @implementation GAAPIClient
 
@@ -31,9 +30,14 @@
 
 + (void)sendUserInfoWithContacts:(NSArray*)contacts {
     
+    NSString *customerID = [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey];
+    if (!customerID) {
+        customerID = @"0";
+    }
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
                            @{@"secret"          : [[GAConfigManager sharedInstance] stringForConfigKey:@"secret" default:@""],
-                             @"customer_id"     : [GAUserPreferences getObjectOfTypeKey:kCustomerIDKey],
+                             @"customer_id"     : customerID,
                              @"device_id"       : [GADeviceInfo deviceID],
                              @"device_type"     : [GADeviceInfo deviceType],
                              @"device_os"       : [GADeviceInfo deviceOS],
