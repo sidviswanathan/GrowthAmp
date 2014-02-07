@@ -5,7 +5,7 @@ GrowthAmp
 
 1. Download the SDK from [here](http://www.growthamp.com/download)
 
-1. Drag libGrowthAmp.a and drop in the frameworks group of your project
+1. Drag GrowthAmp.framework and drop in the frameworks group of your project
 
 1. Drag GrowthAmpResources.bundle and drop in the frameworks group of your project
 

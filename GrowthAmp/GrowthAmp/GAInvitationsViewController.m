@@ -50,7 +50,7 @@
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = GALocalizedString(@"invite_friends", nil);
-        titleLabel.textColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"navBarTextColor" default:@"#FFFFFF"];
+        titleLabel.textColor = [[GAConfigManager sharedInstance] colorForConfigKey:@"navBarTextColor" default:@"#504434"];
         self.navigationItem.titleView = titleLabel;
         
         self.selectAllEnabled = YES;
