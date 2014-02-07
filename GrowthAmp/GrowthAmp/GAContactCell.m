@@ -83,7 +83,7 @@
     if (self.checked) {
         UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"checkMarkImageName" default:@"Checkmark"];
         CGSize size = image.size;
-        checkmarkFrame = CGRectMake(cellWidth - size.width - 5, cellHeight/2 - size.height/2, size.width, size.height);
+        checkmarkFrame = CGRectMake(cellWidth - size.width - 25, cellHeight/2 - size.height/2, size.width, size.height);
         offset = checkmarkFrame.size.width;
     }
     
