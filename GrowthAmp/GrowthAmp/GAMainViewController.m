@@ -94,7 +94,7 @@
 
 - (void)setupContent {
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,screenSize.height*0.5,screenSize.width,36)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,screenSize.height*0.55,screenSize.width,36)];
     titleLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashTitleText" default:@"Spread the Love!"];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     float titleFontSize = [[GAConfigManager sharedInstance] floatForConfigKey:@"splashTitleTextSize" default:@"22"];
@@ -105,7 +105,7 @@
 
     [self.view addSubview:titleLabel];
     
-    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.56,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2)];
+    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenSize.width*textInsetWidth,screenSize.height*0.61,screenSize.width*(1-textInsetWidth*2),screenSize.height*0.2)];
     bodyLabel.text = [[GAConfigManager sharedInstance] stringForConfigKey:@"splashBodyText" default:@"Invite your friends."];
     bodyLabel.textAlignment = NSTextAlignmentCenter;
     float bodyFontSize = [[GAConfigManager sharedInstance] floatForConfigKey:@"splashBodyTextSize" default:@"16"];
