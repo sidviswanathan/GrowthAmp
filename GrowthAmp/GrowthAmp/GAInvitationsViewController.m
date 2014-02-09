@@ -145,7 +145,7 @@
     GAHeaderModel *model = [[GAHeaderModel alloc] init];
     model.headerTitle = self.headerTitle;
     
-    int count = MIN(self.selectedContacts.count, self.maxNumberOfContacts);
+    int count = (int)MIN(self.selectedContacts.count, self.maxNumberOfContacts);
     
     NSString *subtitleStr = [NSString stringWithFormat:@"Tap next to invite %d friends",count];
     

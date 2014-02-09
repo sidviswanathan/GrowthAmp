@@ -75,7 +75,7 @@
     
     [self.view addSubview:self.tableView];
     
-    [self addEmptyHeader];
+    //[self addEmptyHeader];
 }
 
 - (void)addEmptyHeader {
@@ -87,7 +87,7 @@
 }
 
 - (GACellPosition)positionForCellAtIndexPath:(NSIndexPath *)indexPath inArray:(NSArray *)array {
-    NSUInteger position = 0;
+    GACellPosition position = 0;
     if (indexPath.row == 0) {
         position |= GACellPositionTop;
     }
@@ -98,11 +98,11 @@
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
-    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@"background"];
-    tableView.backgroundColor = [UIColor colorWithPatternImage:image];
+    //UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectBGImageName" default:@"background"];
+   // tableView.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 15)];
-    tableView.tableHeaderView = sectionView;
+    //UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 15)];
+    //tableView.tableHeaderView = sectionView;
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView {

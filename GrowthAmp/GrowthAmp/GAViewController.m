@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    /*
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
         UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"navBarImageName" default:@"Header"];
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
@@ -41,6 +42,10 @@
         UIImage *image = GAImage(@"background");
         self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     }
+    */
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blueColor]];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupCloseButton];
     [self setupNextButton];
@@ -68,29 +73,18 @@
 
 - (void)setupNextButton {
     self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *enabledBackgroundImage = [[GAConfigManager sharedInstance] imageForConfigKey:@"nextButtonImageName" default:@"next"];
+    //UIImage *enabledBackgroundImage = [[GAConfigManager sharedInstance] imageForConfigKey:@"nextButtonImageName" default:@"next"];
     
-    enabledBackgroundImage = [enabledBackgroundImage stretchableImageWithLeftCapWidth:enabledBackgroundImage.size.width/2 topCapHeight:enabledBackgroundImage.size.height/2];
+    //enabledBackgroundImage = [enabledBackgroundImage stretchableImageWithLeftCapWidth:enabledBackgroundImage.size.width/2 topCapHeight:enabledBackgroundImage.size.height/2];
     
     NSString *text = GALocalizedString(@"next", nil);
     
-    [self.nextButton setBackgroundImage:enabledBackgroundImage forState:UIControlStateNormal];
-    [self.nextButton setTitle:text forState:UIControlStateNormal];
-    [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:text
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(didTapOnNextButton)];
     
-    UIFont *font = [UIFont boldSystemFontOfSize:12];
-    self.nextButton.titleLabel.font = font;
-    self.nextButton.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:.3];
-    self.nextButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [self.nextButton addTarget:self action:@selector(didTapOnNextButton) forControlEvents:UIControlEventTouchUpInside];
-    
-    CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(100, font.lineHeight) lineBreakMode:NSLineBreakByTruncatingTail];
-    
-    const int padding = 10;
-    self.nextButton.frame = CGRectMake(0, 0, size.width + (padding * 2), 60/2);
-    
-    UIBarButtonItem *barButonItem = [[UIBarButtonItem alloc] initWithCustomView:self.nextButton];
-    self.navigationItem.rightBarButtonItem = barButonItem;
+    self.navigationItem.rightBarButtonItem = barButton;
 }
 
 - (void)didTapOnCloseButton {

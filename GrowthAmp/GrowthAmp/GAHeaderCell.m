@@ -59,20 +59,21 @@
     self.textLabel.frame = [frame[1] CGRectValue];
     
     CGRect detailTitleFrame = self.detailTextLabel.frame;
-    detailTitleFrame.origin.x += -5;
+    detailTitleFrame.origin.x = self.textLabel.frame.origin.x;
     self.detailTextLabel.frame = detailTitleFrame;
 }
 
 - (void)setupSelectButton {
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
-    UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectButtonImageName" default:@"Select"];
+    //UIImage *image = [[GAConfigManager sharedInstance] imageForConfigKey:@"selectButtonImageName" default:@"Select"];
     
-    image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
+    //image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
     
     NSString *text = [self textForButton];
     
-    [self.selectButton setBackgroundImage:image forState:UIControlStateNormal];
+    //[self.selectButton setBackgroundImage:image forState:UIControlStateNormal];
+    self.selectButton.backgroundColor = [UIColor lightGrayColor];
     [self.selectButton setTitle:text forState:UIControlStateNormal];
     [self.selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
@@ -105,7 +106,7 @@
     CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(100, font.lineHeight) lineBreakMode:NSLineBreakByTruncatingTail];
     
     const int padding = 10;
-    CGRect buttonFrame = CGRectMake(cellWidth - (size.width + (padding * 2)) - 5, [[self class] height]/2 - 60/2/2, size.width + (padding * 2), 60/2);
+    CGRect buttonFrame = CGRectMake(cellWidth - (size.width + (padding * 2)), 0, size.width + (padding * 2), [[self class] height]);
     
     // Title frame
     text = self.model.headerTitle;

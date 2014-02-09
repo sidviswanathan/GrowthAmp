@@ -68,8 +68,8 @@
     self.detailTextLabel.backgroundColor = [UIColor clearColor];
     
     CGRect contentViewFrame = self.contentView.frame;
-    contentViewFrame.origin.x = [[self class] leftMargin];
-    contentViewFrame.size.width = size.width - [[self class] leftMargin] - [[self class] rightMargin];
+    contentViewFrame.origin.x = 0;
+    contentViewFrame.size.width = size.width;
     self.contentView.frame = contentViewFrame;
     
     if (self.cellPosition ^ GACellPositionBottom) {
@@ -80,8 +80,8 @@
 - (void)updateBackground {
     CGFloat width = CGRectGetWidth(self.contentView.frame);
     self.backgroundCornersView.frame = CGRectMake(0, 0, width, [[self class] height]);
-    UIImage *corners = [GARoundedCorners imageForPositionMask:self.cellPosition isDown:NO isBlue:NO];
-    self.backgroundCornersView.image = corners;
+    //UIImage *corners = [GARoundedCorners imageForPositionMask:self.cellPosition isDown:NO isBlue:NO];
+    self.backgroundCornersView.backgroundColor = [UIColor whiteColor];
 }
 
 - (NSArray *)contentFrames {
