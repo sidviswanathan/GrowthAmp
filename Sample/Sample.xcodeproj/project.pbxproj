@@ -482,11 +482,7 @@
 		A1653510179384A40039EF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/saureen/Desktop/IOS\\ Projects/GrowthAmp/Sample",
-					"/Users/saureen/Desktop/IOS\\ Projects/GrowthAmp/Sample",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
@@ -507,11 +503,7 @@
 		A1653511179384A40039EF26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/saureen/Desktop/IOS\\ Projects/GrowthAmp/Sample",
-					"/Users/saureen/Desktop/IOS\\ Projects/GrowthAmp/Sample",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample/Sample-Prefix.pch";
 				INFOPLIST_FILE = "Sample/Sample-Info.plist";
