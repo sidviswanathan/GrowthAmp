@@ -106,14 +106,17 @@
     CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(100, font.lineHeight) lineBreakMode:NSLineBreakByTruncatingTail];
     
     const int padding = 10;
-    CGRect buttonFrame = CGRectMake(cellWidth - (size.width + (padding * 2)), 0, size.width + (padding * 2), [[self class] height]);
-    
-    // Title frame
+    const int buttonFrameWidth = 68.0;
+    CGRect buttonFrame = CGRectMake(cellWidth - (buttonFrameWidth + (padding * 2)), 0, buttonFrameWidth + (padding * 2), [[self class] height]);
+
+    // Title frames
     text = self.model.headerTitle;
     font = [[self class] fontForTitle];
     CGFloat remainingWidth = buttonFrame.origin.x - 5*2;
     size = [text sizeWithFont:font constrainedToSize:CGSizeMake(remainingWidth - 5, font.lineHeight * [[self class] numberOfLinesForTitle]) lineBreakMode:NSLineBreakByTruncatingTail];
+    //CGRect titleFrame = CGRectMake(10, 5, size.width, size.height);
     CGRect titleFrame = CGRectMake(10, 5, size.width, size.height);
+    
     
     // Subtitle frame
     CGRect subtitleFrame = CGRectNull;

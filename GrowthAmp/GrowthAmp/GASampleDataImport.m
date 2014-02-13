@@ -104,7 +104,9 @@
     for (int i=1; i<=numImages; i++) {
     
         NSString *imageName = [NSString stringWithFormat:@"%d",i];
+        NSLog(@"The imageName = %@", imageName);
         UIImage *image = GAImage(imageName);
+ 
         [images addObject:image];
     }
     

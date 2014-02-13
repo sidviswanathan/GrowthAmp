@@ -63,6 +63,9 @@
     
     NSArray *frame = [self contentFrames];
     self.imageView.frame = [frame[0] CGRectValue];
+    
+    // TODO: Put this somewhere better but need the frame to calculate radius for cirlce image.
+    [self.imageView.layer setCornerRadius:CGRectGetWidth(self.imageView.bounds) / 2.0];
     self.textLabel.frame = [frame[1] CGRectValue];
     self.detailTextLabel.frame = [frame[2] CGRectValue];
     self.checkmarkImageView.frame = [frame[3] CGRectValue];
@@ -132,7 +135,7 @@
         
         CALayer *l = [self.imageView layer];
         [l setMasksToBounds:YES];
-        [l setCornerRadius:5];
+        //[l setCornerRadius: 20.0];
         
         // You can even add a border
         //[l setBorderWidth:4.0];
