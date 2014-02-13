@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     
-    [self createButtonOne];
+    //[self createButtonOne];
     [self createButtonTwo];
 }
 
@@ -41,7 +41,7 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"No splash" forState:UIControlStateNormal];
+    [button setTitle:@"Invite Friends" forState:UIControlStateNormal];
     
     [button setFrame:CGRectMake(20, BUTTON_HEIGHT * 2, screenSize.width-20*2, BUTTON_HEIGHT)];
     [button addTarget:self action:@selector(buttonTwoClicked) forControlEvents:UIControlEventTouchUpInside];
