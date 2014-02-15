@@ -15,9 +15,9 @@
 	<key>daysUntil2ndAutoLaunch</key>
 	<integer>30</integer>
 	<key>selectAllEnabled</key>
-	<false/>
+	<true/>
 	<key>maxNumberOfContacts</key>
-	<integer>50</integer>
+	<integer>10</integer>
 	<key>splashImageName</key>
 	<string></string>
 	<key>splashTitleText</key>
@@ -37,13 +37,13 @@
 	<key>navBarImageName</key>
 	<string></string>
 	<key>navBarTextColor</key>
-	<string>#504434</string>
+	<string>#FFFFFF</string>
 	<key>selectBGImageName</key>
 	<string></string>
 	<key>selectBGColor</key>
 	<string></string>
 	<key>selectHeaderTitleText</key>
-	<string>Spread the Mosaic Love</string>
+	<string>Earn points for your school</string>
 	<key>selectHeaderSubtitleText</key>
 	<string></string>
 	<key>checkMarkImageName</key>
@@ -55,6 +55,6 @@
 	<key>cancelButtonImageName</key>
 	<string></string>
 	<key>invitationText</key>
-	<string>I&apos;m using a new app called Mosaic to create beautiful photo books, you can get the app here: http://bit.ly/sample</string>
+	<string>I&apos;m using a new app called Shoparoo to earn point for my son&apos;s school, you can get the app here: http://bit.ly/sample</string>
 </dict>
 </plist>

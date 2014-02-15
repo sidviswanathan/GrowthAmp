@@ -44,8 +44,17 @@
     }
     */
     
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor blueColor]];
-    self.view.backgroundColor = [UIColor whiteColor];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:58.0f/255.0f green:125.0f/255.0f blue:3.0f/255.0f alpha:1.0f]];
+//    self.view.backgroundColor = [UIColor whiteColor];
+
+    NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    if ([[ver objectAtIndex:0] intValue] >= 7) {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:58.0f/255.0f green:125.0f/255.0f blue:3.0f/255.0f alpha:1.0f];
+        self.navigationController.navigationBar.translucent = NO;
+        self.view.backgroundColor = [UIColor whiteColor];
+    }else {
+        self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    }
     
     [self setupCloseButton];
     [self setupNextButton];

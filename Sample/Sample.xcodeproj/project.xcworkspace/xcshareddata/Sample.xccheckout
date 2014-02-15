@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>10332E0E-7F26-4499-93F9-CA2687332EF6</string>
+	<string>A7B78EFD-EB5E-443F-85D1-66CC317E2AAD</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>026BECFB-1C66-4E9A-8964-016F9C372979</key>
-		<string>https://github.com/sidviswanathan/GrowthAmp.git</string>
+		<key>07B0FE66-E0AE-48CF-999B-F04EF94B7722</key>
+		<string>ssh://github-sidviswanathan/sidviswanathan/GrowthAmp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Sample/Sample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>026BECFB-1C66-4E9A-8964-016F9C372979</key>
+		<key>07B0FE66-E0AE-48CF-999B-F04EF94B7722</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sidviswanathan/GrowthAmp.git</string>
+	<string>ssh://github-sidviswanathan/sidviswanathan/GrowthAmp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>026BECFB-1C66-4E9A-8964-016F9C372979</string>
+	<string>07B0FE66-E0AE-48CF-999B-F04EF94B7722</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>026BECFB-1C66-4E9A-8964-016F9C372979</string>
+			<string>07B0FE66-E0AE-48CF-999B-F04EF94B7722</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GrowthAmp</string>
 		</dict>
