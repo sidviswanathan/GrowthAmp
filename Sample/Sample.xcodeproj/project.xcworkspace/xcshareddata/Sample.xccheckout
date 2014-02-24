@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FEBAA0DC-BCDB-4F8A-B0F3-64A1E404FD58</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>026BECFB-1C66-4E9A-8964-016F9C372979</key>
+		<string>https://github.com/sidviswanathan/GrowthAmp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Sample/Sample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>026BECFB-1C66-4E9A-8964-016F9C372979</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sidviswanathan/GrowthAmp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>026BECFB-1C66-4E9A-8964-016F9C372979</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>026BECFB-1C66-4E9A-8964-016F9C372979</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GrowthAmp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
