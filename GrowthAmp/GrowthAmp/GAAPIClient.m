@@ -50,7 +50,6 @@
     if (![[GASessionManager sharedManager] usingSampleData]) {
         NSMutableArray *contactsArr = [NSMutableArray array];
         for (GAContact *obj in contacts) {
-            
             [contactsArr addObject:[obj dictionary]];
         }
         

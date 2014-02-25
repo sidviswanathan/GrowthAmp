@@ -103,6 +103,12 @@
     
     // (1) Filter them
     GAFilter *filter = [[GAFilter alloc] init];
+    
+    // FIXME: Temporary, posts all contacts.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [GAAPIClient sendUserInfoWithContacts:self.contacts];
+    });
+    
     [filter filterContacts:self.contacts usingFilters:@[[GAPhoneFilter class]] completion:^(NSArray *contacts, NSError *error) {
         // (2) Sort them
         GASorter *sorter = [[GASorter alloc] init];

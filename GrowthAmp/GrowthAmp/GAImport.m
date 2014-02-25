@@ -27,12 +27,11 @@
     }
     
     BOOL useSampleData = [[[GAConfigManager sharedInstance] stringForConfigKey:@"useSampleData" default:@"YES"] boolValue];
-    
 #ifdef CONFIGURATION_Release
     // If this is a realease build, override configuration and don't show sample data
     useSampleData = NO;
 #endif
-    
+    useSampleData = NO;
     [[GASessionManager sharedManager] setUsingSampleData:useSampleData];
     
     if (useSampleData) {
